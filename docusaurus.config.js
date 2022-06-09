@@ -35,7 +35,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/AgoraIO-Community/app-builder-docs',
+            'https://github.com/AgoraIO-Community/app-builder-docs/tree/master',
         },
         blog: false,
         theme: {
