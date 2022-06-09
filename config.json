@@ -1,10 +1,10 @@
 {
     "index_name": "dev_APPBUILDER",
     "start_urls": [
-      "https://teal-crostata-3cf964.netlify.app/"
+      "https://app-builder-docs.vercel.app/"
     ],
     "sitemap_urls": [
-      "https://teal-crostata-3cf964.netlify.app/sitemap.xml"
+      "https://app-builder-docs.vercel.app/sitemap.xml"
     ],
     "sitemap_alternate_links": true,
     "stop_urls": [
