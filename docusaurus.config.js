@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'App Builder Docs',
-  tagline: '',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Agora App Builder for Live Video Chat & Streaming Apps',
+  url: 'https://app-builder-docs.vercel.app/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -47,7 +47,13 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+   
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+  
+      },
       algolia:{
         apiKey:'0c7bfdbfe8f9ab67ce04621ab1c1abd8',
         indexName:'dev_APPBUILDER',

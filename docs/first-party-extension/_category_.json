@@ -2,6 +2,7 @@
   "label": "First Party Extension",
   "position": 2,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "slug": "/first-party-extension"
   }
 }
