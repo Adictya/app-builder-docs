@@ -6,19 +6,19 @@ import styles from "./styles.module.css";
 const cardList: ICardItem[] = [
   {
     title: "Configuration Reference",
-    Svg: require("@site/static/img/icon-config.svg").default,
+    icon: "config",
     description: <>Designed for efficiency and ease of use by our developers</>,
     ctas: [{ text: "Guide", href: "/sdk/guides" }],
   },
   {
     title: "Turn Key",
-    Svg: require("@site/static/img/icon-config.svg").default,
+    icon: "config",
     description: <>Designed for efficiency and ease of use by our developers</>,
     ctas: [{ text: "Guide", href: "/sdk/guides" }],
   },
   {
     title: "SDKs",
-    Svg: require("@site/static/img/icon-config.svg").default,
+    icon: "config",
     description: <>Designed for efficiency and ease of use by our developers</>,
     ctas: [
       { text: "Guide", href: "/sdk/guides" },
@@ -27,7 +27,7 @@ const cardList: ICardItem[] = [
   },
   {
     title: "First Party Extension",
-    Svg: require("@site/static/img/icon-code.svg").default,
+    icon: "code",
     description: <>Designed for efficiency and ease of use by our developers</>,
     ctas: [
       { text: "Guide", href: "/first-party-extension/guides" },

@@ -1,12 +1,13 @@
 import React from "react";
 import clsx from "clsx";
 import styles from "./card.module.css";
+import Icon from "@site/src/icons";
 
-function Card({ title, Svg, description, ctas }: ICardItem) {
+function Card({ title, icon, description, ctas }: ICardItem) {
   return (
     <div className="card padding--lg">
       <div className="row margin--none">
-        <Svg className={styles.icon} role="img" />
+        <Icon name={icon} />
         <h3 className={styles.title}>{title}</h3>
       </div>
       <div className="card__body margin-bottom--lg">

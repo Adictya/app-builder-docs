@@ -5,7 +5,7 @@ interface ICTA {
 
 interface ICardItem {
     title: string,
-    Svg : React.ComponentType<React.ComponentProps<'svg'>>,
+    icon : string,
     description : JSX.Element;
     ctas ?: ICTA[]
 
@@ -13,7 +13,7 @@ interface ICardItem {
 
 interface IIconButton {
     text : string,
-    Svg : React.ComponentType<React.ComponentProps<'svg'>>,
+    icon: string,
     href : string,
     external: boolean
 }

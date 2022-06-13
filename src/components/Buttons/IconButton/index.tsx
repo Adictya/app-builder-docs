@@ -4,25 +4,25 @@ import Button from "./IconButton";
 const buttonList: IIconButton[] = [
   {
     text: "Blog",
-    Svg: require("@site/static/img/icon-sdk.svg").default,
+    icon: "sdk",
     href: "/blog",
     external: false,
   },
   {
     text: "Github",
-    Svg: require("@site/static/img/icon-github.svg").default,
+    icon: "github",
     href: "https://github.com/AgoraIO-Community/app-builder-docs",
     external: true,
   },
   {
     text: "Community",
-    Svg: require("@site/static/img/icon-discord.svg").default,
+    icon: "discord",
     href: "https://discord.com/",
     external: true,
   },
   {
     text: "Dashboard",
-    Svg: require("@site/static/img/icon-sdk.svg").default,
+    icon: "sdk",
     href: "/",
     external: false,
   },
