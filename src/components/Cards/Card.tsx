@@ -10,7 +10,7 @@ function Card({ title, Svg, description, ctas }: ICardItem) {
         <h3 className={styles.title}>{title}</h3>
       </div>
       <div className="card__body margin-bottom--lg">
-        <p>{description}</p>
+        <p className={styles.desc}>{description}</p>
       </div>
       <div className="card__footer">
         {ctas.map(({ text, href }) => (

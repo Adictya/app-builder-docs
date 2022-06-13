@@ -1,0 +1,21 @@
+.icon {
+    width:20px;
+    height:20px
+}
+.text {
+    margin-left: 10px;
+}
+.btnContainer {
+    align-items: center;
+    display: flex;
+    padding: 20px;
+    border-radius: var(--ifm-card-border-radius);
+    background: var(--ifm-card-background-color);
+    box-shadow: var(--ifm-global-shadow-lw);
+    color : var(--ifm-content-color);
+    font-weight: 700;
+    
+}
+.btnContainer:hover {
+    text-decoration: none;
+}

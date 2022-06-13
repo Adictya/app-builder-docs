@@ -10,3 +10,10 @@ interface ICardItem {
     ctas ?: ICTA[]
 
 }
+
+interface IIconButton {
+    text : string,
+    Svg : React.ComponentType<React.ComponentProps<'svg'>>,
+    href : string,
+    external: boolean
+}

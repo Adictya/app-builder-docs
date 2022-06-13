@@ -8,7 +8,9 @@
     padding-left: 10px;
 }
 
-
+.desc {
+  color: var(--card-content-color);
+}
 
 .link {
  display: inline-block;
