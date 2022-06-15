@@ -6,10 +6,19 @@ title: Components API
 keywords: [videCallProps, ChatBubbleProps]
 ---
 
+import Image from "@site/src/components/Image"
+import img1 from "@site/static/img/docAssets/components-api.png"
+import img2 from "@site/static/img/docAssets/video-call.png"
+
 # Commponents API
 
-videoCall: React.ComponentType | videoCallInterface
-Customize the entire video call component
+This is a quick description of the title. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+<Image src={img1} alt="componentsApi"/>
+
+## videoCall
+
+<Image src={img2} alt="videoCall" />
 
 Modify `rtcEngine.js` to add support.
 
@@ -35,7 +44,7 @@ Customize the entire **chat panel** or pass in an object to override a `subcompo
 
 :::
 
-### ChatBubbleProps
+## ChatBubbleProps
 
 | msg     | string  | Content of the chat message                                                  |
 | ------- | ------- | ---------------------------------------------------------------------------- |
