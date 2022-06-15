@@ -7,6 +7,7 @@ keywords: [videCallProps, ChatBubbleProps]
 ---
 
 import Image from "@site/src/components/Image"
+import Collapsible from "@site/src/components/Collapsible"
 import img1 from "@site/static/img/docAssets/components-api.png"
 import img2 from "@site/static/img/docAssets/video-call.png"
 
@@ -16,11 +17,9 @@ This is a quick description of the title. Lorem ipsum dolor sit amet, consectetu
 
 <Image src={img1} alt="componentsApi"/>
 
-## videoCall
+## VideoCall
 
 <Image src={img2} alt="videoCall" />
-
-Modify `rtcEngine.js` to add support.
 
 ```js title="rtcEngine.js"
 import io.agora.rtc.RTCEngine
@@ -38,16 +37,30 @@ videoCall.chat.chatBubble: React.ComponentType
 Customize the chat Bubble component.
 ChatBubbleProps
 
-:::info
+---
 
-Customize the entire **chat panel** or pass in an object to override a `subcomponent` Check [this `api`](#).
+ <Collapsible collapsed>
 
-:::
+## Video Call Interface
 
-## ChatBubbleProps
-
-| msg     | string  | Content of the chat message                                                  |
+| msg     | string  | Content                                                                      |
 | ------- | ------- | ---------------------------------------------------------------------------- |
 | isLocal | boolean | Specifies if the message is from a local user or if it is from a remote user |
 | uid     | string  | Name of the user who sent the message                                        |
 | ts      | number  | Timestamp of the message                                                     |
+
+</Collapsible>
+
+---
+
+ <Collapsible >
+
+## Chat Interface
+
+| msg     | string  | Content                                                                      |
+| ------- | ------- | ---------------------------------------------------------------------------- |
+| isLocal | boolean | Specifies if the message is from a local user or if it is from a remote user |
+| uid     | string  | Name of the user who sent the message                                        |
+| ts      | number  | Timestamp of the message                                                     |
+
+</Collapsible>

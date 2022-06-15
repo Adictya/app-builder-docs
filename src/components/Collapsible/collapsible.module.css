@@ -1,0 +1,36 @@
+.collapseButton {
+    display: block;
+    padding: 8px 20px;
+    background-color: inherit;
+    border:1px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.collapseIcon {
+    margin-left:5px;
+}
+
+
+
+.content {
+    transition: height .2s ease-in-out ;
+
+}  
+  
+.collapsed {
+    /* display: none; */
+    height: 0;
+    overflow:hidden;
+  }
+  
+  .expanded {
+    /* display: block; */
+    height:auto
+  }
+  .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  

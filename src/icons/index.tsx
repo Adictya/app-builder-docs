@@ -4,6 +4,7 @@ import ConfigIcon from "./config";
 import DiscordIcon from "./discord";
 import GithubIcon from "./github";
 import SDKIcon from "./sdk";
+import ArrowIcon from "./arrow";
 
 export default function Icon({ name, ...props }) {
   switch (name) {
@@ -17,6 +18,8 @@ export default function Icon({ name, ...props }) {
       return <CodeIcon {...props} />;
     case "config":
       return <ConfigIcon {...props} />;
+    case "arrow":
+      return <ArrowIcon {...props} />;
     default:
       return <GithubIcon {...props} />;
   }
