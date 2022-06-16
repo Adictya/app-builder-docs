@@ -8,15 +8,42 @@
 
 /* You can override the default Infima variables here. */
 
-.markdown > h2 {
+ h2 {
   display: inline-block;
-  --ifm-h2-font-size: 1.25rem;
+  font-size: 1.25rem;
   font-family: 'Source Code Pro';
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-family: 'Source Code Pro';
+  font-weight: 400;
 }
 
 .markdown h1:first-child  {
   font-family: 'Source Sans Pro';
+  color: #F2EFED
 }
+
+table td, table  th, table thead tr{
+border: none;
+}
+tbody tr, table thead tr {
+  border-right:1px solid var(--ifm-table-border-color);
+  border-left:1px solid var(--ifm-table-border-color);
+}
+table thead tr {
+  border-top:1px solid var(--ifm-table-border-color);
+}
+table tbody {
+  border-bottom:1px solid var(--ifm-table-border-color);
+  border-radius: 60px;
+}
+table tr:nth-child(2n) {
+  background-color: var(--ifm-table-background)
+}
+
+
 
 :root {
   --ifm-color-primary: #0079f4;
@@ -29,9 +56,15 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-heading-color: #FFFFFF;
+  --ifm-font-color-base: #999999;
+  --ifm-hr-background-color: #575757;
   --ifm-card-vertical-spacing: 10px;
+  --ifm-table-head-font-weight: 400;
+
   
-}
+
+  }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -44,6 +77,12 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --card-content-color: #AFAFAF; 
+  --ifm-table-head-background: #313131;
+  --ifm-table-background: #1f1f1f;
+  --ifm-table-stripe-background: #1f1f1f;
+  --ifm-table-border-color: #090909; 
+  --ifm-table-head-color: #ffffff; 
+  --ifm-table-cell-color: #ffffff; 
  
  
 }

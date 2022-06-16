@@ -2,7 +2,7 @@ import React from "react";
 import Icon from "@site/src/icons";
 import styles from "./collapsible.module.css";
 
-export default function Collapsible({ collapsed, children }) {
+export default function Collapsible({ collapsed = true, children }) {
   const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
 
   const rest = React.Children.toArray(children);
@@ -20,7 +20,7 @@ export default function Collapsible({ collapsed, children }) {
             name="arrow"
             width="12"
             height="10"
-            className={styles.collapseIcon}
+            className={`${styles.collapseIcon} ${isCollapsed && ""}`}
             direction={isCollapsed ? "down" : "up"}
           />
         </button>

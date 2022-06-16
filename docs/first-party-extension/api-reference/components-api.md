@@ -6,66 +6,158 @@ title: Components API
 keywords: [videCallProps, ChatBubbleProps]
 ---
 
-import Image from "@site/src/components/Image"
-import Collapsible from "@site/src/components/Collapsible"
-import Highlight from "@site/src/components/Highlight"
-import img1 from "@site/static/img/docAssets/components-api.png"
-import img2 from "@site/static/img/docAssets/video-call.png"
+import Wrapper from "@site/src/components/Wrapper"
 
-# Commponents API
+<Wrapper>
 
-This is a quick description of the title. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-<Image src={img1} alt="componentsApi"/>
-
-## VideoCall
-
-<Highlight>React.ComponentType</Highlight> | <Highlight>videoCallInterface</Highlight>
+## videoCall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | videoCallInterface
 
 Customize the entire video call component
 
-<Image src={img2} alt="videoCall" />
-
-```js title="rtcEngine.js"
+```js
 import io.agora.rtc.RTCEngine
 mRtcEngine = RtcEngine.create(context, appid, eventHandler)
-// highlight-next-line
 mRtcEngine.setupLocalVideo(videocanvas)
-
 ```
 
-VideoCallInterface
-videoCall.chat: React.ComponentType | ChatInterface
+<accordion>
+
+### VideoCallInterface
+
+**videoCall.chat** : [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | ChatInterface
+
 Customize the entire chat panel or pass in an object to override a subcomponent
-ChatInterface
-videoCall.chat.chatBubble: React.ComponentType
+
+</accordion>
+
+---
+
+<accordion >
+
+### ChatInterface
+
 Customize the chat Bubble component.
-ChatBubbleProps
 
----
+**ChatBubbleProps**
 
- <Collapsible collapsed>
-
-## Video Call Interface
-
-| msg     | string  | Content                                                                      |
+| msg     | string  | Content of the chat message                                                  |
 | ------- | ------- | ---------------------------------------------------------------------------- |
 | isLocal | boolean | Specifies if the message is from a local user or if it is from a remote user |
 | uid     | string  | Name of the user who sent the message                                        |
 | ts      | number  | Timestamp of the message                                                     |
 
-</Collapsible>
+videoCall.chat.chatInput: React.ComponentType
 
----
+**ChatInputProps**
 
- <Collapsible >
+| privateActive  | boolean | Content of the chat message                                                  |
+| -------------- | ------- | ---------------------------------------------------------------------------- |
+| selectedUserID | boolean | Specifies if the message is from a local user or if it is from a remote user |
 
-## Chat Interface
+Customize the chat input by passing in your own component.
 
-| msg     | string  | Content                                                                      |
-| ------- | ------- | ---------------------------------------------------------------------------- |
-| isLocal | boolean | Specifies if the message is from a local user or if it is from a remote user |
-| uid     | string  | Name of the user who sent the message                                        |
-| ts      | number  | Timestamp of the message                                                     |
+**videoCall.settingsPanel:** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
-</Collapsible>
+Customize the settings panel by passing in your own component.
+
+**videoCall.participantsPanel:** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Participants Panel by passing in your own component.
+
+**videoCall.topBar:** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Top Bar by passing in your own component.
+
+**videoCall.bottomBar:** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Bottom Bar by passing in your own component.
+
+**videoCall.renderingComponent**: RenderingComponentInterface
+
+**RenderingComponentInterface**
+
+| rtc                | React.ComponentType | Specifies the rendering component <br/> for displaying Rtc Streams i.e VideoView                                                                         |
+| ------------------ | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [customKey:string] | React.ComponentType | Any Component provided here will be utilized <br/> as custom component for your Application. <br/>For more info, look at the Custom Content API overview |
+| Component          | React.ComponentType | Timestamp of the message                                                                                                                                 |
+
+**videoCall**.customLayouts: (defaultLayouts: Array) => Array
+
+| name      | string              | Specifies if the message is from a local user or if it is from a remote user          |
+| --------- | ------------------- | ------------------------------------------------------------------------------------- |
+| icon      | string              | Can be a <br/> 1. Base 64 Image string <br/>2. CDN URL <br/>3. Bunder imported string |
+| Component | React.ComponentType | Timestamp of the message                                                              |
+
+</accordion>
+
+## create : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Create screen by passing in your own component.
+
+## share : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Share screen by passing in your own component.
+
+## join : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Join screen by passing in your own component.
+
+## Precall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | PrecallInterface
+
+Customize the entire video call component or customize the subcomponents selectively.
+
+```typescript
+const fpe = {
+  precall: NewPreCallComponent
+}
+
+or
+
+const fpe = {
+  precall: {
+    preview: PreviewComponent
+    textBox: TextBoxComponent
+  }
+}
+```
+
+<accordion>
+
+### PrecallInterface
+
+**precall.preview :** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Video Preview by passing in your own component.
+
+**precall.audioMute :** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Audio Mute icon button by passing in your own component.
+
+**precall.videoMute :** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Video Mute icon button by passing in your own component.
+
+**precall.deviceSelect :** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Device Select dropdown by passing in your own component.
+
+**precall.textBox :** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Name Input text box by passing in your own component.
+
+**precall.joinButton :** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Join Call button by passing in your own component.
+
+**precall.meetingName:** [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+Customize the Meeting Name label by passing in your own component.
+
+:::note
+
+Look at i18n API if you want to change the text rather than the component that renders it.
+
+:::
+
+</accordion>
+</Wrapper>
