@@ -8,6 +8,7 @@ keywords: [videCallProps, ChatBubbleProps]
 
 import Image from "@site/src/components/Image"
 import Collapsible from "@site/src/components/Collapsible"
+import Highlight from "@site/src/components/Highlight"
 import img1 from "@site/static/img/docAssets/components-api.png"
 import img2 from "@site/static/img/docAssets/video-call.png"
 
@@ -18,6 +19,10 @@ This is a quick description of the title. Lorem ipsum dolor sit amet, consectetu
 <Image src={img1} alt="componentsApi"/>
 
 ## VideoCall
+
+<Highlight>React.ComponentType</Highlight> | <Highlight>videoCallInterface</Highlight>
+
+Customize the entire video call component
 
 <Image src={img2} alt="videoCall" />
 
