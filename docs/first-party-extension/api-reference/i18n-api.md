@@ -6,15 +6,11 @@ title: i18n API
 keywords: [i18nInterface, i18nDataInterface]
 ---
 
-import Wrapper from "@site/src/components/Wrapper"
-
-<Wrapper>
-
-## i18n : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | Array
+## i18n : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | Array<i18nInterface\>
 
 Customize the text content of your application using this API. The App Builder by default provides default values for
 
-<accordion>
+<collapsible>
 
 ### i18nInterface
 
@@ -29,11 +25,11 @@ Translations for a given language
 
 > When there are two or more translations in the App(including the default `en-us`), A dropdown language selector will be display in both the precall screen as well as the settings panel.
 
-</accordion>
+</collapsible>
 
 ---
 
-<accordion>
+<collapsible>
 
 ### i18nDataInterface
 
@@ -139,5 +135,4 @@ Translations for a given language
 |                                    |                           |                                                                                                                                                                                                      | Language                                                                                               |
 |                                    |                           |                                                                                                                                                                                                      | Video and Audio sharing is disabled for attendees. Raise hand to request permission to share.          |
 
-</accordion>
-</Wrapper>
+</collapsible>

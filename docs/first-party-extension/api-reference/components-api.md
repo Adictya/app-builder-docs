@@ -6,10 +6,6 @@ title: Components API
 keywords: [videCallProps, ChatBubbleProps]
 ---
 
-import Wrapper from "@site/src/components/Wrapper"
-
-<Wrapper>
-
 ## videoCall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | videoCallInterface
 
 Customize the entire video call component
@@ -20,7 +16,7 @@ mRtcEngine = RtcEngine.create(context, appid, eventHandler)
 mRtcEngine.setupLocalVideo(videocanvas)
 ```
 
-<accordion>
+<collapsible>
 
 ### VideoCallInterface
 
@@ -28,13 +24,15 @@ mRtcEngine.setupLocalVideo(videocanvas)
 
 Customize the entire chat panel or pass in an object to override a subcomponent
 
-</accordion>
+</collapsible>
 
 ---
 
-<accordion >
+<collapsible >
 
 ### ChatInterface
+
+**videoCall.chat.chatBubble** : [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) <ChatBubbleProps\>
 
 Customize the chat Bubble component.
 
@@ -46,7 +44,7 @@ Customize the chat Bubble component.
 | uid     | string  | Name of the user who sent the message                                        |
 | ts      | number  | Timestamp of the message                                                     |
 
-videoCall.chat.chatInput: React.ComponentType
+**videoCall.chat.chatInput** : [**React.ComponentType**](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) <ChatInputProps\>
 
 **ChatInputProps**
 
@@ -83,12 +81,12 @@ Customize the Bottom Bar by passing in your own component.
 
 **videoCall**.customLayouts: (defaultLayouts: Array) => Array
 
-| name      | string              | Specifies if the message is from a local user or if it is from a remote user          |
-| --------- | ------------------- | ------------------------------------------------------------------------------------- |
-| icon      | string              | Can be a <br/> 1. Base 64 Image string <br/>2. CDN URL <br/>3. Bunder imported string |
-| Component | React.ComponentType | Timestamp of the message                                                              |
+| name      | string                            | Specifies if the message is from a local user or if it is from a remote user          |
+| --------- | --------------------------------- | ------------------------------------------------------------------------------------- |
+| icon      | string                            | Can be a <br/> 1. Base 64 Image string <br/>2. CDN URL <br/>3. Bunder imported string |
+| Component | React.ComponentType<LayoutProps\> | Timestamp of the message                                                              |
 
-</accordion>
+</collapsible>
 
 ## create : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
@@ -121,7 +119,7 @@ const fpe = {
 }
 ```
 
-<accordion>
+<collapsible>
 
 ### PrecallInterface
 
@@ -159,5 +157,4 @@ Look at i18n API if you want to change the text rather than the component that r
 
 :::
 
-</accordion>
-</Wrapper>
+</collapsible>

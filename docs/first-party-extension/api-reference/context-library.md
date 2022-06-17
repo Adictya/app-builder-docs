@@ -6,13 +6,9 @@ title: Context Library
 keywords: [MeetingInfoContextInterface, LayoutContextInterface]
 ---
 
-import Wrapper from "@site/src/components/Wrapper"
-
-<Wrapper>
-
 ## useMeetingInfo(): MeetingInfoContextInterface
 
-<accordion>
+<collapsible>
 
 ### MeetingInfoContextInterface
 
@@ -26,48 +22,48 @@ Details about the meeting info interface
 | channel            | string                                                                       |                                                                                                    |
 | token              | string                                                                       |                                                                                                    |
 
-</accordion>
+</collapsible>
 
 ## useSidePanel(): SidePanelContextInterface
 
-<accordion>
+<collapsible>
 
 ### SidePanelContextInterface
 
-| sidePanel             | SidePanelType: string | This state represents the active side panel                                                       |
-| --------------------- | --------------------- | ------------------------------------------------------------------------------------------------- |
-| setSidePanel          | React.Dispatch        | Sets the Side Panel type based on the parameter. This method is used to show/hide the side panels |
-| createSidePanel - TBD | TBD                   | TBD                                                                                               |
+| sidePanel             | SidePanelType: string                           | This state represents the active side panel                                                       |
+| --------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| setSidePanel          | React.Dispatch<SetStateAction<SidePanelType\>\> | Sets the Side Panel type based on the parameter. This method is used to show/hide the side panels |
+| createSidePanel - TBD | TBD                                             | TBD                                                                                               |
 
-</accordion>
+</collapsible>
 
 ## useLayout(): LayoutContextInterface
 
-<accordion>
+<collapsible>
 
 ### LayoutContextInterface
 
-| activeLayoutName<br/>    | String         | This state contains the active layout of the app<br/>"Grid" ➝<br/>"Pinned" ➝<br/>"Custom Key" ➝      |
+| activeLayoutName<br/>    | String         | This state contains the active layout of the app<br/>"Grid" ➝<br/>"Pinned" ➝<br/>"<Custom Key\>" ➝   |
 | ------------------------ | -------------- | ---------------------------------------------------------------------------------------------------- |
 | setActiveLayoutName<br/> | React.Dispatch | Sets the Video Call layout. Default values include "grid" and "pinned". An FPE may add more layouts. |
 
-</accordion>
+</collapsible>
 
 ## usePreCall(): PreCallContextInterface
 
-<accordion>
+<collapsible>
 
 ### PreCallContextInterface
 
-| setCallActive | React.Dispatch | Programatically switch between Pre Call(false) and Video Call() screen.                                       |
-| ------------- | -------------- | ------------------------------------------------------------------------------------------------------------- |
-| callActive    | boolean        | The app is in the Video Call screen if the value is true. It is in the Pre Call screen if the value is false. |
+| setCallActive | React.Dispatch<React.SetStateAction<boolean\>\> | Programatically switch between Pre Call(false) and Video Call() screen.                                       |
+| ------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| callActive    | boolean                                         | The app is in the Video Call screen if the value is true. It is in the Pre Call screen if the value is false. |
 
-</accordion>
+</collapsible>
 
 ## useShareLink(): ShareLinkContextInterface
 
-<accordion>
+<collapsible>
 
 ### ShareLinkContextInterface
 
@@ -86,11 +82,11 @@ Details about the meeting info interface
   | copyShareLinkToClipboard | (type: SHARE_LINK_CONTENT_TYPE) => void<br/>                                                    | The function used to copy invite to clipboard based on the type |
   | getShareLink<br/>        | (type: SHARE_LINK_CONTENT_TYPE) => string;                                                      | The function used to get invite content based on the type       |
 
-</accordion>
+</collapsible>
 
 ## useScreenshare(): ScreenshareContextInterface
 
-<accordion>
+<collapsible>
 
 ### ScreenshareContextInterface
 
@@ -102,25 +98,25 @@ const
 | stopUserScreenShare       | () => Promise | Stops screen sharing                                            |
 |                           |               |                                                                 |
 
-</accordion>
+</collapsible>
 
 ## useRecording(): RecordingContextInterface
 
-<accordion>
+<collapsible>
 
 ### RecordingContextInterface
 
-| isRecordingActve<br/><br/> | boolean        | Flag to indicate if cloud recording is active in the application                                                    |
-| -------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------- |
-| startRecording<br/>        | () => void     | Starts cloud recording                                                                                              |
-| stopRecording              | () => void     | Stops cloud recording                                                                                               |
-| setRecordingActive         | React.Dispatch | Start/Stop cloud recording.<br/>Example<br/>\`setRecordingActive(false)\`<br/>\`setRecordingActive(curr => !curr)\` |
+| isRecordingActve<br/><br/> | boolean                                         | Flag to indicate if cloud recording is active in the application                                                    |
+| -------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| startRecording<br/>        | () => void                                      | Starts cloud recording                                                                                              |
+| stopRecording              | () => void                                      | Stops cloud recording                                                                                               |
+| setRecordingActive         | React.Dispatch<React.SetStateAction<boolean\>\> | Start/Stop cloud recording.<br/>Example<br/>\`setRecordingActive(false)\`<br/>\`setRecordingActive(curr => !curr)\` |
 
-</accordion>
+</collapsible>
 
 ## useDeviceContext(): DeviceContext
 
-<accordion>
+<collapsible>
 
 ### DeviceContext
 
@@ -132,23 +128,23 @@ const
 | deviceList     | MediaDeviceInfo\[\]                   | List of devices following [MediaDeviceInfo](https://developer.mozilla.org/en-US/docs/Web/API/MediaDeviceInfo) spec. |
 | setDeviceList  | (devices:MediaDeviceInfo\[\]) => void | Edit the list of devices                                                                                            |
 
-</accordion>
+</collapsible>
 
 ## useStorageContext(): StorageContextInterface
 
-<accordion>
+<collapsible>
 
 ### StorageContextInterface
 
-| store    | StoreInterface | Contains the list of Key-Value pairs that are persistently stored |
-| -------- | -------------- | ----------------------------------------------------------------- | -------------------------------------------------------------- |
-| setStore | React.Dispatch | null                                                              | Modify the persistant store by adding/removing Key-Value pairs |
+| store    | StoreInterface                                                 | Contains the list of Key-Value pairs that are persistently stored |
+| -------- | -------------------------------------------------------------- | ----------------------------------------------------------------- |
+| setStore | React.Dispatch<React.SetStateAction<StoreInterface\>\> \| null | Modify the persistant store by adding/removing Key-Value pairs    |
 
-</accordion>
+</collapsible>
 
 ---
 
-<accordion>
+<collapsible>
 
 ### StoreInterface
 
@@ -157,6 +153,4 @@ const
 | displayName          | null | string | User name of the local user                           |
 | selectedLanguageCode | null | string | Selected i18n locale                                  |
 
-</accordion>
-
-</Wrapper>
+</collapsible>
