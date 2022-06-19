@@ -3,8 +3,8 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
- @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
- @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+ @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 /* You can override the default Infima variables here. */
 
@@ -22,8 +22,9 @@ h3 {
 
 .markdown h1:first-child  {
   font-family: 'Source Sans Pro';
-  color: #F2EFED
+  color: var(--page-title-color);
 }
+
 
 table td, table  th, table thead tr{
 border: none;
@@ -43,46 +44,74 @@ table tr:nth-child(2n) {
   background-color: var(--ifm-table-background)
 }
 
+.card {
+  height: 100%;
+}
+
+
+
+
 
 
 :root {
   --ifm-color-primary: #0079f4;
   --ifm-font-family-base: 'Source Sans Pro';
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary-dark: #006ddc;
+  --ifm-color-primary-darker: #0067cf;
+  --ifm-color-primary-darkest: #0055ab;
+  --ifm-color-primary-light: #0d85ff;
+  --ifm-color-primary-lighter: #1a8bff;
+  --ifm-color-primary-lightest: #3e9eff;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-heading-color: #FFFFFF;
+  --page-title-color: #000;
+  --ifm-menu-color: #808080;
+  --ifm-menu-color-active: #000;
+  --ifm-heading-color: #000;
   --ifm-font-color-base: #999999;
   --ifm-hr-background-color: #575757;
-  --ifm-card-vertical-spacing: 10px;
+  --ifm-card-vertical-spacing: 20px;
   --ifm-table-head-font-weight: 400;
+  --ifm-toc-border-color: #555555;
 
-  
+
+  /* --ifm-menu-link-sublist-icon : url('data:image/svg+xml;utf-8,<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg" <path d="M0.19499 6.30833L2.78166 3.72167L0.19499 1.135C0.13318 1.07333 0.0841414 1.00007 0.0506821 0.919421C0.0172228 0.838772 0 0.752315 0 0.665C0 0.577685 0.0172228 0.491228 0.0506821 0.410578C0.0841414 0.329929 0.13318 0.256671 0.19499 0.195C0.45499 -0.065 0.87499 -0.065 1.13499 0.195L4.19499 3.255C4.45499 3.515 4.45499 3.935 4.19499 4.195L1.13499 7.255C0.87499 7.515 0.45499 7.515 0.19499 7.255C-0.0583432 6.995 -0.0650098 6.56833 0.19499 6.30833Z" fill="#808080"/> </svg>'); */
 
   }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+html[data-theme='dark'] {
   --ifm-color-primary: #0079f4;;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary-dark: #006ddc;
+  --ifm-color-primary-darker: #0067cf;
+  --ifm-color-primary-darkest: #0055ab;
+  --ifm-color-primary-light: #0d85ff;
+  --ifm-color-primary-lighter: #1a8bff;
+  --ifm-color-primary-lightest: #3e9eff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --card-content-color: #AFAFAF; 
+
+  --ifm-heading-color: #FFFFFF;
+  --page-title-color: #F2EFED;
+  --ifm-menu-color-active: #fff;
+
   --ifm-table-head-background: #313131;
   --ifm-table-background: #1f1f1f;
   --ifm-table-stripe-background: #1f1f1f;
   --ifm-table-border-color: #090909; 
   --ifm-table-head-color: #ffffff; 
   --ifm-table-cell-color: #ffffff; 
+
+  --ifm-navbar-background-color: #000814;
+  --ifm-background-color: #0a0a0a;
+  --ifm-toc-border-color: #555555;
  
- 
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #181818;
+}
+
+.menu__caret:before  {
+  background: var(--ifm-menu-link-sublist-icon) ;
 }

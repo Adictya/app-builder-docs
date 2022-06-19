@@ -6,19 +6,21 @@ import Icon from "@site/src/icons";
 function Card({ title, icon, description, ctas }: ICardItem) {
   return (
     <div className="card padding--lg">
-      <div className="row margin--none">
+      <div className={styles.header}>
         <Icon name={icon} />
-        <h3 className={styles.title}>{title}</h3>
+        <h2 className={styles.title}>{title}</h2>
       </div>
-      <div className="card__body margin-bottom--lg">
-        <p className={styles.desc}>{description}</p>
-      </div>
-      <div className="card__footer">
-        {ctas.map(({ text, href }) => (
-          <a className={styles.link} href={href} key={text}>
-            {text}
-          </a>
-        ))}
+      <div className={styles.content}>
+        <div className={styles.body}>
+          <p className={styles.desc}>{description}</p>
+        </div>
+        <div className={styles.footer}>
+          {ctas.map(({ text, href }) => (
+            <a className={styles.link} href={href} key={text}>
+              {text}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
