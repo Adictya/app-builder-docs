@@ -36,6 +36,17 @@ h3 {
   padding-left: 0;
 }
 
+table {
+  display: table;
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+}
+
+thead th:first-child{border-top-left-radius: 12px;}
+thead th:last-child{border-top-right-radius: 12px;}
+tbody tr:last-child>td:first-child{border-bottom-left-radius: 12px;}
+tbody tr:last-child>td:last-child{border-bottom-right-radius: 12px;}
 
 table td, table  th, table thead tr{
 border: none;
@@ -88,6 +99,7 @@ table tr:nth-child(2n) {
   --ifm-toc-border-color: #555555;
   --prism-background-color: #f6f8fa;
   --prism-color: #393a34;
+  --ifm-pre-padding: 32px;
 
  
 
