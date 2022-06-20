@@ -30,6 +30,14 @@ Customize the entire video call component
 import io.agora.rtc.RTCEngine
 mRtcEngine = RtcEngine.create(context, appid, eventHandler)
 mRtcEngine.setupLocalVideo(videocanvas)
+mRtcEngine = RtcEngine.create(context, appid, eventHandler)
+mRtcEngine.setupLocalVideo(videocanvas)
+mRtcEngine = RtcEngine.create(context, appid, eventHandler)
+mRtcEngine.setupLocalVideo(videocanvas)
+mRtcEngine = RtcEngine.create(context, appid, eventHandler)
+mRtcEngine.setupLocalVideo(videocanvas)
+mRtcEngine = RtcEngine.create(context, appid, eventHandler)
+mRtcEngine.setupLocalVideo(videocanvas)
 ```
 
 VideoCallInterface
@@ -41,6 +49,11 @@ Customize the chat Bubble component.
 ChatBubbleProps
 
 ---
+
+```js
+import io.agora.rtc.RTCEngine
+console.log("hello world")
+```
 
  <Collapsible collapsed>
 

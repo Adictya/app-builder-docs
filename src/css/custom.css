@@ -48,6 +48,12 @@ table tr:nth-child(2n) {
   height: 100%;
 }
 
+.theme-code-block pre  {
+  border: 1px solid #323232;
+  margin:20px 0;
+  border-radius: 12px;
+}
+
 
 
 
@@ -73,7 +79,10 @@ table tr:nth-child(2n) {
   --ifm-card-vertical-spacing: 20px;
   --ifm-table-head-font-weight: 400;
   --ifm-toc-border-color: #555555;
+  --prism-background-color: #f6f8fa;
+  --prism-color: #393a34;
 
+ 
 
   /* --ifm-menu-link-sublist-icon : url('data:image/svg+xml;utf-8,<svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg" <path d="M0.19499 6.30833L2.78166 3.72167L0.19499 1.135C0.13318 1.07333 0.0841414 1.00007 0.0506821 0.919421C0.0172228 0.838772 0 0.752315 0 0.665C0 0.577685 0.0172228 0.491228 0.0506821 0.410578C0.0841414 0.329929 0.13318 0.256671 0.19499 0.195C0.45499 -0.065 0.87499 -0.065 1.13499 0.195L4.19499 3.255C4.45499 3.515 4.45499 3.935 4.19499 4.195L1.13499 7.255C0.87499 7.515 0.45499 7.515 0.19499 7.255C-0.0583432 6.995 -0.0650098 6.56833 0.19499 6.30833Z" fill="#808080"/> </svg>'); */
 
@@ -105,6 +114,10 @@ html[data-theme='dark'] {
   --ifm-navbar-background-color: #000814;
   --ifm-background-color: #0a0a0a;
   --ifm-toc-border-color: #555555;
+  --prism-background-color: #051021;
+  --prism-color: #f8f8f2;
+  
+
  
 }
 
