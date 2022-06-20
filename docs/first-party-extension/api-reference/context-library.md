@@ -142,8 +142,6 @@ const
 
 </collapsible>
 
----
-
 <collapsible>
 
 ### StoreInterface

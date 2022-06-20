@@ -1,4 +1,7 @@
 .landingPage {
     max-width: 1000px;
-    
+  
+}
+.landingPage .container {
+    padding-left: 0;
 }

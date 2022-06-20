@@ -27,8 +27,6 @@ Translations for a given language
 
 </collapsible>
 
----
-
 <collapsible>
 
 ### i18nDataInterface

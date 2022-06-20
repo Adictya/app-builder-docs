@@ -26,8 +26,6 @@ Customize the entire chat panel or pass in an object to override a subcomponent
 
 </collapsible>
 
----
-
 <collapsible >
 
 ### ChatInterface

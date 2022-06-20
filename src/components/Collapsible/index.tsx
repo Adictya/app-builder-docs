@@ -33,6 +33,7 @@ export default function Collapsible({ collapsed = true, children }) {
       >
         {rest}
       </div>
+      <hr />
     </>
   );
 }

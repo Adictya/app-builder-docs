@@ -25,6 +25,17 @@ h3 {
   color: var(--page-title-color);
 }
 
+.landingPage {
+  max-width: 75%;
+
+}
+.docs-doc-id-docs .pagination-nav {
+  max-width: calc(75% - 16px);
+}
+.landingPage .container {
+  padding-left: 0;
+}
+
 
 table td, table  th, table thead tr{
 border: none;
@@ -53,10 +64,6 @@ table tr:nth-child(2n) {
   margin:20px 0;
   border-radius: 12px;
 }
-
-
-
-
 
 
 :root {
