@@ -26,11 +26,11 @@ h3 {
 }
 
 .landingPage {
-  max-width: 75%;
+  max-width: 1000px;
 
 }
 .docs-doc-id-docs .pagination-nav {
-  max-width: calc(75% - 16px);
+  max-width: calc(1000px - 16px);
 }
 .landingPage .container {
   padding-left: 0;
@@ -100,6 +100,8 @@ table tr:nth-child(2n) {
   --prism-background-color: #f6f8fa;
   --prism-color: #393a34;
   --ifm-pre-padding: 32px;
+  
+ 
 
  
 
@@ -135,10 +137,31 @@ html[data-theme='dark'] {
   --ifm-toc-border-color: #555555;
   --prism-background-color: #051021;
   --prism-color: #f8f8f2;
-  
-
  
 }
+
+[data-theme='dark'] .DocSearch {
+
+  --docsearch-footer-background: #252525;
+  --docsearch-hit-active-color: #ffffff;
+  --docsearch-hit-background: #181818;
+  --docsearch-modal-background: #0a0a0a;
+  --docsearch-highlight-color: #089cfd;
+  --docsearch-hit-color: #ffffff;
+  --docsearch-muted-color:#808080;
+}
+[data-theme='dark'] .DocSearch-Hit[aria-selected=true] a {
+  background: #0C1D2F ;
+}
+.DocSearch .DocSearch-Hit-title {
+font-size: 1em;
+font-weight: 400;
+}
+.DocSearch .DocSearch-Hit-path {
+  font-size: .875em;
+  font-weight: 400;
+}
+
 
 [data-theme='dark'] .theme-doc-sidebar-container {
   background-color: #181818;
