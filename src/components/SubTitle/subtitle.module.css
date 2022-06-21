@@ -1,0 +1,28 @@
+.container{
+    display: flex;
+    align-items: baseline;
+}
+.heading {
+ margin-right: 10px;
+
+}
+.link{
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Source Code Pro';
+    background-color: #002753;
+    padding: 6px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.link:hover {
+    text-decoration: none;
+   
+}
+.separator {
+    font-size: 40px;
+    margin:0 8px; 
+    position: relative;
+    bottom: -5px;   
+    line-height: 25px;
+}

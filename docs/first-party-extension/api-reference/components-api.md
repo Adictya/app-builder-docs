@@ -6,9 +6,15 @@ title: Components API
 keywords: [videCallProps, ChatBubbleProps]
 ---
 
-## videoCall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | videoCallInterface
+<subtitle>
+
+## VideoCall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) videoCallInterface
+
+</subtitle>
 
 Customize the entire video call component
+
+![image](./assets/image.png)
 
 ```js
 import io.agora.rtc.RTCEngine
@@ -86,19 +92,35 @@ Customize the Bottom Bar by passing in your own component.
 
 </collapsible>
 
-## create : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+<subtitle>
+
+## Create : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+</subtitle>
 
 Customize the Create screen by passing in your own component.
 
-## share : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+<subtitle>
+
+## Share : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+</subtitle>
 
 Customize the Share screen by passing in your own component.
 
-## join : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+<subtitle>
+
+## Join : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+</subtitle>
 
 Customize the Join screen by passing in your own component.
 
-## Precall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | PrecallInterface
+<subtitle>
+
+## Precall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) PrecallInterface
+
+</subtitle>
 
 Customize the entire video call component or customize the subcomponents selectively.
 

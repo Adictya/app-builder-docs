@@ -6,7 +6,11 @@ title: i18n API
 keywords: [i18nInterface, i18nDataInterface]
 ---
 
-## i18n : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) | Array<i18nInterface\>
+<subtitle>
+
+## i18n : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) i18nInterface
+
+</subtitle>
 
 Customize the text content of your application using this API. The App Builder by default provides default values for
 
