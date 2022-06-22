@@ -36,6 +36,9 @@ h3 {
   padding-left: 0;
 }
 
+a:hover {
+  text-decoration: none;
+}
 table {
   display: table;
   width: 100%;

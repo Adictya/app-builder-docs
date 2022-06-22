@@ -1,0 +1,24 @@
+.lastUpdated {
+  margin-top: 0.2rem;
+  font-style: italic;
+  font-size: smaller;
+}
+
+.footerText {
+  color:var(--ifm-heading-color);
+  margin-bottom: 8px;
+
+}
+.alignCenter{
+  text-align: center;
+}
+.alignRight {
+  text-align: right;
+}
+
+
+@media (min-width: 997px) {
+  .lastUpdated {
+    text-align: right;
+  }
+}
