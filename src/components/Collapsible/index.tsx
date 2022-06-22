@@ -18,8 +18,8 @@ export default function Collapsible({ collapsed = true, children }) {
           {isCollapsed ? "View More" : "View Less"}
           <Icon
             name="arrow"
-            width="12"
-            height="10"
+            width="8"
+            height="5"
             className={`${styles.collapseIcon} ${isCollapsed && ""}`}
             direction={isCollapsed ? "down" : "up"}
           />

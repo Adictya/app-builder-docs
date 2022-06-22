@@ -80,6 +80,7 @@ export default function DocItemFooter(props) {
           formattedLastUpdatedAt={formattedLastUpdatedAt}
         />
       )}
+      <hr/>
     </footer>
   );
 }

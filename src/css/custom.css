@@ -79,6 +79,10 @@ table tr:nth-child(2n) {
   border-radius: 12px;
 }
 
+.pagination-nav__link {
+  border: none;
+}
+
 
 :root {
   --ifm-color-primary: #0079f4;
@@ -114,7 +118,8 @@ table tr:nth-child(2n) {
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 html[data-theme='dark'] {
-  --ifm-color-primary: #0079f4;;
+  --ifm-link-color: #099DFD;
+  --ifm-color-primary: #099DFD;
   --ifm-color-primary-dark: #006ddc;
   --ifm-color-primary-darker: #0067cf;
   --ifm-color-primary-darkest: #0055ab;
