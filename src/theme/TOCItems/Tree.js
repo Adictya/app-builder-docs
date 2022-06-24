@@ -10,7 +10,7 @@ function TOCItemTree({toc, className, linkClassName, isChild}) {
         <li key={heading.id}>
           {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
           <a
-            href={`#${heading.id}`}
+            href={`#${heading.id.split('--')[0]}`}
             className={linkClassName ?? undefined}
             // Developer provided the HTML, so assume it's safe.
             // eslint-disable-next-line react/no-danger

@@ -1,17 +1,18 @@
 import React from "react";
 import styles from "./subtitle.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import clsx from "clsx";
 
 export default function SubTitle({ children }) {
-  //console.log(children);
+  if (!children) return null;
   let content = React.Children.toArray(children.props.children);
-  console.log(content);
+
   //console.log(content.length);
   if (content.length == 1) {
     content = content[0].split(":");
   }
 
-  const heading = content.shift();
+  const heading = content.shift().split(":")[0];
 
   const data = content.map(
     (element: string | React.ReactElement, index: number) => {
@@ -41,7 +42,15 @@ export default function SubTitle({ children }) {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>{heading.split(":")[0]} :</h2>
+      <h2
+        id={heading.toLowerCase().trim()}
+        className={clsx(
+          styles.heading,
+          "anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-theme-Heading-styles-module"
+        )}
+      >
+        {heading} :
+      </h2>
       {data}
     </div>
   );
