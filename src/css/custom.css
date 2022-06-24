@@ -83,6 +83,17 @@ table tr:nth-child(2n) {
   border: none;
 }
 
+.table-of-contents__link--active {
+  background-color: #1e2a41;
+  color : var(--ifm-color-primary) !important
+}
+.table-of-contents__link {
+  color: var(--docsearch-muted-color);
+  font-family: 'Source Code Pro';
+  font-weight: 500;
+  padding-left:10px;
+}
+
 
 :root {
   --ifm-color-primary: #0079f4;
