@@ -8,7 +8,7 @@ export default function Collapsible({ collapsed = true, children }) {
   const rest = React.Children.toArray(children);
   const title = rest.shift();
   return (
-    <>
+    <div className={styles.collapsible}>
       <div className={styles.header}>
         {title}
         <button
@@ -34,6 +34,6 @@ export default function Collapsible({ collapsed = true, children }) {
         {rest}
       </div>
       <hr />
-    </>
+    </div>
   );
 }

@@ -35,6 +35,22 @@ h3 {
 .landingPage .container {
   padding-left: 0;
 }
+.theme-doc-footer-edit-meta-row {
+  margin-bottom: 32px;
+}
+.theme-doc-footer-edit-meta-row  a {
+  font-weight: 600;
+}
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: none;
+}
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: none;
+}
+.pagination-nav__label {
+  font-size: 18px;
+}
+
 
 a:hover {
   text-decoration: none;
