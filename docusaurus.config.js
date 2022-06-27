@@ -86,14 +86,46 @@ const config = {
         
       },
       footer: {
+      
         style: 'dark',
+        
         links: [
           {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Setup',
                 to: '/',
+              },
+              {
+                label: 'Quickstart',
+                to: '/',
+              },
+              {
+                label: 'Guides',
+                to: '/first-party-extension/guides',
+              },
+              {
+                label: 'API Refernces',
+                to: '/first-party-extension/api-reference',
+              },
+            ],
+          },
+        
+          {
+            title: 'Company',
+            items: [
+              {
+                label: 'About Us',
+                to: 'https://www.agora.io/en/',
+              },
+              {
+                label: 'Contact Us',
+                to: 'https://www.agora.io/en/',
+              },
+              {
+                label: 'Careers',
+                to: 'https://www.agora.io/en/',
               },
             ],
           },
@@ -101,28 +133,60 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Code of Conduct',
+                to: 'https://www.agora.io/en/',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Blog',
+                to: 'https://www.agora.io/en/',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Support Plans',
+                to: 'https://www.agora.io/en/',
+              },
+              {
+                label: 'Talk to Us',
+                to: 'https://www.agora.io/en/',
+              },
+              {
+                label: 'Developer Resources',
+                to: 'https://www.agora.io/en/',
               },
             ],
           },
         
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Agora.io,Inc`,
+        copyright: `© ${new Date().getFullYear()} Agora.io,Inc`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+    customFields:{
+      socialLinks :[
+        {
+          title:'facebook',
+          to:'https://www.facebook.com/AgoraIO/'
+        },
+        {
+          title:'instagram',
+          to:'https://www.instagram.com/agora.io/'
+        },
+        {
+          title:'linkedin',
+          to:'https://www.linkedin.com/company/agora-lab-inc/'
+        },
+       
+        {
+          title:'twitter',
+          to:'https://twitter.com/AgoraIO'
+        },
+        
+
+      ],
+    
+    }
 };
 
 module.exports = config;

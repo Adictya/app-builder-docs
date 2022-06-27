@@ -110,6 +110,21 @@ table tr:nth-child(2n) {
   padding-left:10px;
 }
 
+.footer {
+  border:1px solid #181818;
+  padding-bottom: 0;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 27px 0;
+  background-color: #000;
+
+}
+.footer__social-icons {
+  margin-left:10px;
+}
 
 :root {
   --ifm-color-primary: #0079f4;
@@ -172,6 +187,9 @@ html[data-theme='dark'] {
   --ifm-toc-border-color: #555555;
   --prism-background-color: #051021;
   --prism-color: #f8f8f2;
+
+  --ifm-footer-background-color: #0a0a0a;
+  --ifm-footer-color: #ffffff
  
 }
 

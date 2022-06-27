@@ -11,7 +11,7 @@ export default function PaginatorNavLink(props) {
       )}
       to={permalink}>
       {subLabel && <div className="pagination-nav__sublabel">{subLabel}</div>}
-      <div className="pagination-nav__label"></div>
+      <div className="pagination-nav__label">{title}</div>
     </Link>
   );
 }
