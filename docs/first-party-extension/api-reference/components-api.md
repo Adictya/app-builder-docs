@@ -32,12 +32,13 @@ mRtcEngine.setupLocalVideo(videocanvas)
 
 ### VideoCallInterface
 
-| chat              | Customize the entire chat panel or pass in an object to override a subcomponent |
-| ----------------- | ------------------------------------------------------------------------------- |
-| settingsPanel     | Customize the settings panel by passing in your own component.                  |
-| participantsPanel | Customize the Participants Panel by passing in your own component.              |
-| topBar            | Customize the Top Bar by passing in your own component                          |
-| bottomBar         | Customize the Bottom Bar by passing in your own component                       |
+| Method                                           | Description                                                                     |
+| ------------------------------------------------ | ------------------------------------------------------------------------------- |
+| [chat](#videocallchat)                           | Customize the entire chat panel or pass in an object to override a subcomponent |
+| [settingsPanel](#videocallsettingspanel)         | Customize the settings panel by passing in your own component.                  |
+| [participantsPanel](#videocallparticipantspanel) | Customize the Participants Panel by passing in your own component.              |
+| [topBar](#videocalltopbar)                       | Customize the Top Bar by passing in your own component                          |
+| [bottomBar](#videocalltopbar)                    | Customize the Bottom Bar by passing in your own component                       |
 
 </collapsible>
 <subtitle>
@@ -51,9 +52,15 @@ Customize the entire chat panel or pass in an object to override a subcomponent
 
 ### ChatInterface
 
+| Method                                      | Description                                                |
+| ------------------------------------------- | ---------------------------------------------------------- |
+| [chat.chatBubble](#videocallchatchatbubble) | Customize the chat Bubble component.                       |
+| [chat.chatInput](#videocallchatchatinput)   | Customize the chat input by passing in your own component. |
+
+</collapsible>
 <subtitle>
 
-videoCall.chat.chatBubble : [React.ComponentType<ChatBubbleProps\>](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+## videoCall.chat.chatBubble : [React.ComponentType<ChatBubbleProps\>](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
 
@@ -69,7 +76,7 @@ Customize the chat Bubble component.
 
 <subtitle>
 
-videoCall.chat.chatInput : [React.ComponentType<ChatInputProps\>](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+## videoCall.chat.chatInput : [React.ComponentType<ChatInputProps\>](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
 
@@ -80,8 +87,6 @@ videoCall.chat.chatInput : [React.ComponentType<ChatInputProps\>](https://github
 | selectedUserID | boolean | Specifies if the message is from a local user or if it is from a remote user |
 
 Customize the chat input by passing in your own component.
-
-</collapsible>
 
 <subtitle>
 
@@ -204,14 +209,15 @@ const fpe = {
 
 ### PrecallInterface
 
-| preview      | Customize the Video Preview by passing in your own component.          |
-| ------------ | ---------------------------------------------------------------------- |
-| audioMute    | Customize the Audio Mute icon button by passing in your own component. |
-| videoMute    | Customize the Video Mute icon button by passing in your own component. |
-| deviceSelect | Customize the Device Select dropdown by passing in your own component  |
-| textBox      | Customize the Name Input text box by passing in your own component     |
-| joinButton   | Customize the Join Call button by passing in your own component.       |
-| meetingName  | Customize the Meeting Name label by passing in your own component      |
+| Method                               | Description                                                            |
+| ------------------------------------ | ---------------------------------------------------------------------- |
+| [preview](#precallpreview)           | Customize the Video Preview by passing in your own component.          |
+| [audioMute](#precallaudiomute)       | Customize the Audio Mute icon button by passing in your own component. |
+| [videoMute](#precallvideomute)       | Customize the Video Mute icon button by passing in your own component. |
+| [deviceSelect](#precalldeviceselect) | Customize the Device Select dropdown by passing in your own component  |
+| [textBox](#precalltextbox)           | Customize the Name Input text box by passing in your own component     |
+| [joinButton](#precalljoinbutton)     | Customize the Join Call button by passing in your own component.       |
+| [meetingName](#precallmeetingname)   | Customize the Meeting Name label by passing in your own component      |
 
 </collapsible>
 
@@ -241,7 +247,7 @@ Customize the Video Mute icon button by passing in your own component.
 
 <subtitle>
 
-## precall.deviceSelect :[React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+## precall.deviceSelect : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
 
