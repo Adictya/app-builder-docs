@@ -34,6 +34,7 @@ h3 {
 }
 .landingPage .container {
   padding-left: 0;
+  padding-right: 0;
 }
 .theme-doc-footer-edit-meta-row {
   margin-bottom: 32px;
@@ -120,11 +121,56 @@ table tr:nth-child(2n) {
   justify-content: space-between;
   padding: 27px 0;
   background-color: #000;
+  width:95%;
 
 }
 .footer__social-icons {
   margin-left:10px;
 }
+.footer__logo {
+  margin-top: 0;
+}
+
+/* Device related  */
+@media (max-width: 480px) {
+  .footer__contact , .footer__col {
+    flex-basis: 99%!important;
+    max-width: 99%!important;
+    margin-bottom: 14px;
+    text-align: center;
+   
+}
+
+
+
+}
+
+@media (min-width: 481px) and (max-width: 996px) {
+  .footer__col {
+     flex-basis: 33%!important;
+     max-width: 33%!important;
+    
+ }
+ .footer__contact {
+   flex-basis: 35%!important;  
+   max-width: 35%!important;
+  
+ }
+ .footer__link {
+   flex-basis: 65%!important;
+   max-width: 65%!important;
+  
+ } 
+ .col--3 {
+  --ifm-col-width: calc(3 / 12 * 100%);
+ }
+ .col--6 {
+  --ifm-col-width: calc(6 / 12 * 100%);
+ }
+
+ 
+ }
+
 
 :root {
   --ifm-color-primary: #0079f4;
@@ -189,7 +235,8 @@ html[data-theme='dark'] {
   --prism-color: #f8f8f2;
 
   --ifm-footer-background-color: #0a0a0a;
-  --ifm-footer-color: #ffffff
+  --ifm-footer-color: #ffffff;
+  --ifm-footer-link-color: #ffffff
  
 }
 

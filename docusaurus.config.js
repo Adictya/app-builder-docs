@@ -23,7 +23,7 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
 
-  plugins:[
+  plugins: [
     [
       '@docusaurus/plugin-ideal-image',
       {
@@ -33,7 +33,7 @@ const config = {
         steps: 2, // the max number of images generated between min and max (inclusive)
         disableInDev: false,
       }
-      ],
+    ],
   ],
 
 
@@ -61,19 +61,19 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-   
+
     ({
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
-  
+
       },
-      algolia:{
-        apiKey:'0c7bfdbfe8f9ab67ce04621ab1c1abd8',
-        indexName:'dev_APPBUILDER',
+      algolia: {
+        apiKey: '0c7bfdbfe8f9ab67ce04621ab1c1abd8',
+        indexName: 'dev_APPBUILDER',
         contextualSearch: true,
-        placeholder:'Search',
-        appId:'RDJ5H7PYFS',
+        placeholder: 'Search',
+        appId: 'RDJ5H7PYFS',
       },
       navbar: {
         title: '',
@@ -83,12 +83,11 @@ const config = {
           srcDark: 'img/logo-dark.svg',
           target: '_self',
         },
-        
+
       },
       footer: {
-      
+
         style: 'dark',
-        
         links: [
           {
             title: 'Docs',
@@ -111,7 +110,7 @@ const config = {
               },
             ],
           },
-        
+
           {
             title: 'Company',
             items: [
@@ -154,7 +153,7 @@ const config = {
               },
             ],
           },
-        
+
         ],
         copyright: `© ${new Date().getFullYear()} Agora.io,Inc`,
       },
@@ -163,30 +162,54 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-    customFields:{
-      socialLinks :[
-        {
-          title:'facebook',
-          to:'https://www.facebook.com/AgoraIO/'
-        },
-        {
-          title:'instagram',
-          to:'https://www.instagram.com/agora.io/'
-        },
-        {
-          title:'linkedin',
-          to:'https://www.linkedin.com/company/agora-lab-inc/'
-        },
-       
-        {
-          title:'twitter',
-          to:'https://twitter.com/AgoraIO'
-        },
-        
+  customFields: {
 
-      ],
-    
-    }
+    contactDetails: {
+      textLogo: {
+        src: "/img/agora-logo-text.svg",
+        alt: 'Agora',
+        width: '100px',
+        height: 'auto',
+        href: 'https://www.agora.io/en/',
+
+      },
+      logo: {
+        src: "/img/logo-dark.svg",
+        alt: 'App Builder',
+        width: '120px',
+        height: 'auto',
+        href: 'https://appbuilder.agora.io/'
+
+      },
+      contactNumber: "+1 408 879 5885",
+      email: "contact@agora.io",
+      address: `2804 Mission College Blvd <br/> 
+                Santa Clara, CA, USA 95054`,
+    },
+
+    socialLinks: [
+      {
+        title: 'facebook',
+        to: 'https://www.facebook.com/AgoraIO/'
+      },
+      {
+        title: 'instagram',
+        to: 'https://www.instagram.com/agora.io/'
+      },
+      {
+        title: 'linkedin',
+        to: 'https://www.linkedin.com/company/agora-lab-inc/'
+      },
+
+      {
+        title: 'twitter',
+        to: 'https://twitter.com/AgoraIO'
+      },
+
+
+    ],
+
+  }
 };
 
 module.exports = config;

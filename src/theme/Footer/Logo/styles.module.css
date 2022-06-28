@@ -1,9 +1,11 @@
 .footerLogoLink {
-  opacity: 0.5;
+  opacity: 0.7;
   transition: opacity var(--ifm-transition-fast)
     var(--ifm-transition-timing-default);
+    width:40px;
 }
 
 .footerLogoLink:hover {
   opacity: 1;
 }
+
