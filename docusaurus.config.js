@@ -68,6 +68,9 @@ const config = {
         disableSwitch: false,
 
       },
+      tableOfContents: {
+        maxHeadingLevel: 2
+      },
       algolia: {
         apiKey: '0c7bfdbfe8f9ab67ce04621ab1c1abd8',
         indexName: 'dev_APPBUILDER',

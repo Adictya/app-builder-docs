@@ -43,7 +43,7 @@ export default function SubTitle({ children }) {
   return (
     <div className={styles.container}>
       <h2
-        id={heading.toLowerCase().trim()}
+        id={heading.toLowerCase().split(".").join("").trim()}
         className={clsx(
           styles.heading,
           "anchor anchorWithStickyNavbar_node_modules-@docusaurus-theme-classic-lib-theme-Heading-styles-module"
