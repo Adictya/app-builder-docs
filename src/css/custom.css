@@ -162,10 +162,10 @@ table tr:nth-child(2n) {
   
  } 
  .col--3 {
-  --ifm-col-width: calc(3 / 12 * 100%);
+  --ifm-col-width: calc(3 / 12 * 100%) !important;
  }
  .col--6 {
-  --ifm-col-width: calc(6 / 12 * 100%);
+  --ifm-col-width: calc(6 / 12 * 100%) !important;
  }
 
  
