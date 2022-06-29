@@ -6,7 +6,7 @@ title: Components API
 keywords: [videCallProps, ChatBubbleProps]
 ---
 
-import Image from "@site/src/components/Image"
+import {Image1} from "@site/src/components/Image"
 import Collapsible from "@site/src/components/Collapsible"
 import Highlight from "@site/src/components/Highlight"
 import img1 from "@site/static/img/docAssets/components-api.png"
@@ -15,8 +15,6 @@ import img2 from "@site/static/img/docAssets/video-call.png"
 # Commponents API
 
 This is a quick description of the title. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-<Image src={img1} alt="componentsApi"/>
 
 ## VideoCall
 

@@ -3,6 +3,7 @@ import React from 'react';
 import MDXComponents from '@theme-original/MDXComponents';
 import Collapsible from '../components/Collapsible';
 import SubTitle from '../components/SubTitle';
+import Image from '../components/Image';
 
 
 export default {
@@ -10,5 +11,6 @@ export default {
   ...MDXComponents,
   // Map our custom components to the global scope
   collapsible: Collapsible,
-  subtitle : SubTitle
+  subtitle: SubTitle,
+  image: Image
 };

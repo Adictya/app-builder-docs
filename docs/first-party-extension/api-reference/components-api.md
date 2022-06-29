@@ -21,12 +21,59 @@ Below is the navigational image | image
 Customize the entire video call component
 
 ```js
-import io.agora.rtc.RTCEngine
-mRtcEngine = RtcEngine.create(context, appid, eventHandler)
-mRtcEngine.setupLocalVideo(videocanvas)
+import React from "react";
+import { View } from "react-native";
+import { installFPE } from "fpe-api/install";
+import {
+  ParticipantsView,
+  Chat,
+  Navbar,
+  SettingsView,
+  Controls,
+  VideoComponent,
+  useSidePanel,
+} from "fpe-api";
+import { SidePanelType } from "../src/subComponents/SidePanelEnum";
+
+const VideoCall: React.FC = () => {
+  const { sidePanel } = useSidePanel();
+  return (
+    <View style={{ flex: 1, flexDirection: "column", overflow: "hidden" }}>
+      <Navbar></Navbar>
+      <View
+        style={{
+          flex: 12,
+          flexDirection: "row",
+        }}
+      >
+        <VideoComponent />
+        {sidePanel === SidePanelType.Chat ? (
+          <Chat />
+        ) : sidePanel === SidePanelType.Settings ? (
+          <SettingsView />
+        ) : sidePanel === SidePanelType.Participants ? (
+          <ParticipantsView />
+        ) : (
+          <></>
+        )}
+      </View>
+      <Controls />
+    </View>
+  );
+};
+
+const data = installFPE({
+  components: {
+    videoCall: VideoCall,
+  },
+});
+
+export default data;
 ```
 
-![image](./assets/image.png)
+<!-- ![image](./assets/image.png) -->
+
+<image alt="Video Call" lightImageSrc="api/videocall-light.png" darkImageSrc="api/videocall-dark.png" />
 
 <collapsible>
 
@@ -160,30 +207,6 @@ Customize the layout through LayoutInterface
 
 <subtitle>
 
-## Create : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
-
-</subtitle>
-
-Customize the Create screen by passing in your own component.
-
-<subtitle>
-
-## Share : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
-
-</subtitle>
-
-Customize the Share screen by passing in your own component.
-
-<subtitle>
-
-## Join : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
-
-</subtitle>
-
-Customize the Join screen by passing in your own component.
-
-<subtitle>
-
 ## Precall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) PrecallInterface
 
 </subtitle>
@@ -277,7 +300,26 @@ Customize the Join Call button by passing in your own component.
 
 Customize the Meeting Name label by passing in your own component.
 
-<!--
+<subtitle>
 
+## Create : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
- -->
+</subtitle>
+
+Customize the Create screen by passing in your own component.
+
+<subtitle>
+
+## Share : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+</subtitle>
+
+Customize the Share screen by passing in your own component.
+
+<subtitle>
+
+## Join : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+
+</subtitle>
+
+Customize the Join screen by passing in your own component.

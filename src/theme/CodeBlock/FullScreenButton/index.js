@@ -10,6 +10,7 @@ function FullScreenButton({ code, className, forwardRef }) {
   const copyTimeout = useRef(undefined);
   const handleFullScreen = useCallback((e) => {
     const element = forwardRef.current;
+    element.classList.toggle('fullscreen')
 
     if (
       document.fullscreenElement ||

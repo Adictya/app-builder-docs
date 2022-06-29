@@ -52,6 +52,11 @@ h3 {
   font-size: 18px;
 }
 
+.mdImage {
+  border-radius: var(--ifm-code-border-radius);
+  margin-bottom: var(--ifm-leading) !important;
+ 
+}
 
 a:hover {
   text-decoration: none;
@@ -131,6 +136,15 @@ table tr:nth-child(2n) {
   margin-top: 0;
 }
 
+.prism-code code {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.fullscreen .prism-code code {
+  max-height: 95vh;
+ 
+}
+
 /* Device related  */
 @media (max-width: 480px) {
   .footer__contact , .footer__col {
@@ -195,6 +209,7 @@ table tr:nth-child(2n) {
   --prism-background-color: #f6f8fa;
   --prism-color: #393a34;
   --ifm-pre-padding: 32px;
+  --ifm-leading:24px;
   
  
 
