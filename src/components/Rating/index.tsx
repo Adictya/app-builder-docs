@@ -5,13 +5,16 @@ function RateThisPage({ pageID }) {
   const [haveVoted, setHaveVoted] = React.useState(false);
 
   const giveFeedback = (value) => {
-    if (window.gtag) {
-      window.gtag("event", "feedback", {
-        page: pageID,
-        vote: value,
+    if (window.ga) {
+      window.ga("send", {
+        hitType: "event",
+        eventCategory: "button",
+        eventAction: "feedback",
+        eventLabel: pageID,
+        eventValue: value,
       });
     }
-    console.log(`voted: for ${pageID} -  ${value}`);
+    console.log(`voted: for ${pageID} - ${value}`);
     setHaveVoted(true);
     //TODO: Add Analytics to send page feedback
   };
