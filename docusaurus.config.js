@@ -23,6 +23,13 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
 
+  scripts: [
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-KNSXGMLE89',
+      async: true
+    }
+  ],
+
   plugins: [
     [
       '@docusaurus/plugin-ideal-image',
@@ -54,6 +61,10 @@ const config = {
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'G-KNSXGMLE89',
+          anonymizeIP: true,
         },
       }),
     ],

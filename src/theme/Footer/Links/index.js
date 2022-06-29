@@ -4,7 +4,6 @@ import FooterLinksMultiColumn from '@theme/Footer/Links/MultiColumn';
 import FooterLinksSimple from '@theme/Footer/Links/Simple';
 import FooterLogo from '../Logo';
 export default function FooterLinks({ links, contact }) {
-  console.log(links)
   return <div className='row'>
     <div className='col col--5 footer__contact'>
       <ul className='footer__items clean-list'>

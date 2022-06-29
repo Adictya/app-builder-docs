@@ -1,11 +1,17 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-function RateThisPage() {
+function RateThisPage({ pageID }) {
   const [haveVoted, setHaveVoted] = React.useState(false);
 
-  const giveFeedback = (x) => {
-    console.log(x);
+  const giveFeedback = (value) => {
+    if (window.gtag) {
+      window.gtag("event", "feedback", {
+        page: pageID,
+        vote: value,
+      });
+    }
+    console.log(`voted: for ${pageID} -  ${value}`);
     setHaveVoted(true);
     //TODO: Add Analytics to send page feedback
   };
