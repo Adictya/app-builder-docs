@@ -12,5 +12,10 @@ export default {
   // Map our custom components to the global scope
   collapsible: Collapsible,
   subtitle: SubTitle,
-  image: Image
+  image: Image,
+  // intro: ({ children }) => children,
+  // api: ({ children }) => children,
+  // method: ({ children }) => children,
+  // interface: ({ children }) => children,
+
 };

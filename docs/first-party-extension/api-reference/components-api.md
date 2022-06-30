@@ -6,12 +6,17 @@ title: Components API
 keywords: [videCallProps, ChatBubbleProps]
 ---
 
+<intro>
 This is quick desription about the Components API.
 
 Below is the navigational image | image
 
 ![image](./assets/image.png)
+</intro>
 
+<api>
+
+<intro>
 <subtitle>
 
 ## videoCall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) videoCallInterface
@@ -71,10 +76,11 @@ const data = installFPE({
 export default data;
 ```
 
-<!-- ![image](./assets/image.png) -->
-
 <image alt="Video Call" lightImageSrc="api/videocall-light.png" darkImageSrc="api/videocall-dark.png" />
 
+</intro>
+
+<interface>
 <collapsible>
 
 ### VideoCallInterface
@@ -88,6 +94,10 @@ export default data;
 | [bottomBar](#videocalltopbar)                    | Customize the Bottom Bar by passing in your own component                       |
 
 </collapsible>
+</interface>
+
+<method>
+ 
 <subtitle>
 
 ## videoCall.chat : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) ChatInterface
@@ -95,6 +105,8 @@ export default data;
 </subtitle>
 
 Customize the entire chat panel or pass in an object to override a subcomponent
+
+<interface>
 <collapsible >
 
 ### ChatInterface
@@ -104,12 +116,16 @@ Customize the entire chat panel or pass in an object to override a subcomponent
 | [chat.chatBubble](#videocallchatchatbubble) | Customize the chat Bubble component.                       |
 | [chat.chatInput](#videocallchatchatinput)   | Customize the chat input by passing in your own component. |
 
-</collapsible>
-<subtitle>
+  </collapsible>
+  </interface>
+  </method>
+
+  <method>
+  <subtitle>
 
 ## videoCall.chat.chatBubble : [React.ComponentType<ChatBubbleProps\>](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
-</subtitle>
+  </subtitle>
 
 Customize the chat Bubble component.
 
@@ -120,6 +136,10 @@ Customize the chat Bubble component.
 | isLocal | boolean | Specifies if the message is from a local user or if it is from a remote user |
 | uid     | string  | Name of the user who sent the message                                        |
 | ts      | number  | Timestamp of the message                                                     |
+
+</method>
+
+<method>
 
 <subtitle>
 
@@ -135,6 +155,9 @@ Customize the chat Bubble component.
 
 Customize the chat input by passing in your own component.
 
+</method>
+
+<method>
 <subtitle>
 
 ## videoCall.settingsPanel : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
@@ -142,40 +165,50 @@ Customize the chat input by passing in your own component.
 </subtitle>
 
 Customize the settings panel by passing in your own component.
+</method>
 
-<subtitle>
+<method>
+  <subtitle>
 
 ## videoCall.participantsPanel : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
-</subtitle>
+  </subtitle>
 
 Customize the Participants Panel by passing in your own component.
+</method>
 
-<subtitle>
+<method>
+  <subtitle>
 
 ## videoCall.topBar : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
-</subtitle>
+  </subtitle>
 
 Customize the Top Bar by passing in your own component.
+</method>
 
-<subtitle>
+<method>
+  <subtitle>
 
 ## videoCall.bottomBar : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
-</subtitle>
+  </subtitle>
 
 Customize the Bottom Bar by passing in your own component.
+</method>
 
-<subtitle>
+<method>
+
+  <subtitle>
 
 ## videoCall.renderingComponent : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) RenderingComponentInterface
 
-</subtitle>
+  </subtitle>
 
 Customize the rendering by through RenderingComponentInterface
 
-<collapsible>
+  <interface>
+  <collapsible>
 
 ### RenderingComponentInterface
 
@@ -184,17 +217,21 @@ Customize the rendering by through RenderingComponentInterface
 | [customKey:string] | React.ComponentType | Any Component provided here will be utilized <br/> as custom component for your Application. <br/>For more info, look at the Custom Content API overview |
 | Component          | React.ComponentType | Timestamp of the message                                                                                                                                 |
 
-</collapsible>
+  </collapsible>
+  </interface>
+  </method>
 
-<subtitle>
+<method>
+  <subtitle>
 
 ## videoCall.customLayouts: LayoutInterface
 
-</subtitle>
+  </subtitle>
 
 Customize the layout through LayoutInterface
 
-<collapsible>
+  <interface>
+  <collapsible>
 
 ### LayoutInterface
 
@@ -203,11 +240,17 @@ Customize the layout through LayoutInterface
 | icon      | string                            | Can be a <br/> 1. Base 64 Image string <br/>2. CDN URL <br/>3. Bunder imported string |
 | Component | React.ComponentType<LayoutProps\> | Timestamp of the message                                                              |
 
-</collapsible>
+  </collapsible>
+  </interface>
+  </method>
 
+</api>
+
+<api>
+<intro>
 <subtitle>
 
-## Precall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) PrecallInterface
+## precall : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) PrecallInterface
 
 </subtitle>
 
@@ -228,6 +271,8 @@ const fpe = {
 }
 ```
 
+</intro>
+<interface>
 <collapsible>
 
 ### PrecallInterface
@@ -244,6 +289,9 @@ const fpe = {
 
 </collapsible>
 
+</interface>
+
+<method>
 <subtitle>
 
 ## precall.preview : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
@@ -251,6 +299,9 @@ const fpe = {
 </subtitle>
 
 Customize the Video Preview by passing in your own component.
+</method>
+
+<method>
 
 <subtitle>
 
@@ -259,6 +310,9 @@ Customize the Video Preview by passing in your own component.
 </subtitle>
 
 Customize the Audio Mute icon button by passing in your own component.
+</method>
+
+<method>
 
 <subtitle>
 
@@ -267,6 +321,9 @@ Customize the Audio Mute icon button by passing in your own component.
 </subtitle>
 
 Customize the Video Mute icon button by passing in your own component.
+</method>
+
+<method>
 
 <subtitle>
 
@@ -275,7 +332,9 @@ Customize the Video Mute icon button by passing in your own component.
 </subtitle>
 
 Customize the Device Select dropdown by passing in your own component.
+</method>
 
+<method>
 <subtitle>
 
 ## precall.textBox : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
@@ -283,7 +342,9 @@ Customize the Device Select dropdown by passing in your own component.
 </subtitle>
 
 Customize the Name Input text box by passing in your own component.
+</method>
 
+<method>
 <subtitle>
 
 ## precall.joinButton : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
@@ -291,7 +352,9 @@ Customize the Name Input text box by passing in your own component.
 </subtitle>
 
 Customize the Join Call button by passing in your own component.
+</method>
 
+<method>
 <subtitle>
 
 ## precall.meetingName : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
@@ -300,26 +363,44 @@ Customize the Join Call button by passing in your own component.
 
 Customize the Meeting Name label by passing in your own component.
 
+</method>
+
+</api>
+
+<api>
+<intro>
+
 <subtitle>
 
-## Create : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+## create : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
 
 Customize the Create screen by passing in your own component.
+</intro>
+</api>
+
+<api>
+<intro>
 
 <subtitle>
 
-## Share : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+## share : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
 
 Customize the Share screen by passing in your own component.
+</intro>
+</api>
 
+<api>
+<intro>
 <subtitle>
 
-## Join : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+## join : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
 
 Customize the Join screen by passing in your own component.
+</intro>
+</api>
