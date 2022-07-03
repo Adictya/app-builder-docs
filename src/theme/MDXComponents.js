@@ -5,7 +5,7 @@ import Collapsible from '../components/Collapsible';
 import SubTitle from '../components/SubTitle';
 import Image from '../components/Image';
 
-
+//TODO: custom elements should be removed from rendering
 export default {
   // Re-use the default mapping
   ...MDXComponents,

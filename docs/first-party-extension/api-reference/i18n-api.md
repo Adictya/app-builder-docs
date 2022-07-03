@@ -4,6 +4,7 @@ sidebar_position: 2
 description: Customize the text content of your application using this API
 title: i18n API
 keywords: [i18nInterface, i18nDataInterface]
+sidebar_custom_props: { icon: "i18" }
 ---
 
 <subtitle>

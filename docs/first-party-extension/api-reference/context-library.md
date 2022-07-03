@@ -4,6 +4,7 @@ sidebar_position: 3
 description: Context Library
 title: Context Library
 keywords: [MeetingInfoContextInterface, LayoutContextInterface]
+sidebar_custom_props: { icon: "code" }
 ---
 
 ## useMeetingInfo(): MeetingInfoContextInterface

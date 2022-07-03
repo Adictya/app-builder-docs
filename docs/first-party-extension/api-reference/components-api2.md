@@ -4,6 +4,7 @@ sidebar_position: 1
 description: Components API is a very powreful way to override
 title: Components API
 keywords: [videCallProps, ChatBubbleProps]
+sidebar_custom_props: { icon: "settings" }
 ---
 
 import {Image1} from "@site/src/components/Image"
