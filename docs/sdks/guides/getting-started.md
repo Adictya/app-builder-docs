@@ -13,7 +13,7 @@ The following guide describes the process of embedding the App Bulder Web SDK in
 
 #### STEP 1
 
-You need to download and extract the app builder source code, you can read more [here](info-guide)<br/> Run the app-builder-cli in your project folder using the following command:
+You need to download and extract the app builder source code, you can read more [here](https://appbuilder.agora.io/docs/Frontend/Web-guide)<br/> Run the app-builder-cli in your project folder using the following command:
 
 ```
 npm i && npm run start
@@ -41,7 +41,7 @@ Select the <strong>Web SDK</strong> platform, after which the CLI will start the
 ## CUSTOMIZATION
 
 You can use FPEs (First Party Extension) to customize your embedded App Builder project.<br/>
-Read this [guide](info-guide) for more information
+Read this [guide](https://appbuilder.agora.io/docs/Frontend/Web-guide) for more information
 
 #### STEP 1
 
