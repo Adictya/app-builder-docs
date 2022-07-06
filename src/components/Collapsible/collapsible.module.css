@@ -12,10 +12,6 @@
     margin-left:8px;
 }
 
-.collapsible-title .anchor {
-    overflow: hidden;
-}
-
 
 .content {
     transition: height .2s ease-in-out ;
@@ -35,7 +31,7 @@
   .header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
       margin-bottom: 10px;
   }
   

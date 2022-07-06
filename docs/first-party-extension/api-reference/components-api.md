@@ -225,7 +225,7 @@ Customize the rendering by through RenderingComponentInterface
 <method>
   <subtitle>
 
-## videoCall.customLayouts: LayoutInterface
+## videoCall.customLayouts : LayoutInterface
 
   </subtitle>
 
