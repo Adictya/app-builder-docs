@@ -5,14 +5,15 @@
     border:1px solid white;
     border-radius: 20px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .collapseIcon {
     margin-left:8px;
 }
 
-.collapsible {
-    
+.collapsible-title .anchor {
+    overflow: hidden;
 }
 
 

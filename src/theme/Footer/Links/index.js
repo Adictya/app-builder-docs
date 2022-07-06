@@ -5,7 +5,7 @@ import FooterLinksSimple from '@theme/Footer/Links/Simple';
 import FooterLogo from '../Logo';
 export default function FooterLinks({ links, contact }) {
   return <div className='row'>
-    <div className='col col--5 footer__contact'>
+    <div className='col col--6 footer__contact'>
       <ul className='footer__items clean-list'>
         <li className='footer__item'><FooterLogo logo={contact.textLogo} /></li>
         <li className='footer__item'> <FooterLogo logo={contact.logo} /></li>

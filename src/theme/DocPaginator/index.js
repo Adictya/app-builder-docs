@@ -1,11 +1,11 @@
 import React from 'react';
-import Translate, {translate} from '@docusaurus/Translate';
+import Translate, { translate } from '@docusaurus/Translate';
 import PaginatorNavLink from '@theme/PaginatorNavLink';
 export default function DocPaginator(props) {
-  const {previous, next} = props;
+  const { previous, next } = props;
   return (
     <nav
-      className="pagination-nav docusaurus-mt-lg"
+      className="pagination-nav "
       aria-label={translate({
         id: 'theme.docs.paginator.navAriaLabel',
         message: 'Docs pages navigation',

@@ -3,14 +3,19 @@ import clsx from 'clsx';
 import Icon from "@site/src/icons";
 export default function FooterLayout({ style, links, logo, copyright, socialLinks }) {
   return (
-    <footer
-      className="footer">
-      <div className="container container-fluid">
-        {links}
-        {(copyright) && (
-          <div className="footer__bottom ">
-            <div
-              className="footer__copyright ">
+    <>
+      <footer
+        className="footer">
+        <div className="container container-fluid">
+          {links}
+
+        </div>
+
+      </footer>
+      {(copyright) && (
+        <div className="footer__bottom ">
+          <div className="footer__bottom-content" >
+            <div className="footer__copyright ">
               {copyright}
             </div>
             <div className="footer__social ">
@@ -27,8 +32,8 @@ export default function FooterLayout({ style, links, logo, copyright, socialLink
               )}
             </div>
           </div>
-        )}
-      </div>
-    </footer>
+        </div>
+      )}
+    </>
   );
 }

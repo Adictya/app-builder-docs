@@ -116,18 +116,37 @@ table tr:nth-child(2n) {
   padding-left:10px;
 }
 
+.collapsible-title .anchor {
+  overflow: hidden;
+}
+
 .footer {
   border:1px solid #181818;
   padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: .875rem;
+}
+.pagination-nav__link {
+  padding-left:0;
+  padding-right: 0;
+}
+.footer__bottom {
+  background-color: var(--copyright-background-color);
+  font-size: .875rem;
+}
+.footer__copyright{
+  color: var(--ifm-footer-color)
 }
 
-.footer__bottom {
+.footer__bottom-content{
   display: flex;
   justify-content: space-between;
-  padding: 27px 0;
-  background-color: #000;
-  width:95%;
-
+  padding: 27px 16px;
+  max-width: var(--ifm-container-width-xl);
+  margin:0 auto;
+  width:100%;
+ 
 }
 .footer__social-icons {
   margin-left:10px;
@@ -155,8 +174,6 @@ table tr:nth-child(2n) {
    
 }
 
-
-
 }
 
 @media (min-width: 481px) and (max-width: 996px) {
@@ -176,14 +193,40 @@ table tr:nth-child(2n) {
   
  } 
  .col--3 {
-  --ifm-col-width: calc(3 / 12 * 100%) !important;
+  --ifm-col-width: calc(3 / 12 * 100%) 
+ }
+ .col--4 {
+  --ifm-col-width: calc(4 / 12 * 100%) 
  }
  .col--6 {
-  --ifm-col-width: calc(6 / 12 * 100%) !important;
+  --ifm-col-width: calc(6 / 12 * 100%) 
  }
 
  
  }
+ @media (max-width: 996px)  {
+  .col--4 {
+    --ifm-col-width: calc(4 / 12 * 100%) 
+   }
+   
+ }
+
+ @media (min-width: 481px) {
+   .footer {
+     padding-top: 100px;
+   }
+ }
+ /* @media (min-width: 1440px) {
+.footer__bottom-content {
+    max-width: var(--ifm-container-width-xl);
+    margin:0 auto;
+    width:100%;
+    
+}
+} */
+.theme-doc-footer-edit-meta-row {
+  align-items: center;
+}
 
 
 :root {
@@ -231,6 +274,7 @@ html[data-theme='dark'] {
   --ifm-color-primary-lightest: #3e9eff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --card-content-color: #AFAFAF; 
+  --sidebar-background-color:#181818;
 
   --ifm-heading-color: #FFFFFF;
   --page-title-color: #F2EFED;
@@ -251,7 +295,9 @@ html[data-theme='dark'] {
 
   --ifm-footer-background-color: #0a0a0a;
   --ifm-footer-color: #ffffff;
-  --ifm-footer-link-color: #ffffff
+  --ifm-footer-link-color: #ffffff;
+
+  --copyright-background-color:#000;
  
 }
 
@@ -279,7 +325,7 @@ font-weight: 400;
 
 
 [data-theme='dark'] .theme-doc-sidebar-container {
-  background-color: #181818;
+  background-color: var(--sidebar-background-color);
 }
 
 .menu__caret:before  {
