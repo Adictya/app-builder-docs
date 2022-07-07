@@ -21,8 +21,8 @@ export default function Collapsible({
       <div className={clsx(styles.header, "collapsible-title")}>
         {title}
         <button
-          id={id}
-          className={styles.collapseButton}
+          id={`${id}-btn`}
+          className={clsx(styles.collapseButton, isCollapsed && "collapsed")}
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
           {isCollapsed ? "View More" : "View Less"}

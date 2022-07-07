@@ -8,6 +8,10 @@
 
 /* You can override the default Infima variables here. */
 
+html {
+  scroll-behavior: smooth;
+}
+
  h2 {
   font-size: 1.25rem;
   font-family: 'Source Code Pro';
