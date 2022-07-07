@@ -117,7 +117,8 @@ table tr:nth-child(2n) {
 }
 
 .collapsible-title .anchor {
-  overflow: hidden;
+  /* overflow: hidden; */
+  word-break: break-all;
 }
 
 .footer {

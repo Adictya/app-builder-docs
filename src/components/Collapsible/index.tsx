@@ -3,16 +3,25 @@ import Icon from "@site/src/icons";
 import styles from "./collapsible.module.css";
 import clsx from "clsx";
 
-export default function Collapsible({ collapsed = true, children }) {
-  const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
+interface ICollapsibeProps {
+  collapsed: boolean;
+  children: React.ReactNode;
+}
 
+export default function Collapsible({
+  collapsed = true,
+  children,
+}: ICollapsibeProps) {
+  const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
   const rest = React.Children.toArray(children);
   const title = rest.shift();
+  const id = React.isValidElement(title) ? title.props.id : "";
   return (
     <div className={styles.collapsible}>
       <div className={clsx(styles.header, "collapsible-title")}>
         {title}
         <button
+          id={id}
           className={styles.collapseButton}
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
