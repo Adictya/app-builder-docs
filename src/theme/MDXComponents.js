@@ -4,6 +4,8 @@ import MDXComponents from '@theme-original/MDXComponents';
 import Collapsible from '../components/Collapsible';
 import SubTitle from '../components/SubTitle';
 import Image from '../components/Image';
+import NotFound from '../components/NotFound';
+
 
 //TODO: custom elements should be removed from rendering
 export default {
@@ -13,6 +15,7 @@ export default {
   collapsible: Collapsible,
   subtitle: SubTitle,
   image: Image,
+  notfound: NotFound
   // intro: ({ children }) => children,
   // api: ({ children }) => children,
   // method: ({ children }) => children,

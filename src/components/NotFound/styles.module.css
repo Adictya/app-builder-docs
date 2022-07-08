@@ -1,0 +1,13 @@
+.container {
+    
+}
+.header {
+    font-size:120px;
+    line-height: 80px;
+    
+}
+.text {
+    font-size:1.5rem;
+    color:var(--ifm-heading-color);
+    font-weight: 300;
+}

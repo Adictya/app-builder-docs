@@ -2,7 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 export default function PaginatorNavLink(props) {
-  const {permalink, title, subLabel, isNext} = props;
+  const { permalink, title, subLabel, isNext } = props;
+  if (title === '404') return null;
   return (
     <Link
       className={clsx(

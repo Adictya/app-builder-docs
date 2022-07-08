@@ -3,6 +3,8 @@ import Translate, { translate } from '@docusaurus/Translate';
 import PaginatorNavLink from '@theme/PaginatorNavLink';
 export default function DocPaginator(props) {
   const { previous, next } = props;
+  console.log(previous)
+  //if (previous ? title = '404') return null;
   return (
     <nav
       className="pagination-nav "

@@ -1,6 +1,13 @@
 import React from "react";
+import IconButtonContainer from "../Buttons/IconButton";
+import CardContainer from "../Cards";
 import styles from "./styles.module.css";
 
-export default function HomePage({ children }) {
-  return <div className="landingPage">{children}</div>;
+export default function HomePage() {
+  return (
+    <div className="landingPage">
+      <CardContainer />
+      <IconButtonContainer />
+    </div>
+  );
 }
