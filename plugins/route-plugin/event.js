@@ -10,7 +10,8 @@ export default (function () {
       const id = location.hash;
       const ele = document.querySelector(`${id}-btn`);
       if (ele) {
-        ele.classList.contains('collapsed') && ele.click();
+        //ele.classList.contains('collapsed') && ele.click();
+        //TODO: remove auto open accordion on scroll view
       }
     }
   }

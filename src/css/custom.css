@@ -59,7 +59,6 @@ h3 {
 .mdImage {
   border-radius: var(--ifm-code-border-radius);
   margin-bottom: var(--ifm-leading) !important;
- 
 }
 
 a:hover {
@@ -95,6 +94,7 @@ table tr:nth-child(2n) {
   background-color: var(--ifm-table-background)
 }
 
+
 .card {
   height: 100%;
 }
@@ -115,7 +115,7 @@ table tr:nth-child(2n) {
 }
 .table-of-contents__link {
   color: var(--docsearch-muted-color);
-  font-family: 'Source Code Pro';
+  font-family: 'Source Sans Pro';
   font-weight: 500;
   padding-left:10px;
 }
@@ -123,6 +123,7 @@ table tr:nth-child(2n) {
 .collapsible-title .anchor {
   /* overflow: hidden; */
   word-break: break-all;
+ 
 }
 
 .footer {
@@ -250,7 +251,7 @@ table tr:nth-child(2n) {
   --ifm-menu-color-active: #000;
   --ifm-heading-color: #000;
   --ifm-font-color-base: #999999;
-  --ifm-hr-background-color: #575757;
+
   --ifm-card-vertical-spacing: 20px;
   --ifm-table-head-font-weight: 400;
   --ifm-toc-border-color: #555555;
@@ -258,6 +259,7 @@ table tr:nth-child(2n) {
   --prism-color: #393a34;
   --ifm-pre-padding: 32px;
   --ifm-leading:24px;
+  --ifm-hr-margin-vertical:40px
   
  
 
@@ -280,6 +282,10 @@ html[data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --card-content-color: #AFAFAF; 
   --sidebar-background-color:#181818;
+  --interface-background-color:#111111;
+  --collapsible-background-color:#373737b0;
+  --collapsible-border-color:#575757a6;
+  --collapsible-button-color:#ffffff;
 
   --ifm-heading-color: #FFFFFF;
   --page-title-color: #F2EFED;
@@ -301,6 +307,8 @@ html[data-theme='dark'] {
   --ifm-footer-background-color: #0a0a0a;
   --ifm-footer-color: #ffffff;
   --ifm-footer-link-color: #ffffff;
+
+  --ifm-hr-background-color: #303030;
 
   --copyright-background-color:#000;
  

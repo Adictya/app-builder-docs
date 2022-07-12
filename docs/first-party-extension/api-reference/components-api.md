@@ -7,13 +7,7 @@ keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
 ---
 
-<intro>
-This is quick desription about the Components API.
-
-Below is the navigational image | image
-
-![image](./assets/image.png)
-</intro>
+This is a quick description about the Components API.
 
 <api>
 
@@ -25,6 +19,7 @@ Below is the navigational image | image
 </subtitle>
 
 Customize the entire video call component
+<image alt="Video Call" lightImageSrc="api/videocall-light.png" darkImageSrc="api/videocall-dark.png" />
 
 ```js
 import React from "react";
@@ -77,14 +72,13 @@ const data = installFPE({
 export default data;
 ```
 
-<image alt="Video Call" lightImageSrc="api/videocall-light.png" darkImageSrc="api/videocall-dark.png" />
-
 </intro>
-
-<interface>
+<method>
 <collapsible>
 
 ### VideoCallInterface
+
+Customize the entire chat panel or pass in an object to override a subcomponent
 
 | Method                                           | Description                                                                     |
 | ------------------------------------------------ | ------------------------------------------------------------------------------- |
@@ -95,7 +89,7 @@ export default data;
 | [bottomBar](#videocalltopbar)                    | Customize the Bottom Bar by passing in your own component                       |
 
 </collapsible>
-</interface>
+</method>
 
 <method>
  
@@ -105,12 +99,14 @@ export default data;
 
 </subtitle>
 
-Customize the entire chat panel or pass in an object to override a subcomponent
+Customize the entire video call component
 
-<interface>
+<method>
 <collapsible >
 
 ### ChatInterface
+
+Customize the entire chat panel or pass in an object to override a subcomponent.
 
 | Method                                      | Description                                                |
 | ------------------------------------------- | ---------------------------------------------------------- |
@@ -118,7 +114,7 @@ Customize the entire chat panel or pass in an object to override a subcomponent
 | [chat.chatInput](#videocallchatchatinput)   | Customize the chat input by passing in your own component. |
 
   </collapsible>
-  </interface>
+  </method>
   </method>
 
   <method>
@@ -130,6 +126,8 @@ Customize the entire chat panel or pass in an object to override a subcomponent
 
 Customize the chat Bubble component.
 
+<collapsible>
+
 ### ChatBubbleProps
 
 | msg     | string  | Content of the chat message                                                  |
@@ -137,6 +135,8 @@ Customize the chat Bubble component.
 | isLocal | boolean | Specifies if the message is from a local user or if it is from a remote user |
 | uid     | string  | Name of the user who sent the message                                        |
 | ts      | number  | Timestamp of the message                                                     |
+
+</collapsible>
 
 </method>
 
@@ -147,14 +147,17 @@ Customize the chat Bubble component.
 ## videoCall.chat.chatInput : [React.ComponentType<ChatInputProps\>](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
+<collapsible>
 
 ### ChatInputProps
+
+Customize the chat input by passing in your own component.
 
 | privateActive  | boolean | Content of the chat message                                                  |
 | -------------- | ------- | ---------------------------------------------------------------------------- |
 | selectedUserID | boolean | Specifies if the message is from a local user or if it is from a remote user |
 
-Customize the chat input by passing in your own component.
+</collapsible>
 
 </method>
 
@@ -208,7 +211,7 @@ Customize the Bottom Bar by passing in your own component.
 
 Customize the rendering by through RenderingComponentInterface
 
-  <interface>
+  <method>
   <collapsible>
 
 ### RenderingComponentInterface
@@ -219,7 +222,7 @@ Customize the rendering by through RenderingComponentInterface
 | Component          | React.ComponentType | Timestamp of the message                                                                                                                                 |
 
   </collapsible>
-  </interface>
+  </method>
   </method>
 
 <method>
@@ -231,7 +234,7 @@ Customize the rendering by through RenderingComponentInterface
 
 Customize the layout through LayoutInterface
 
-  <interface>
+  <method>
   <collapsible>
 
 ### LayoutInterface
@@ -242,7 +245,7 @@ Customize the layout through LayoutInterface
 | Component | React.ComponentType<LayoutProps\> | Timestamp of the message                                                              |
 
   </collapsible>
-  </interface>
+  </method>
   </method>
 
 </api>
@@ -273,7 +276,7 @@ const fpe = {
 ```
 
 </intro>
-<interface>
+<method>
 <collapsible>
 
 ### PrecallInterface
@@ -290,7 +293,7 @@ const fpe = {
 
 </collapsible>
 
-</interface>
+</method>
 
 <method>
 <subtitle>

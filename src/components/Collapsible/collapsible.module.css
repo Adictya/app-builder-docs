@@ -1,38 +1,78 @@
-.collapseButton {
-    display: block;
-    padding: 8px 20px;
-    background-color: inherit;
-    border:1px solid white;
-    border-radius: 20px;
-    cursor: pointer;
-    white-space: nowrap;
+.collapsible {
+  background-color: var(--interface-background-color);
+  padding: 32px;
+  border-radius: 12px;
+  padding-bottom: 0;
+}
+
+.toggleButton {
+  display: block;
+  padding: 8px 20px;
+  background-color: inherit;
+  border: 1px solid var(--collapsible-button-color);
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Source Sans Pro';
+  white-space: nowrap;
+  margin: 0 auto;
+  font-weight: 500;
+  cursor: pointer !important;
 }
 
 .collapseIcon {
-    margin-left:8px;
-    vertical-align: middle;
+  margin-left: 8px;
+  vertical-align: middle;
 }
 
-
 .content {
-    transition: height .2s ease-in-out ;
+  transition: height 0.2s ease-in-out;
+}
 
-}  
-  
+.content table {
+    margin-bottom: 0;
+}
+
 .collapsed {
-    /* display: none; */
-    height: 0;
-    overflow:hidden;
-  }
+  height: 250px;
+  overflow: hidden;
+}
+
+.collapsed::after {
+  content: "";
+}
+
+.expanded {
+  height: auto;
+  padding-bottom: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btnContainer {
+  background: var(--collapsible-background-color);
+  padding: 24px;
+  border-top: 1px solid var(--collapsible-border-color);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  position: relative;
+ 
+}
+
+.collapsedBtn::before {
+  content: "";
+  position: absolute;
+  top: -35px;
+  left: 32px;
+  right: 32px;
+  height: 30px;
+  background: var(--ifm-table-background);
+  opacity: 0.5;
+  padding-left: 32px;
+  padding-right: 32px;
   
-  .expanded {
-    /* display: block; */
-    height:auto
-  }
-  .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 10px;
-  }
-  
+}

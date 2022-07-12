@@ -4,46 +4,61 @@ import styles from "./collapsible.module.css";
 import clsx from "clsx";
 
 interface ICollapsibeProps {
-  collapsed: boolean;
   children: React.ReactNode;
 }
 
-export default function Collapsible({
-  collapsed = true,
-  children,
-}: ICollapsibeProps) {
-  const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
+export default function Collapsible({ children }: ICollapsibeProps) {
+  const [isCollapsed, setIsCollapsed] = React.useState(false);
+  const [height, setHeight] = React.useState(0);
+  const contentRef = React.useRef(null);
+  const maxContentHeight = 300;
+  React.useEffect(() => {
+    setHeight(contentRef.current.clientHeight);
+    setIsCollapsed(contentRef.current.clientHeight > maxContentHeight);
+  }, []);
+
+  const isVisible = height > maxContentHeight;
   const rest = React.Children.toArray(children);
   const title = rest.shift();
   const id = React.isValidElement(title) ? title.props.id : "";
   return (
-    <div className={styles.collapsible}>
-      <div className={clsx(styles.header, "collapsible-title")}>
-        {title}
-        <button
-          id={`${id}-btn`}
-          className={clsx(styles.collapseButton, isCollapsed && "collapsed")}
-          onClick={() => setIsCollapsed(!isCollapsed)}
+    <>
+      {console.log(isCollapsed)}
+      <div className={styles.collapsible}>
+        <div className={clsx(styles.header, "collapsible-title")}>{title}</div>
+        <div
+          ref={contentRef}
+          className={`${isCollapsed ? styles.collapsed : styles.expanded} ${
+            styles.content
+          } ${isCollapsed ? "collapsed-table" : "expanded-table"}`}
+          aria-expanded={isCollapsed}
         >
-          {isCollapsed ? "View More" : "View Less"}
-          <Icon
-            name="arrow"
-            width="8"
-            height="5"
-            className={`${styles.collapseIcon} ${isCollapsed && ""}`}
-            direction={isCollapsed ? "down" : "up"}
-          />
-        </button>
+          {rest}
+        </div>
       </div>
-      <div
-        className={`${isCollapsed ? styles.collapsed : styles.expanded} ${
-          styles.content
-        }`}
-        aria-expanded={isCollapsed}
-      >
-        {rest}
-      </div>
-      <hr />
-    </div>
+      {isVisible && (
+        <div
+          className={clsx(
+            styles.btnContainer,
+            isCollapsed && styles.collapsedBtn
+          )}
+        >
+          <button
+            id={`${id}-btn`}
+            className={clsx(styles.toggleButton)}
+            onClick={() => setIsCollapsed(!isCollapsed)}
+          >
+            {isCollapsed ? "View More" : "View Less"}
+            <Icon
+              name="arrow"
+              width="8"
+              height="5"
+              className={`${styles.collapseIcon} ${isCollapsed && ""}`}
+              direction={isCollapsed ? "down" : "up"}
+            />
+          </button>
+        </div>
+      )}
+    </>
   );
 }

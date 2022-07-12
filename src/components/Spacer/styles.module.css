@@ -1,0 +1,29 @@
+.api {
+
+}
+.api::after {
+    content:'';
+    width:100%;
+    border-top:1px solid var(--ifm-hr-background-color);
+    display: inline-block;
+    height:1px;
+    margin-top:50px;
+    margin-bottom:44px;
+    position: relative;
+    left:-46px;
+    width: calc(100% + 80px);
+}
+.method {
+
+}
+.api .method:not(:last-child)::after {
+    content:'';
+    width:100%;
+    border-top:1px solid var(--ifm-hr-background-color);
+    display: inline-block;
+    height:1px;
+    margin-top:40px;
+    margin-bottom:34px;
+    position: relative;
+ 
+}
