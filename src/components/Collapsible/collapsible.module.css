@@ -1,7 +1,8 @@
 .collapsible {
   background-color: var(--interface-background-color);
   padding: 32px;
-  border-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
   padding-bottom: 0;
 }
 
@@ -60,7 +61,6 @@
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   position: relative;
- 
 }
 
 .collapsedBtn::before {
@@ -76,3 +76,17 @@
   padding-right: 32px;
   
 }
+
+/* upto tablet design */
+@media  (max-width: 996px) {
+    .btnContainer {
+       padding: 16px;   
+   }
+   .collapsible {
+       padding: 26px;
+       padding-bottom: 0;
+   }
+   .expanded {
+       padding-bottom: 26px;
+   }
+}  
