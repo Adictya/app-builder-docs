@@ -28,6 +28,7 @@
 
 .content {
   transition: height 0.2s ease-in-out;
+  overflow-x: auto;
 }
 
 .content table {
@@ -36,7 +37,7 @@
 
 .collapsed {
   height: 250px;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .collapsed::after {
