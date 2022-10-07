@@ -23,15 +23,15 @@ These events can be sent with different levels of persistance.
 
 - **Level 1:**
 
-  The event(s) are sent, received between the present user(s) in the channel. User(s) joining the channel later are unaware of the past events.
+  These events are short-lived. A "Level 1" event sent by a user will only be available to other users in the room at that time. These events won't be available to users who join the room after the event has been sent.
 
 - **Level 2:**
 
-  The event(s) are sent, received between the present user(s) in the channel and persisted till the user is active in the call. New user(s) joining the channel will receive the events of the active user(s) in the call.
+  These events are persisted until the sender leaves the channel. A "Level 2" event sent by a user will be available to other users in the room regardless of when they join as long as the sender is present in the room. These events won't be available to users who join the room after the sender has left the room.
 
 - **Level 3:**
 
-  The event(s) are sent, received between the present user(s) in the channel and persisted for the duration of the entire call. New user(s) joining the channel will receive the events of the active user(s) and past user(s) of the call.
+  These events are persisted until the session ends. A "Level 3" event sent by a user will be available to other users if there is at least one user present in the room. When the last user leaves a room, the session ends. All events are cleared when a session ends.
 
 <br/>
 
