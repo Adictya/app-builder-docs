@@ -73,7 +73,7 @@ Create a component you want to override the default Chat Bubble component with.
 ```tsx title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
 import React from "react";
 
-const ChatBubbleComp = (props) => {
+const ChatBubbleComponent = (props) => {
   return <></>;
 };
 
@@ -88,7 +88,7 @@ When passed as an override the component will recieve props to display necessary
 
 <!-- RHS -->
 
-```tsx title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx {4} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
 import React from "react";
 
 const ChatBubbleComponent = (props) => {
@@ -108,7 +108,7 @@ Once we have the props, we can fetch any other information like in our case we r
 
 <!-- RHS -->
 
-```tsx title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx {2,8-11} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
 import React from "react";
 import { useRender } from "customization-api";
 
@@ -135,7 +135,7 @@ Since we only want to make a small modification to the UI we can reuse the defau
 
 <!-- RHS -->
 
-```tsx title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx {1,23} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
 import { ChatBubble, useRender } from "customization-api";
 import React from "react";
 
