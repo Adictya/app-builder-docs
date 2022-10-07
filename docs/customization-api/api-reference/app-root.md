@@ -23,10 +23,10 @@ App root does not have access to any AppBuilder [app states](/customization-api/
 
 Use the example code given below showcasing a simple usecase of the api as a guide.
 
-```tsx {72-79} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/app-root.tsx"
-import {customize} from 'customization-api';
-import React, {useContext, useEffect, useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+```tsx {72-79} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/app-root.tsx"
+import { customize } from "customization-api";
+import React, { useContext, useEffect, useState } from "react";
+import { View, Text, StyleSheet } from "react-native";
 
 export interface AppRootInterface {
   customKey1?: string;
@@ -34,8 +34,8 @@ export interface AppRootInterface {
 }
 
 const AppRootContext = React.createContext<AppRootInterface>({
-  customKey1: 'default value 1',
-  customKey2: 'default value 2',
+  customKey1: "default value 1",
+  customKey2: "default value 2",
 });
 
 interface AppRootProviderProps {
@@ -46,25 +46,25 @@ const AppRootProvider = (props: AppRootProviderProps) => {
   const [customState, setCustomState] = useState<AppRootInterface>({});
   useEffect(() => {
     setCustomState({
-      customKey1: 'custom value 1',
-      customKey2: 'custom value 2',
+      customKey1: "custom value 1",
+      customKey2: "custom value 2",
     });
   }, []);
   return (
-    <AppRootContext.Provider value={{...customState}}>
+    <AppRootContext.Provider value={{ ...customState }}>
       {props.children}
     </AppRootContext.Provider>
   );
 };
 
 const VideoCallPage = () => {
-  const {customKey1, customKey2} = useContext(AppRootContext);
+  const { customKey1, customKey2 } = useContext(AppRootContext);
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
-        <Text style={[styles.textStyle, {fontWeight: 'bold'}]}>
-          Custom key 1 - {customKey1} {'\n'}
-          Custom key 2 - {customKey2} {'\n'}
+        <Text style={[styles.textStyle, { fontWeight: "bold" }]}>
+          Custom key 1 - {customKey1} {"\n"}
+          Custom key 2 - {customKey2} {"\n"}
         </Text>
         <Text style={styles.textStyle}>
           Here is your app root sample usage.
@@ -76,13 +76,13 @@ const VideoCallPage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#90EE90',
-    justifyContent: 'center',
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
   },
   textContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignSelf: 'center',
+    justifyContent: "center",
+    alignSelf: "center",
     borderWidth: 1,
     maxHeight: 200,
     borderRadius: 30,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   textStyle: {
     padding: 10,
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: "center",
     lineHeight: 30,
   },
 });

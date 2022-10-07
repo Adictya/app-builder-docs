@@ -59,7 +59,7 @@ You can override the entire VideoCall screen by pasing in a [React.ComponentType
 
 Use the example code given below showcasing a simple usecase of the api as a guide.
 
-```tsx {18-24} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/video-call.tsx"
+```tsx {18-24} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/video-call.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -113,7 +113,7 @@ Result:
 <imageSlider alt="videocall component override" darkImageSrc1="customization-api/api/components-api/videocall-bar-before.png" darkImageSrc2="customization-api/api/components-api/videocall-after.png" />
 
 :::info
-A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/video-call.tsx)
+A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/video-call.tsx)
 :::
 
 </collapsible>
@@ -169,7 +169,7 @@ To reuse parts of default bottom bar ui you can import them from the [SubCompone
 
 Use the example code given below showcasing a simple usecase of the api as a guide.
 
-```tsx {18-26} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/bottom-bar.tsx"
+```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/bottom-bar.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -225,7 +225,7 @@ Result:
 <imageSlider alt="bottombar component override" darkImageSrc1="customization-api/api/components-api/videocall-bar-before.png" darkImageSrc2="customization-api/api/components-api/bottombar-after.png" />
 
 :::info
-A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/bottom-bar.tsx)
+A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/bottom-bar.tsx)
 :::
 
 </collapsible>
@@ -261,7 +261,7 @@ To reuse parts of default top bar ui you can import them from the [SubComponents
 
 Use the example code given below showcasing a simple usecase of the api as a guide.
 
-```tsx {18-26} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/top-bar.tsx"
+```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/top-bar.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -317,7 +317,7 @@ Result:
 <imageSlider alt="topbar component override" darkImageSrc1="customization-api/api/components-api/videocall-bar-before.png" darkImageSrc2="customization-api/api/components-api/topbar-after.png" />
 
 :::info
-A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/top-bar.tsx)
+A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/top-bar.tsx)
 :::
 
 </collapsible>
@@ -397,7 +397,7 @@ You can override the ChatTextInput component component by passing in a [React Co
 
 Use the code example given below showcasing overriding of the default chat bubble ui as a guide.
 
-```tsx {9-19} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/chat-input.tsx"
+```tsx {9-19} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/chat-input.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, StyleSheet } from "react-native";
@@ -434,7 +434,7 @@ Result:
 <imageSlider alt="chat input component override" darkImageSrc1="customization-api/api/components-api/chatinputbutton-before.png" darkImageSrc2="customization-api/api/components-api/chatinput-after.png" />
 
 :::info
-A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/chat-input.tsx)
+A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/chat-input.tsx)
 :::
 
 </collapsible>
@@ -472,7 +472,7 @@ You can override the ChatSendButton component by passing in a [React Component](
 
 Use the code example given below showcasing overriding of the default chat bubble ui as a guide.
 
-```tsx {9-19} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/chat-send-button.tsx"
+```tsx {9-19} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/chat-send-button.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, StyleSheet } from "react-native";
@@ -510,7 +510,7 @@ Result:
 <imageSlider alt="chat send button component override" darkImageSrc1="customization-api/api/components-api/chatinputbutton-before.png" darkImageSrc2="customization-api/api/components-api/chatbutton-after.png" />
 
 :::info
-A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/chat-send-button.tsx)
+A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/chat-send-button.tsx)
 :::
 
 </collapsible>
@@ -552,7 +552,7 @@ You can override the ChatBubble component by passing in a [React Component](http
 
 Use the code example given below showcasing overriding of the default chat bubble ui as a guide.
 
-```tsx {18-26} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/chat-bubble.tsx"
+```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/chat-bubble.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -610,7 +610,7 @@ Result:
 <imageSlider alt="chat bubble component override" darkImageSrc1="customization-api/api/components-api/chatbubble-before.png" darkImageSrc2="customization-api/api/components-api/chatbubble-after.png" />
 
 :::info
-A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/chat-bubble.tsx)
+A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/chat-bubble.tsx)
 :::
 
 </collapsible>
@@ -645,7 +645,7 @@ You can import parts of default participantsPanel ui from the [SubComponents Lib
 
 Use the example code given below showcasing a simple usecase of the api as a guide.
 
-```tsx {18-26} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/participants-panel.tsx"
+```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/participants-panel.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -745,7 +745,7 @@ You can add custom content by adding custom render objects to the render app sta
 
 Use the example code given below showcasing overriding of the default render component for `rtc` content type as a guide.
 
-```tsx {18-26} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/custom-content-basic.tsx"
+```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/custom-content-basic.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -803,7 +803,7 @@ Result:
 <imageSlider alt="custom content component override" darkImageSrc1="customization-api/api/components-api/videocomponent-before.png" darkImageSrc2="customization-api/api/components-api/videocomponent-after.png" />
 
 :::info
-A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/custom-content-basic.tsx)
+A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/custom-content-basic.tsx)
 :::
 
 <br/>
@@ -811,7 +811,7 @@ A more **advanced usage example** can be found [here](https://github.com/AgoraIO
 
 Use the example code given below showcasing a simple usecase of the api as a guide.
 
-```tsx {18-39} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/custom-content-advanced.tsx"
+```tsx {18-39} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/custom-content-advanced.tsx"
 import { customize, useRtc } from "customization-api";
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -943,7 +943,7 @@ This function recieves an array of default layouts and expects you to return an 
 
 Use the example code given below showcasing appending a custom layout as a guide.
 
-```tsx {18-32} gh="https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-api-example/apiexamples/customization/api/custom-layout.tsx"
+```tsx {18-32} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/custom-layout.tsx"
 import { customize } from "customization-api";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -1007,7 +1007,7 @@ Result:
 <imageSlider alt="custom layout override" darkImageSrc1="customization-api/api/components-api/videocomponent-before.png" darkImageSrc2="customization-api/api/components-api/layout-after.png" />
 
 :::info
-A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/Appbuilder-FPE-Getting-Started/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/custom-layout.tsx)
+A more **advanced usage example** can be found [here](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-advanced-api-example/advancedapiexamples/customization/api/custom-layout.tsx)
 :::
 
 </collapsible>
