@@ -108,7 +108,7 @@ Once we have the props, we can fetch any other information like in our case we r
 
 <!-- RHS -->
 
-```tsx {2,8-11} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx {2,7-11} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
 import React from "react";
 import { useRender } from "customization-api";
 
@@ -135,7 +135,7 @@ Since we only want to make a small modification to the UI we can reuse the defau
 
 <!-- RHS -->
 
-```tsx {1,23} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx {1,13} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
 import { ChatBubble, useRender } from "customization-api";
 import React from "react";
 
