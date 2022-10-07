@@ -54,7 +54,7 @@ export default function CodeBlockString({
 
   React.useEffect(() => {
     wordWrap.toggle();
-    const scrollBy = 18 * hline.current; // height of one line 20x , 300-(32*64) /18
+    const scrollBy = 20 * hline.current; // height of one line 20x , 300-(32*64) /18
     const section = containerRef?.current?.querySelector('pre')
     if (tlines?.current < 13) {
       const expandbtn = containerRef?.current?.querySelector('.expand-btn')

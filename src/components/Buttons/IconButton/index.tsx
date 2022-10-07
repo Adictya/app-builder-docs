@@ -5,7 +5,7 @@ const buttonList: IIconButton[] = [
   {
     text: "Support",
     icon: "slack",
-    href: "https://agoraiodev.slack.com/signup#/domain-signup",
+    href: "https://www.agora.io/en/join-slack/",
     external: true,
   },
   {
@@ -16,7 +16,7 @@ const buttonList: IIconButton[] = [
   },
   {
     text: "Console",
-    icon: "console",
+    icon: "agoraConsole",
     href: "https://console.agora.io/",
     external: true,
   },

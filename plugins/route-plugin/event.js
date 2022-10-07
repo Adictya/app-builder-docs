@@ -8,12 +8,11 @@ export default (function () {
     onRouteDidUpdate({ location, previousLocation }) {
       //added timeout due to https://github.com/facebook/docusaurus/issues/3399
       // 100ms is to detect if  highlight code section is present
-
-      window.setTimeout(() => {
-        const timer = document.querySelector('pre.code-scroll') ? 400 : 0;
+      if (location.pathname !== previousLocation?.pathname) {
         window.setTimeout(() => {
-          // logic for page scroll
-          if (location.pathname !== previousLocation?.pathname) {
+          const timer = document.querySelector('pre.code-scroll') ? 500 : 0;
+          window.setTimeout(() => {
+            // logic for page scroll
             const id = location?.hash || '';
             if (id) {
               const ele = document.querySelector(id);
@@ -22,19 +21,19 @@ export default (function () {
             } else {
               document.body.scrollIntoView()
             }
-          }
 
-        }, timer)
+          }, timer)
 
-        // if (location.pathname !== previousLocation?.pathname) {
-        //   document.querySelectorAll('.prism-code').forEach((ele) => {
-        //     const scrollBy = ele.getAttribute('pos');
-        //     ele?.scrollTo({ top: scrollBy, behavior: 'smooth' })
-        //   })
-        // }
 
-      }, 100)
+          // if (location.pathname !== previousLocation?.pathname) {
+          //   document.querySelectorAll('.prism-code').forEach((ele) => {
+          //     const scrollBy = ele.getAttribute('pos');
+          //     ele?.scrollTo({ top: scrollBy, behavior: 'smooth' })
+          //   })
+          // }
 
+        }, 100)
+      }
     }
   }
 })();

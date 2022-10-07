@@ -176,7 +176,7 @@ const config = {
 
               {
                 label: "Slack",
-                to: "https://agoraiodev.slack.com/signup#/domain-signup",
+                to: "https://www.agora.io/en/join-slack/",
               },
             ],
           },

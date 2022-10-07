@@ -16,6 +16,7 @@ import ConsoleIcon from "./console";
 import GetStartedIcon from "./getStarted";
 import TurnKeyIcon from "./turnkey";
 import ManualIcon from "./manual";
+import AgoraConsoleIcon from "./agoraConsole";
 
 export default function Icon({ name, ...props }) {
   switch (name) {
@@ -53,6 +54,8 @@ export default function Icon({ name, ...props }) {
       return <TurnKeyIcon {...props} />;
     case "manual":
       return <ManualIcon {...props} />;
+    case "agoraConsole":
+      return <AgoraConsoleIcon {...props} />;
     default:
       return <CodeIcon {...props} />;
   }
