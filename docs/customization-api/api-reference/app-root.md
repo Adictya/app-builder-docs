@@ -11,7 +11,7 @@ Provides API to insert a custom root component.
 
 ## appRoot : [React.Component](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
-Accepts a React Component under which the AppBuilder ui is renderd.
+Accepts a React Component under which the AppBuilder ui is rendered.
 
 :::info
 The component must return the recieved `props.children` to render the AppBuilder ui.
