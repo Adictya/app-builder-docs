@@ -19,7 +19,7 @@ You can access them under the `customization-api` module as a named export.
 
 <subtitle>
 
-## Icons : IconsInterface
+## icons : IconsInterface
 
 </subtitle>
 
@@ -155,13 +155,16 @@ import { ChatBubble } from "customization-api";
 
 #### ChatBubbleProps
 
-| Prop      | Type                                                                                                                                                                                                          | Description                                                                  |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| message   | string                                                                                                                                                                                                        | Content of the chat message                                                  |
-| isLocal   | boolean                                                                                                                                                                                                       | Specifies if the message is from a local user or if it is from a remote user |
-| uid       | [UidType](/customization-api/api-reference/types#uidtype)                                                                                                                                                     | Name of the user who sent the message                                        |
-| timestamp | number                                                                                                                                                                                                        | Timestamp of the message                                                     |
-| render?   | ( msg: string, isLocal: boolean, uid: string, ts: number) => [JSX.Element](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L3073) | Render method for chat bubble to provide a custom jsx                        |
+| Prop              | Type                                                                                                                                                                                                          | Description                                                                  |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| msgId             | string                                                                                                                                                                                                        | Message id                                                                   |
+| message           | string                                                                                                                                                                                                        | Content of the chat message                                                  |
+| uid               | [UidType](/customization-api/api-reference/types#uidtype)                                                                                                                                                     | Name of the user who sent the message                                        |
+| isLocal           | boolean                                                                                                                                                                                                       | Specifies if the message is from a local user or if it is from a remote user |
+| isDeleted         | boolean                                                                                                                                                                                                       | Specifies if the message has been deleted                                    |
+| createdTimestamp  | number                                                                                                                                                                                                        | Message creation timestamp                                                   |
+| updatedTimestamp | number                                                                                                                                                                                                        | Last message update timestamp                                                |
+| render?           | ( msg: string, isLocal: boolean, uid: string, ts: number) => [JSX.Element](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L3073) | Render method for chat bubble to provide a custom jsx                        |
 
 </method>
 
@@ -192,7 +195,7 @@ import { Chat } from "customization-api";
 | Prop            | Type                                                                                                                                                                                                 | Description                         |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
 | chatBubble?     | [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<[ChatBubbleProps](#chatbubbleprops)\>         | ChatBubble component to be used     |
-| chatTextInput?  | [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<[ChatTextInputProps](#chatinputprops)\>       | ChatTextInput component to be used  |
+| chatTextInput?  | [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<[ChatTextInputProps](#chattextinputprops)\>       | ChatTextInput component to be used  |
 | chatSendButton? | [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<[ChatSendButtonProps](#chatsendbuttonprops)\> | ChatSendButton component to be used |
 
 </method>
@@ -240,7 +243,7 @@ import { MaxVideoView } from "customization-api";
 
 <image caption="Grid Layout" darkImageSrc="customization-api/api/sub-components-library/grid.png" />
 
-The GridLayout component is used to render the user video feeds in a responsive grid parttern.
+The GridLayout component is used to render the user video feeds in a responsive grid pattern.
 
 ```jsx
 import { GridLayout } from "customization-api";
@@ -356,7 +359,7 @@ import { NetworkQualityPill } from "customization-api";
 
 <subtitle>
 
-## VideoCallScreen : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+## VideocallScreen : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
 
@@ -364,10 +367,10 @@ import { NetworkQualityPill } from "customization-api";
 
 <image caption="Video call screen" darkImageSrc="customization-api/api/sub-components-library/videocallscreen.png" />
 
-The VideoCallScreen component is used to render the entire video call screen.
+The VideocallScreen component is used to render the entire video call screen.
 
 ```jsx
-import { VideoCallScreen } from "customization-api";
+import { VideocallScreen } from "customization-api";
 ```
 
 </method>
@@ -732,7 +735,7 @@ import { NavBarComponentsArray } from "customization-api";
 
 | Key                    | Type                                                                                                                                                                                                                                                                                                                                     | Description                                       |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| badgeContainerPosition | { top?: `number`, right?: `number`, left?: `number`, bottom?: `number` }                                                                                                                                                                                                                                                                 | Position for peninding chat messages alert badge  |
+| badgeContainerPosition | { top?: `number`, right?: `number`, left?: `number`, bottom?: `number` }                                                                                                                                                                                                                                                                 | Position for pending chat messages alert badge  |
 | badgeTextStyle         | [TextStyle](https://reactnative.dev/docs/text-style-props)                                                                                                                                                                                                                                                                               | custom style for badge text                       |
 | buttonTemplateName     | [buttonTemplateName](/customization-api/api-reference/types#buttontemplatename)                                                                                                                                                                                                                                                          | Type of button template to be used for the button |
 | render?                | ( onPress: `()=>void` , isPanelActive: `boolean`, totalUnreadCount: `number` , buttonTemplateName: [buttonTemplateName](/customization-api/api-reference/types#buttontemplatename) ) => [JSX.Element](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L3073) | Function to be used to render the button          |
@@ -793,7 +796,7 @@ import { NavBarComponentsArray } from "customization-api";
 
 <subtitle>
 
-## ControlsComponentArray : [React.ComponentType\[\]](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
+## ControlsComponentsArray : [React.ComponentType\[\]](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </subtitle>
 
@@ -801,7 +804,7 @@ import { NavBarComponentsArray } from "customization-api";
 
 <image caption="ControlsComponentArray" darkImageSrc="customization-api/api/sub-components-library/controlarray.png" />
 
-The ControlsComponentArray is an array of all meeting control button subcomponents listed below.
+The ControlsComponentsArray is an array of all meeting control button subcomponents listed below.
 
 | Index | Name               | Type                                                    | Description                                                 |
 | ----- | ------------------ | ------------------------------------------------------- | ----------------------------------------------------------- |

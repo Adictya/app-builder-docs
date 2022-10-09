@@ -1,7 +1,7 @@
 ---
 sidebar_label: Actions Library
 sidebar_position: 5
-description: Components API is a very powreful way to override
+description: Components API is a very powerful way to override
 title: Actions Library
 keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
@@ -126,7 +126,7 @@ muteToggleLocal( MUTE_LOCAL_TYPE.audio ); // toggle local user's audio mute stat
 
 ## useRemoteMute(): [muteToggleRemote](#mutetogglelocal)
 
-Returns an asynchronous function to toggle muted state of the given track type for a remote user with the given uid.
+Returns an asynchronous function to toggle muted state of the given track type for a remote user with the given uid or if no uid provided, mutes everyone else in the meeting.
 
 ```js
 import { useRemoteMute, MUTE_REMOTE_TYPE } from "customization-api";
@@ -148,7 +148,7 @@ muteToggleRemote( MUTE_REMOTE_TYPE.audio, 123457 ); // toggle uid:123457 user's 
 
 <collapsible>
 
-### muteToggleLocal(type: [MUTE_REMOTE_TYPE](#mute_remote_type), uid: [UidType](/customization-api/api-reference/types#uidtype) ): Promise<void\>
+### muteToggleLocal(type: [MUTE_REMOTE_TYPE](#mute_remote_type), uid?: [UidType](/customization-api/api-reference/types#uidtype) ): Promise<void\>
 
 </collapsible>
 
@@ -162,7 +162,7 @@ muteToggleRemote( MUTE_REMOTE_TYPE.audio, 123457 ); // toggle uid:123457 user's 
 
 ## useRemoteEndCall(): [remoteEndCall](#remoteendcall)
 
-Returns a function to end the call for a remote user with the given uid
+Returns a function to end the call for a remote user with the given uid.
 
 ```js
 import { useRemoteEndCall } from "customization-api";

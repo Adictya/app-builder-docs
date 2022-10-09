@@ -36,7 +36,7 @@ However if Precall Screen is disabled in the Builder,
 
 <image alt="Precall Screen Builder Option" caption="Precall toggle"  darkImageSrc="customization-api/api/components-api/precall.svg" />
 
-the videoCall screen is directly displayed after:
+The videoCall screen is directly displayed after:
 
 - The user clicks on the “Start Meeting” button inside the `Share` screen
 - The user clicks on a meeting invite link.
@@ -55,9 +55,9 @@ To make the customizations powerful, you can use the libraries to access the int
 
 ### VideoCallComponent : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
-You can override the entire VideoCall screen by pasing in a [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) under the `videoCall` key to the `Components Api Object`
+You can override the entire VideoCall screen by passing in a [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) under the `videoCall` key to the `Components Api Object`
 
-Use the example code given below showcasing a simple usecase of the api as a guide.
+Use the example code given below showcasing a simple use-case of the api as a guide.
 
 ```tsx {18-24} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/video-call.tsx"
 import { customize } from "customization-api";
@@ -125,15 +125,17 @@ A more **advanced usage example** can be found [here](https://github.com/AgoraIO
 
 ### VideoCallInterface
 
-You can override specific parts of the VideoCall screen by pasing in this object with key and values corresponding to the part you want to override under the `videoCall` key to the `Components Api Object`
+You can override specific parts of the VideoCall screen by passing in this object with key and values corresponding to the part you want to override under the `videoCall` key to the `Components Api Object`
 
-| Key                                               | Type                                                            | Description                                                                     |
-| ------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [bottomBar](#videocallbottombar)?                 | [BottomBarComponent](#bottombarcomponent)                       | Customize the Bottom Bar by passing in your own component                       |
-| [chat](#videocallchat)?                           | [ChatInterface](#chatinterface)                                 | Customize the entire chat panel or pass in an object to override a subcomponent |
-| [customContent](#videocallcustomcontent)?         | [RenderingComponentInterface](#renderingcomponentinterface)     | Add custom content to the layouts by passing in your own Render object          |
-| [customLayouts](#videocallcustomlayouts)?         | [CustomLayoutsOverrideFunction](#customlayoutsoverridefunction) | Customize the available layouts or pass in your own layout.                     |
-| [participantsPanel](#videocallparticipantspanel)? | [ParticipantPanelComponent](#participantspanelcomponent)        | Customize the Participants Panel by passing in your own component.              |
+| Key                                               | Type                                                          | Description                                                                                          |
+| ------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [bottomBar](#videocallbottombar)?                 | [BottomBarComponent](#bottombarcomponent)                     | Customize the Bottom Bar by passing in your own component                                            |
+| [topBar](#videocalltopbar)?                       | [TopBarComponent](#topbarcomponent)                           | Customize the Top Bar by passing in your own component                                               |
+| [chat](#videocallchat)?                           | [ChatInterface](#chatinterface)                               | Customize the entire chat panel or pass in an object to override a subcomponent                      |
+| [customContent](#videocallcustomcontent)?         | [RenderingComponentInterface](#renderingcomponentinterface)   | Add custom content to the layouts by passing in your own Content render component or modify existing |
+| [customLayout](#videocallcustomlayout)?           | [CustomLayoutOverrideFunction](#customlayoutoverridefunction) | Customize the available layouts or pass in your own layout.                                          |
+| [participantsPanel](#videocallparticipantspanel)? | [ParticipantPanelComponent](#participantspanelcomponent)      | Customize the Participants Panel by passing in your own component.                                   |
+| [useUserContext](#videocalluseusercontext)?       | [useUserContextHook](#useusercontexthook)                     | Provide a custom hook to be executed when video call ui is rendered                                  |
 
 <br/>
 
@@ -154,7 +156,7 @@ You can override specific parts of the VideoCall screen by pasing in this object
 The BottomBarComponent occupies the bottom part of the VideoCall screen and displays all the meeting controls.
 
 :::note
-The controls displayed change depending on the operating sytem/platform and the user config
+The controls displayed change depending on the operating system/platform and the user config
 :::
 
 ### _Overrides_:
@@ -167,7 +169,7 @@ You can override the BottomBar component by passing in a [React Component](https
 
 To reuse parts of default bottom bar ui you can import them from the [SubComponents Library](/customization-api/api-reference/sub-component-library) accessible under the `customization-api` module.
 
-Use the example code given below showcasing a simple usecase of the api as a guide.
+Use the example code given below showcasing a simple use-case of the api as a guide.
 
 ```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/bottom-bar.tsx"
 import { customize } from "customization-api";
@@ -259,7 +261,7 @@ You can override the TopBar component by passing in a [React Component](https://
 
 To reuse parts of default top bar ui you can import them from the [SubComponents Library](/customization-api/api-reference/sub-component-library) accessible under the `customization-api` module.
 
-Use the example code given below showcasing a simple usecase of the api as a guide.
+Use the example code given below showcasing a simple use-case of the api as a guide.
 
 ```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/top-bar.tsx"
 import { customize } from "customization-api";
@@ -343,7 +345,7 @@ The Chat component displays the ui to send and view the chat messages.
 
 ### ChatInterface
 
-You can override the specific parts chat ui by pasing in this object with key and values corresponding to the part you want to overrid under the `chat` key to the `VideoCallInterface`
+You can override the specific parts chat ui by passing in this object with key and values corresponding to the part you want to overrid under the `chat` key to the `VideoCallInterface`
 
 | Method                                           | Description                               |
 | ------------------------------------------------ | ----------------------------------------- |
@@ -546,7 +548,7 @@ You can override the ChatBubble component by passing in a [React Component](http
 | isLocal   | boolean                                                                                                                                                                                                       | Specifies if the message is from a local user or if it is from a remote user |
 | uid       | [UidType](/customization-api/api-reference/types#uidtype)                                                                                                                                                     | Name of the user who sent the message                                        |
 | timestamp | number                                                                                                                                                                                                        | Timestamp of the message                                                     |
-| render?   | ( msg: string, isLocal: boolean, uid: string, ts: number) => [JSX.Element](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L3073) | Render method for chat bubble to provide a custom jsx                        |
+| render?   | ( msg: string, isLocal: boolean, uid: string, ts: number) => [JSX.Element](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L3073) | Render method for chat bubble to provide a ui                                |
 
 <br/>
 
@@ -639,11 +641,11 @@ The participantsPanel component lists all the users in the video call / livestre
 
 ### ParticipantsPanelComponent: [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
-You can override the entire participantsPanel component by pasing in a [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) under the `participanPanel` key to the `VideocallInterface Object`
+You can override the entire participantsPanel component by passing in a [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78) under the `participanPanel` key to the `VideocallInterface Object`
 
 You can import parts of default participantsPanel ui from the [SubComponents Library](/customization-api/api-reference/sub-component-library) accessible under the `customization-api` module to reuse them in your component.
 
-Use the example code given below showcasing a simple usecase of the api as a guide.
+Use the example code given below showcasing a simple use-case of the api as a guide.
 
 ```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/participants-panel.tsx"
 import { customize } from "customization-api";
@@ -721,7 +723,7 @@ Result:
 
 <!-- <image alt="Video Call" lightImageSrc="api/bottomBar_light.png" darkImageSrc="api/bottomBar_dark.png" /> -->
 
-The constomContent object specifies the react component to be used for rendering each custom content type including user inserted and default types present in the [Render Context](/customization-api/api-reference/app-state-library#userendercontext).
+The customContent object specifies the react component to be used for rendering each custom content type including user inserted and default types present in the [Render Context](/customization-api/api-reference/app-state-library#userendercontext).
 
 ### _Overrides_:
 
@@ -809,7 +811,7 @@ A more **advanced usage example** can be found [here](https://github.com/AgoraIO
 <br/>
 <br/>
 
-Use the example code given below showcasing a simple usecase of the api as a guide.
+Use the example code given below showcasing a simple use-case of the api as a guide.
 
 ```tsx {18-39} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/custom-content-advanced.tsx"
 import { customize, useRtc } from "customization-api";
@@ -887,7 +889,7 @@ Result:
 <!-- ***************************************************************************************************************** -->
 <subtitle>
 
-## videoCall.customLayout : customLayoutsOverrideFunction
+## videoCall.customLayout : customLayoutOverrideFunction
 
 </subtitle>
 
@@ -900,11 +902,11 @@ Customize the layout through LayoutInterface
 <method>
 <collapsible>
 
-### customLayoutsOverrideFunction: ( [DefaultLayouts](#defaultlayouts-array-layoutinterface) ) => [LayoutObjectType](#layoutobjecttype)[]
+### customLayoutOverrideFunction: ( [DefaultLayouts](#defaultlayouts-array-layoutinterface) ) => [LayoutObjectType](#layoutobjecttype)[]
 
-You can override the layouts by providing a function with LayoutInterface[] return type to the `customLayouts` under `VideoCallInterface` object.
+You can override the layouts by providing a function with LayoutInterface[] return type to the `customLayout` under `VideoCallInterface` object.
 
-This function recieves an array of default layouts and expects you to return an array of LayoutObjects that represent your layouts.
+This function receives an array of default layouts and expects you to return an array of LayoutObjects that represent your layouts.
 
 #### DefaultLayouts: Array <[LayoutInterface](#layoutinterface)\>
 
@@ -923,7 +925,7 @@ This function recieves an array of default layouts and expects you to return an 
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | name      | string                                                                                                                                | Name of the layout                                                                    |
 | label     | string                                                                                                                                | Label of the layout to be displayed in UI                                             |
-| icon      | string                                                                                                                                | Can be a <br/> 1. Base 64 Image string <br/>2. CDN URL <br/>3. Bunder imported string |
+| icon      | string                                                                                                                                | Can be a <br/> 1. Base 64 Image string <br/>2. CDN URL <br/>3. Bundler imported string |
 | component | [LayoutComponent](/customization-api/api-reference/components-api#layoutcomponent-reactcomponent-renderstateinterfacerenderposition-) | Layout component to be used to render the video feeds                                 |
 
 <br/>
@@ -1020,11 +1022,11 @@ A more **advanced usage example** can be found [here](https://github.com/AgoraIO
 
 <subtitle>
 
-## useUserContext: userContextHook
+## videoCall.useUserContext: userContextHook
 
 </subtitle>
 
-The useUserContext is called as a hook right before rendering the VideoCall ui. It has access to all the app-states and can be used to perform any necessary action.
+The useUserContext is called as a hook when rendering the VideoCall ui. It has access to all the app-states and can be used to perform any necessary action.
 
 :::tip
 Ideal place to call the 'AddCustomContent' action in [dispatch](/customization-api/api-reference/types#dispatchtype) to add [custom content](#videocallcustomcontent). Since the hook is executed before rendering any VideoCall ui.
@@ -1059,14 +1061,14 @@ Ideal place to call the 'AddCustomContent' action in [dispatch](/customization-a
 Accepts a React Component under which the AppBuilder ui is rendered.
 
 :::info
-The component must return the recieved `props.children` to render the AppBuilder ui.
+The component must return the received `props.children` to render the AppBuilder ui.
 :::
 
 :::tip
 App root does not have access to any AppBuilder [app states](/customization-api/api-reference/app-state-library) however can be used in tandem with [useUserContext](#useusercontext) to supply app state values as needed via a shared context / data-store.
 :::
 
-Use the example code given below showcasing a simple usecase of the api as a guide.
+Use the example code given below showcasing a simple use-case of the api as a guide.
 
 ```tsx {72-79} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/app-root.tsx"
 import { customize } from "customization-api";

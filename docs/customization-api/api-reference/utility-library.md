@@ -1,7 +1,7 @@
 ---
 sidebar_label: Utility Library
 sidebar_position: 6
-description: Components API is a very powreful way to override
+description: Components API is a very powerful way to override
 title: Utility Library
 keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
@@ -97,7 +97,7 @@ if (isAudioEnabled( 123457 )) {
 
 ## useLocalUid(): [UidType](/customization-api/api-reference/types#uidtype)
 
-Returns the loacal user's uid.
+Returns the local user's uid.
 
 ```js
 import { useLocalUid } from "customization-api";
@@ -250,7 +250,7 @@ import { useHistory } from "customization-api";
 
 ## useParams: [useParamsHook](https://v5.reactrouter.com/web/api/Hooks/useparams)
 
-Returns the navigataion parameters passed via the url/path.
+Returns the navigation parameters passed via the url/path.
 
 ```js
 import { useParams } from "customization-api";

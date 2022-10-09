@@ -25,7 +25,7 @@ The overrides are applied by passing the array under the top-level `i18n` key to
 
 #### i18nDataInterface
 
-<!-- TODO(adictya): Try a different represntation method for this  -->
+<!-- TODO(adictya): Try a different representation method for this  -->
 
 | Key                          | Type                                                                                        | Description                                       | Defaults          |
 | ---------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------- | ----------------- |
@@ -43,7 +43,7 @@ The overrides are applied by passing the array under the top-level `i18n` key to
 
 ### _Usage_:
 
-Use the example code given below showcasing overrding
+Use the example code given below showcasing overriding
 
 ```js
 import React from "react";
@@ -119,7 +119,7 @@ export default userCustomization;
 
 | Index | Name        | Description                                                       |
 | ----- | ----------- | ----------------------------------------------------------------- |
-| 1     | Broadcaster | User publishes to other channel boradcasters and Audience members |
+| 1     | Broadcaster | User publishes to other channel broadcasters and Audience members |
 | 2     | Audience    | User subscribing to other channel broadcasters without publishes  |
 
 </method>

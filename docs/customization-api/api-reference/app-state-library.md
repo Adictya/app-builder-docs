@@ -141,18 +141,18 @@ The Messages app state governs the chat messages.
 | deleteMessage            | ( msgId: string, toUid?: number ) => void                            | Method to delete a message                                                    |
 | groupUnreadCount         | number                                                               | Number of unread group messages                                               |
 | setGroupUnreadCount      | (count: number) => void                                              | method to set number of unread group messages                                 |
-| indIvidualUnreadCount    | { [key: string]: number }                                            | object containing number of unread private messages corresponding to each uid |
+| individualUnreadCount    | { [key: string]: number }                                            | object containing number of unread private messages corresponding to each uid |
 | setIndividualUnreadCount | (count: { [key: string]: number } ) => void                          | method to set nubmer of unread private messages                               |
 
 #### MessageStoreInterface
 
 | key               | type                                                      | description                     |
 | ----------------- | --------------------------------------------------------- | ------------------------------- |
-| createdtimestamp  | number                                                    | message creation timestamp      |
-| updatedtimestamp? | number                                                    | last message update timestamp   |
+| createdTimestamp  | number                                                    | message creation timestamp      |
+| updatedTimestamp? | number                                                    | last message update timestamp   |
 | msg               | string                                                    | message content                 |
-| msgid             | string                                                    | message id                      |
-| isdeleted         | boolean                                                   | indicates if message is deleted |
+| msgId             | string                                                    | message id                      |
+| isDeleted         | boolean                                                   | indicates if message is deleted |
 | uid               | [UidType](/customization-api/api-reference/types#uidtype) | uid of the message sender       |
 
 <br/>
@@ -200,7 +200,7 @@ it is composed of:
 
 Each [renderobject](/customization-api/api-reference/types#renderobjectinterface) in the `renderlist` is passed as a prop to corresponding type of [content component](/customization-api/api-reference/components-api#renderingcomponentinterface). All the resulting components are then passed to the layouts as an array to be rendered as desired.
 
-**For eg.** The Render app state contains a [renderobject](/customization-api/api-reference/types#rtcrenderinterface) of `type:'rtc'` for each user in the meeting by default stored in `renderList`. It is used to display user video feeds coming from AgoraRTC hence they contain all the necessary information like: `uid` to identify and subscribe to the video and audio, `audio` and `video` mute states to correctly display fallbacks and icons, etc. each Renderobject is passed as a prop to [MaxVideoView](/customization-api/api-reference/sub-component-library#maxvideoview) unless overriden by [CustomContent API](/customization-api/api-reference/components-api#videocallcustomcontent). After which the resulting array of components is passed to layout to be rendered.
+**For eg.** The Render app state contains a [renderobject](/customization-api/api-reference/types#rtcrenderinterface) of `type:'rtc'` for each user in the meeting by default stored in `renderList`. It is used to display user video feeds coming from AgoraRTC hence they contain all the necessary information like: `uid` to identify and subscribe to the video and audio, `audio` and `video` mute states to correctly display fallbacks and icons, etc. each Renderobject is passed as a prop to [MaxVideoView](/customization-api/api-reference/sub-component-library#maxvideoview) unless overridden by [CustomContent API](/customization-api/api-reference/components-api#videocallcustomcontent). After which the resulting array of components is passed to layout to be rendered.
 
 :::tip
 You can add custom render objects to the render app state using the 'AddCustomContent' action in [dispatch](/customization-api/api-reference/types#dispatchtype)
@@ -304,13 +304,13 @@ The MeetingInfo app state contains information about the active meeting.
 | roomId             | {<br/>&emsp;attendee: string,<br/>&emsp;host?: string,<br/>} | Host and attendee roomIds                                                 |
 | pstn?              | {<br/>&emsp;number: string,<br/>&emsp;pin: string<br/>}      | PSTN info                                                                 |
 | isSeparateHostLink | boolean                                                      | Indicates if seperate host and attendee links generated                   |
-| channel            | string                                                       | Channel name of current meeting                                           |
-| uid                | [UidType](/customization-api/api-reference/types#uidtype)    | Uid of the local user                                                     |
-| token              | string                                                       | RTC authentication token required to join the channel                     |
-| rtmToken           | string                                                       | RTM authentication token required to join the channel                     |
+| channel?           | string                                                       | Channel name of current meeting                                           |
+| uid?               | [UidType](/customization-api/api-reference/types#uidtype)    | Uid of the local user                                                     |
+| token?             | string                                                       | RTC authentication token required to join the channel                     |
+| rtmToken?          | string                                                       | RTM authentication token required to join the channel                     |
 | encryptionSecret?  | string                                                       | Packet encryption secret                                                  |
-| screenShareUid     | string                                                       | Uid of local user's screenshare                                           |
-| screenShareToken   | string                                                       | Authentication token for local user's screenshare                         |
+| screenShareUid?    | string                                                       | Uid of local user's screenshare                                           |
+| screenShareToken?  | string                                                       | Authentication token for local user's screenshare                         |
 
 <br/>
 
@@ -380,10 +380,10 @@ The RTC app state exposes the internal RtcEngine object as well as dispatch inte
 
 #### RtcInterface
 
-| Key               | Type                                                                                                                          | Description                                                                                                                                             |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| RtcEngine         | [RtcEngine](https://docs.agora.io/en/Voice/API%20Reference/react_native/classes/rtcengine.html)                               | The RtcEngine object from the AgoraRTC SDK                                                                                                              |
-| dispatch          | [DispatchType](/customization-api/api-reference/types#dispatchtype)                                                           | Method to perform various app builder actions. You can see list of available actions [here](/customization-api/api-reference/types#callbacksinterface). |
+| Key               | Type                                                                                                                               | Description                                                                                                                                             |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RtcEngine         | [RtcEngine](https://docs.agora.io/en/Voice/API%20Reference/react_native/classes/rtcengine.html)                                    | The RtcEngine object from the AgoraRTC SDK                                                                                                              |
+| dispatch          | [DispatchType](/customization-api/api-reference/types#dispatchtype)                                                                | Method to perform various app builder actions. You can see list of available actions [here](/customization-api/api-reference/types#callbacksinterface). |
 | setDualStreamMode | ( mode: [DualStreamMode](https://agoraio-community.github.io/VideoUIKit-ReactNative/enums/Agora_UIKit.DualStreamMode.html) ): void | Method to modify dual stream mode                                                                                                                       |
 
 :::danger
