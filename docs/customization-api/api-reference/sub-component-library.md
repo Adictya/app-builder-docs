@@ -1,8 +1,8 @@
 ---
-sidebar_label: Sub-components Library
+sidebar_label: Subcomponents Library
 sidebar_position: 3
-description: Sub-components Library
-title: Sub-components Library
+description: Subcomponents Library
+title: Subcomponents Library
 keywords: [MeetingInfoContextInterface, LayoutContextInterface]
 sidebar_custom_props: { icon: "code" }
 ---
