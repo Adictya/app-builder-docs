@@ -7,7 +7,7 @@ keywords: [appBuilder, websdk]
 sidebar_custom_props: { icon: "settings" }
 ---
 
-The following guide describes the process of embedding the App Bulder Web SDK in an Angular web app.
+The following guide describes the process of embedding the App Builder Web SDK in an Angular web app.
 
 ## BUILDING
 
@@ -102,7 +102,7 @@ Make sure to provide necessary styling including a width and height on the paren
 ...
 @Component({
   selector: 'app-root',
-  template: ` <div id="app-builder-cointainer">
+  template: ` <div id="app-builder-container">
     <app-builder></app-builder>
   </div> `,
   styles: [`

@@ -70,7 +70,7 @@ Create a component you want to override the default Chat Bubble component with.
 
 <!-- RHS -->
 
-```tsx title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx' gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-quickstart/apiexamples/customization/components/MyChatBubbleComponent.tsx"
 import React from "react";
 
 const ChatBubbleComponent = (props) => {
@@ -84,11 +84,11 @@ export default ChatBubbleComp;
 
 #### STEP 3
 
-When passed as an override the component will recieve props to display necessary information or perform necessary actions. We can refer to the [api reference](/customization-api/api-reference/components-api#chatbubblecomponent) to see the props available to our component and destructure them for use.
+When passed as an override the component will receive props to display necessary information or perform necessary actions. We can refer to the [api reference](/customization-api/api-reference/components-api#chatbubblecomponent) to see the props available to our component and destructure them for use.
 
 <!-- RHS -->
 
-```tsx {4} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx {4} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx' gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-quickstart/apiexamples/customization/components/MyChatBubbleComponent.tsx"
 import React from "react";
 
 const ChatBubbleComponent = (props) => {
@@ -104,11 +104,11 @@ export default ChatBubbleComponent;
 
 #### STEP 4
 
-Once we have the props, we can fetch any other information like in our case we recieve the message senders `uid` as prop however in UI it would be more helpful to show the `displayName` of the user. We can fetch any such information using the [App state library](/customization-api/api-reference/app-state-library) the `displayName` in specific can be fetched from the [Render app state](/customization-api/api-reference/app-state-library#userender)
+Once we have the props, we can fetch any other information like in our case we receive the message senders `uid` as prop however in UI it would be more helpful to show the `displayName` of the user. We can fetch any such information using the [App state library](/customization-api/api-reference/app-state-library) the `displayName` in specific can be fetched from the [Render app state](/customization-api/api-reference/app-state-library#userender)
 
 <!-- RHS -->
 
-```tsx {2,7-11} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx {2,7-11} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx' gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-quickstart/apiexamples/customization/components/MyChatBubbleComponent.tsx"
 import React from "react";
 import { useRender } from "customization-api";
 
@@ -131,11 +131,11 @@ export default ChatBubbleComponent;
 
 #### STEP 5
 
-Since we only want to make a small modification to the UI we can reuse the default [ChatBubbleComponent](/customization-api/api-reference/sub-component-library#chatbubble) available to us along with various default components a part of the [SubComponentsLibrary](/customization-api/api-reference/sub-component-library). We pass all the recieved props as is to the imported component.
+Since we only want to make a small modification to the UI we can reuse the default [ChatBubbleComponent](/customization-api/api-reference/sub-component-library#chatbubble) available to us along with various default components a part of the [SubComponentsLibrary](/customization-api/api-reference/sub-component-library). We pass all the received props as is to the imported component.
 
 <!-- RHS -->
 
-```tsx {1,13} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx {1,13} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx' gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-quickstart/apiexamples/customization/components/MyChatBubbleComponent.tsx"
 import { ChatBubble, useRender } from "customization-api";
 import React from "react";
 
@@ -158,11 +158,11 @@ export default ChatBubbleComponent;
 
 #### STEP 6
 
-Having all the needed information at hand we can start defining our UI. To fetch the colors defined by the AppBuilder theme in use we can import the [config Library](/customization-api/api-reference/config-library). We can also conditionally style our component using the `isLocal` flag recieved as prop.
+Having all the needed information at hand we can start defining our UI. To fetch the colors defined by the AppBuilder theme in use we can import the [config Library](/customization-api/api-reference/config-library). We can also conditionally style our component using the `isLocal` flag received as prop.
 
 <!-- RHS -->
 
-```tsx title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx'
+```tsx title='<path-to-app-builder-project-folder>/<project-name>/customization/components/MyChatBubbleComponent.tsx' gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-quickstart/apiexamples/customization/components/MyChatBubbleComponent.tsx"
 import { ChatBubble, useRender, $config } from "customization-api";
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -181,46 +181,47 @@ const ChatBubbleComponent = (props) => {
   return (
     <View style={[container, isLocal ? containerLocal : containerRemote]}>
       <View style={[username, isLocal ? usernameLocal : usernameRemote]}>
-        <Text
-          style={{ fontWeight: "bold", color: isLocal ? "black" : "white" }}
-        >
+        <Text style={{fontWeight: 'bold', color: isLocal ? 'white' : 'black'}}>
           {displayName.slice(0, 1)}
         </Text>
       </View>
-      <ChatBubble {...props} />
+      <View style={{maxWidth: '80%'}}>
+        <ChatBubble {...props} />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
+    display: 'flex',
     flex: 1,
-    alignItems: "flex-end",
+    alignItems: 'flex-end',
   },
   containerLocal: {
-    flexDirection: "row-reverse",
+    flexDirection: 'row-reverse',
   },
   containerRemote: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   username: {
     height: 32,
     width: 32,
     borderRadius: 16,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: "5px",
-    backgroundColor: $config.PRIMARY_FONT_COLOR + "20",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: '5px',
   },
   usernameLocal: {
     marginLeft: -10,
-    marginRight: 0,
+    marginRight: 5,
+    backgroundColor: $config.PRIMARY_COLOR,
   },
   usernameRemote: {
     marginLeft: 5,
     marginRight: -10,
+    backgroundColor: $config.PRIMARY_FONT_COLOR + '20',
   },
 });
 
@@ -229,39 +230,13 @@ export default ChatBubbleComponent;
 
 <!-- LHS -->
 
-#### STEP 6
+#### STEP 7
 
 We call the `customize` method and pass an object with the necessary keys. Since we want to override the Chat Bubble component our object should look like so based on the [Api Reference](/customization-api/api-reference/components-api).
 
 <!-- RHS -->
 
-```tsx {5-13} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/index.tsx'
-import { customize } from "customization-api";
-
-import MyChatBubbleComponent from "./components/MyChatBubbleComponent";
-
-const userCustomization = customize({
-  components: {
-    videoCall: {
-      chat: {
-        chatBubble: MyChatBubbleComponent,
-      },
-    },
-  },
-});
-
-export default userCustomization;
-```
-
-<!-- LHS -->
-
-#### STEP 7
-
-Finally we export our customization generated by the `customize` method to allow App Builder to apply it.
-
-<!-- RHS -->
-
-```js {15} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/index.tsx'
+```tsx {5-13} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-quickstart/apiexamples/customization/index.tsx" title='<path-to-app-builder-project-folder>/<project-name>/customization/components/index.tsx'
 import { customize } from "customization-api";
 
 import MyChatBubbleComponent from "./components/MyChatBubbleComponent";
@@ -283,9 +258,41 @@ export default userCustomization;
 
 #### STEP 8
 
+Finally we export our customization generated by the `customize` method to allow App Builder to apply it.
+
+<!-- RHS -->
+
+```js {15} title='<path-to-app-builder-project-folder>/<project-name>/customization/components/index.tsx' gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-quickstart/apiexamples/customization/index.tsx"
+import { customize } from "customization-api";
+
+import MyChatBubbleComponent from "./components/MyChatBubbleComponent";
+
+const userCustomization = customize({
+  components: {
+    videoCall: {
+      chat: {
+        chatBubble: MyChatBubbleComponent,
+      },
+    },
+  },
+});
+
+export default userCustomization;
+```
+
+<!-- LHS -->
+
+#### STEP 9
+
 You should now see your customization applied to App Builder when you build your project.
 
 <!-- RHS -->
 
 <!-- ![Website with App Builder embedded](sdk/angular/5.png) -->
 <imageSlider alt="AppBuilder customization-api quickstart" darkImageSrc1="customization-api/guides/guide-before.png" darkImageSrc2="customization-api/guides/guide-after.png" />
+
+---
+
+## CONCLUSION
+
+We now have successfully customized our chat bubble component and added a username bubble before every message. You can check out the code [ here ](https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-quickstart)

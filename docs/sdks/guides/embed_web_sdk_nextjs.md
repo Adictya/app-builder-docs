@@ -7,7 +7,7 @@ keywords: [appBuilder, websdk]
 sidebar_custom_props: { icon: "settings" }
 ---
 
-The following guide describes the process of embedding the App Bulder React SDK in a NextJS app.
+The following guide describes the process of embedding the App Builder React SDK in a NextJS app.
 
 ## Building
 

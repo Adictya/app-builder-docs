@@ -7,7 +7,7 @@ keywords: [appBuilder, websdk]
 sidebar_custom_props: { icon: "settings" }
 ---
 
-The following guide describes the process of embedding the App Bulder Web SDK in a vanilla JS project.
+The following guide describes the process of embedding the App Builder Web SDK in a vanilla JS project.
 
 ## BUILDING
 
