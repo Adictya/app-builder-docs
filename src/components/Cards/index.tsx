@@ -51,7 +51,7 @@ export default function CardContainer(): JSX.Element {
       <div className="container">
         <div className="row">
           {cardList.map((props, idx) => (
-            <div className="col col--4 margin-bottom--lg" key={idx}>
+            <div className="col col--4 card-col margin-bottom--lg" key={idx}>
               <Card {...props} />
             </div>
           ))}

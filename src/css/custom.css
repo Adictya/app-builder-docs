@@ -183,8 +183,12 @@ table .icon {
 }
 
 
-.card {
+.card,.button-col {
   height: 100%;
+}
+
+.card svg , .button-col svg{
+  min-width: 20px;
 }
 
 .theme-code-block pre  {
@@ -192,6 +196,10 @@ table .icon {
   margin:20px 0;
   border-radius: 12px;
   overflow-x: hidden;
+}
+
+.menu__list .separator {
+  border-top:1px solid #333333;
 }
 
 .pagination-nav__link {
@@ -278,8 +286,9 @@ table .icon {
     margin-bottom: 14px;
     text-align: center;
 }
-.col {
-  --ifm-col-width:100% !important;
+
+.button-col a {
+  min-height: 90px;
 }
 
 }
@@ -320,6 +329,17 @@ table .icon {
    }
    
  } 
+
+ @media (max-width: 895px) {
+  .card-col {
+    --ifm-col-width: calc(12 / 12 * 100%) !important
+  }
+  .button-col {
+    --ifm-col-width: calc(6 / 12 * 100%) !important;
+    
+  }
+ 
+ }
 
  @media (min-width: 481px) {
    .footer {

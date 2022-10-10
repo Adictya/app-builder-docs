@@ -69,7 +69,7 @@ Sends the event with the provided details.
 | ------------ | --------------------------------------- | ------------------------------------------------------------------------------------ |
 | eventName    | string                                  | Name of the event to be sent                                                         |
 | payload      | string                                  | Payload to be sent along with the event                                              |
-| persistLevel | [EventPersistLevel](#eventpersistlevel) | Payload to be sent along with the event                                              |
+| persistLevel | [EventPersistLevel](#eventpersistlevel) | Sets the persistence of the event                                                    |
 | receiver?    | [ReceiverUid](#receiveruid)             | Uid(s) to send the message to. Leave emtpy to send as a channel message to all users |
 
 ```ts
