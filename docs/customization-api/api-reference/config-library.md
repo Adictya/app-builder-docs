@@ -121,7 +121,7 @@ Flag to enable/disable packet encryption functionality.
 
 <method>
 
-## PROFILE: [VideoProfile](https://docs.agora.io/en/video-call-4.x/API%20Reference/web_ng/globals.html#videoencoderconfigurationpreset)
+## PROFILE: [VideoProfile](https://api-ref.agora.io/en/voice-sdk/web/4.x/globals.html#videoencoderconfigurationpreset)
 
 Video profile to be used for user video feeds.
 
