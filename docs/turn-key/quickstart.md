@@ -24,7 +24,7 @@ This guide helps you get started with your web app as well as build your app for
 1.  Click the **Download Source Code** button on the App Builder.
 2.  Unzip the downloaded folder
 3.  Open the agora-app-builder folder inside Terminal or Command Prompt.
-4.  Set up your development environment by following [this guide](/turn-key/guides/Frontend/Environment-setup)
+4.  Set up your development environment by following [this guide](/turn-key/guides/frontend/Environment-setup)
 5.  Run the following command: **`npm i && npm start`**
     <image alt="CLI Start"  lightImageSrc="guides/CLIStart.png" darkImageSrc="guides/CLIStart.png" />
 6.  This will launch the App Builder CLI, where you can install and build your applications. The App Builder CLI allows you to easily Install and Build apps.
@@ -40,6 +40,6 @@ This guide helps you get started with your web app as well as build your app for
 
 ## Step 3 - Distribute your app
 
-- To distribute the app to a CDN like Vercel or Netlify, You can refer to our detailed build guide [here](/turn-key/guides/Frontend/Build-guide)
+- To distribute the app to a CDN like Vercel or Netlify, You can refer to our detailed build guide [here](/turn-key/guides/frontend/Build-guide)
 
-- If you want to submit this app to the App Store or Play Store, follow [this guide](/turn-key/guides/Frontend/Code-Signing-guide) to codesign your app, to adhere to the requirements from Apple and Google.
+- If you want to submit this app to the App Store or Play Store, follow [this guide](/turn-key/guides/frontend/Code-Signing-guide) to codesign your app, to adhere to the requirements from Apple and Google.
