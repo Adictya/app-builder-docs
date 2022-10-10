@@ -49,7 +49,7 @@ const { isRecordingActive, startRecording, stopRecording } = useRecording();
 
 ## useSidePanel(selector?: [Selector](/customization-api/api-reference/types#selector)): [SidePanelContextInterface](/customization-api/api-reference/app-state-library#sidepanelcontextinterface)
 
-The Recording app state governs the App Builder cloud recording functionality.
+The SidePanel app state governs the sidePanel ui.
 
 <br/>
 
@@ -87,13 +87,13 @@ const { sidePanel, setSidePanel } = useSidePanel();
 
 <method>
 
-## useChatUiControl(selector?: [Selector](/customization-api/api-reference/types#selector)): [ChatUiControlInterface](/customization-api/api-reference/app-state-library#chatuicontrolinterface)
+## useChatUIControl(selector?: [Selector](/customization-api/api-reference/types#selector)): [ChatUIControlInterface](/customization-api/api-reference/app-state-library#chatuicontrolinterface)
 
-The ChatUiControl app state governs the chat ui.
+The ChatUIControl app state governs the chat ui.
 
 <br/>
 
-#### ChatUiControlInterface
+#### ChatUIControlInterface
 
 | Key                   | Type                                                                      | Description                                           |
 | --------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------- |
