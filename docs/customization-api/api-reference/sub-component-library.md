@@ -696,13 +696,14 @@ import { UiKitImageIcon } from "customization-api";
 
 The NavBarComponentsArray is an array of all buttons present on the default nav bar component.
 
-| Index | Name                   | Type                                                                | Description                             |
-| ----- | ---------------------- | ------------------------------------------------------------------- | --------------------------------------- |
-| 0     | CopyJoinInfo           | [CopyJoinInfoComponent](#copyjoininfocomponent)                     | Button to copy meeting invite           |
-| 1     | ParticipantsIconButton | [ParticipantsIconButtonComponent](#participantsiconbuttoncomponent) | Button to toggle participants sidepanel |
-| 2     | ChatIconButton         | [ChatIconButtonComponent](#chaticonbuttoncomponent)                 | Button to toggle chat sidepanel         |
-| 3     | LayoutIconButton       | [LayoutIconButtonComponent](#layouticonbuttoncomponent)             | Button to switch layouts                |
-| 4     | SettingsIconButton     | [SettingsIconButtonComponent](#settingsiconbuttoncomponent)         | Button to toggle setting sidepanel      |
+| Index | Name                   | Type                                                                | Description                                       |
+| ----- | ---------------------- | ------------------------------------------------------------------- | ------------------------------------------------- |
+| 0     | CopyJoinInfo           | [CopyJoinInfoComponent](#copyjoininfocomponent)                     | Button to copy meeting invite                     |
+| 1     | ParticipantsCountView  | [ParticipantsCountViewComponent](#participantscountviewcomponent)   | Element to show number of participant in the chat |
+| 2     | ParticipantsIconButton | [ParticipantsIconButtonComponent](#participantsiconbuttoncomponent) | Button to toggle participants sidepanel           |
+| 3     | ChatIconButton         | [ChatIconButtonComponent](#chaticonbuttoncomponent)                 | Button to toggle chat sidepanel                   |
+| 4     | LayoutIconButton       | [LayoutIconButtonComponent](#layouticonbuttoncomponent)             | Button to switch layouts                          |
+| 5     | SettingsIconButton     | [SettingsIconButtonComponent](#settingsiconbuttoncomponent)         | Button to toggle setting sidepanel                |
 
 ```jsx
 import { NavBarComponentsArray } from "customization-api";
@@ -723,6 +724,14 @@ import { NavBarComponentsArray } from "customization-api";
 | showText           | `boolean`                                                                                                                                                                                                                                                                        | Flag to determine whether to show text besides button |
 | buttonTemplateName | [buttonTemplateName](/customization-api/api-reference/types#buttontemplatename)                                                                                                                                                                                                  | Type of button template to be used for the button     |
 | render?            | ( onPress: `()=>void`, buttonTemplateName: [buttonTemplateName](/customization-api/api-reference/types#buttontemplatename) ) => [JSX.Element](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L3073) | Component to be used to render the button             |
+
+</collapsible>
+
+<br/>
+
+<collapsible>
+
+### ParticipantsCountViewComponent: [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)
 
 </collapsible>
 
@@ -951,11 +960,11 @@ The SidePanelButtonsArray is an array of all the side panel button subcomponents
 | 1     | RemoteVideoMute                       | [RemoteVideoMuteComponent](#remotevideomuteprops)                                             | Side panel button to mute remote user video              |
 | 2     | RemoteEndCall                         | [RemoteEndCallComponent](#remoteendcallprops)                                                 | Side panel button to remote remote user from call        |
 | 3     | RemoteLiveStreamApprovedRequestRecall | [RemoteLiveStreamApprovedRequestRecallComponent](#remotelivestreamapprovedrequestrecallprops) | Side panel button to recall attendee raise hand request  |
-| 4     | RemoteLiveStreamControlApprove        | [RemoteLiveStreamControlApproveComponent](#remotelivestreamcontrolapproveprops)               | Side panel button to approve attendee raise hand request |
-| 4     | RemoteLiveStreamControlReject         | [RemoteLiveStreamControlRejectComponent](#remotelivestreamcontrolrejectprops)                 | Side panel button to reject attendee raise hand request  |
-| 5     | ChatSendButton                        | [ChatSendButtonComponent](#chatsendbuttonprops)                                               | Side panel button send chat message                      |
-| 6     | MuteAllAudioButton                    | [MuteAllAudioButtonComponent](#muteallaudiobuttonprops)                                       | Side panel button to mute all remote users audio         |
-| 6     | MuteAllVideoButton                    | [MuteAllVideoButtonComponent](#muteallvideobuttonprops)                                       | Side panel button to mute all remote users video         |
+| 4     | RemoteLiveStreamRequestApprove        | [RemoteLiveStreamRequestApproveComponent](#remotelivestreamrequestapproveprops)               | Side panel button to approve attendee raise hand request |
+| 5     | RemoteLiveStreamRequestReject         | [RemoteLiveStreamRequestRejectComponent](#remotelivestreamrequestrejectprops)                 | Side panel button to reject attendee raise hand request  |
+| 6     | ChatSendButton                        | [ChatSendButtonComponent](#chatsendbuttonprops)                                               | Side panel button send chat message                      |
+| 7     | MuteAllAudioButton                    | [MuteAllAudioButtonComponent](#muteallaudiobuttonprops)                                       | Side panel button to mute all remote users audio         |
+| 8     | MuteAllVideoButton                    | [MuteAllVideoButtonComponent](#muteallvideobuttonprops)                                       | Side panel button to mute all remote users video         |
 
 ```jsx
 import { SidePanelButtonsArray } from "customization-api";
@@ -1028,9 +1037,9 @@ import { SidePanelButtonsArray } from "customization-api";
 
 <collapsible>
 
-### RemoteLiveStreamControlApproveComponent : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<[RemoteLiveStreamControlApproveProps](#remotelivestreamcontrolapproveprops)>
+### RemoteLiveStreamRequestApproveComponent : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<[RemoteLiveStreamControlApproveProps](#remotelivestreamrequestapproveprops)>
 
-#### RemoteLiveStreamControlApproveProps
+#### RemoteLiveStreamRequestApproveProps
 
 | Key | Type                                                      | Description                               |
 | --- | --------------------------------------------------------- | ----------------------------------------- |
@@ -1042,9 +1051,9 @@ import { SidePanelButtonsArray } from "customization-api";
 
 <collapsible>
 
-### RemoteLiveStreamControlRejectComponent : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<[RemoteLiveStreamControlRejectProps](#remotelivestreamcontrolrejectprops)>
+### RemoteLiveStreamRequestRejectComponent : [React.ComponentType](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<[RemoteLiveStreamControlRejectProps](#remotelivestreamrequestrejectprops)>
 
-#### RemoteLiveStreamControlRejectProps
+#### RemoteLiveStreamRequestRejectProps
 
 | Key | Type                                                      | Description                               |
 | --- | --------------------------------------------------------- | ----------------------------------------- |
