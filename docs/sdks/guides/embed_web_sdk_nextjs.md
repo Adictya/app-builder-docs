@@ -78,14 +78,12 @@ The **app-builder-cli** compiles your App Builder project into a node module ins
 
 The module is installed with same name as your App Builder project which can be imported into your Nextjs App.
 
-However in a NextJS environment, Client Side rendering must be enforced for the App Builder component. One way to do so is by importing App Builer into a **new App Builder wrapper compoonent**.
+However in a NextJS environment, Client Side rendering must be enforced for the App Builder component. One way to do so is by importing App Builer into a **new App Builder wrapper component**.
 
 <!-- RHS -->
 
-```js
-// AppBuilderWrapper.tsx
-
-import AgoraAppBuilder from "AgoraAppBuilder";
+```js title="src/components/AppBuilderWrapper.tsx"
+import AgoraAppBuilder from "@appbuilder/react";
 ```
 
 #### STEP 2
@@ -98,21 +96,14 @@ Make sure to provide necessary styling including a width, height and display fle
 
 <!-- RHS -->
 
-```js
-// AppBuilderWrapper.tsx
-import AgoraAppBuilder from "AgoraAppBuilder";
+```js {5-7} title="src/components/AppBuilderWrapper.tsx"
+import AgoraAppBuilder from "@appbuilder/react";
 
 const AppBuilderWrapper = () => {
   return (
-    {
-      // <!-- [ highlighted code start ] -->
-    }
     <div style={{display:'flex',width: '100vw', height: '550px'}}>
       <AgoraAppBuilder.View />
     </div>
-    {
-      // <!-- [ highlighted code end ] -->
-    }
   )
 };
 ```
@@ -142,12 +133,11 @@ const AgoraAppBuilderWraper = dynamic(
 
 After dynamically importing the wrapper it can be rendered normally in any page/component.
 
-You can add a `suppressHydrationWarning={true}` prop to the parent element of the wrapper to supress any subsequent hydration warnings emitted due to client side rendering of its children component.
+You can add a `suppressHydrationWarning={true}` prop to the parent element of the wrapper to suppress any subsequent hydration warnings emitted due to client side rendering of its children component.
 
 <!-- RHS -->
 
-```js
-// <!-- [ dim code start ] -->
+```js {10-16}
 import dynamic from "next/dynamic";
 
 const AgoraAppBuilderWraper = dynamic(
@@ -156,7 +146,6 @@ const AgoraAppBuilderWraper = dynamic(
     ssr: false,
   }
 );
-// <!-- [ dim code end ] -->
 
 const VideoCall = () => {
   return (
@@ -204,23 +193,20 @@ Read [this guide](/customization-api/quickstart) for more information.
 
 <!-- LHS -->
 
-To create a FPE in a NextJs web app you need to access the `createFPE` method on the imported `AgoraAppBuilder` object, which takes the `FPEConfig` as a parameter and returns a FPE Object.
+To create a Customization you need to access the `createCustomization` method on the imported `AgoraAppBuilder` object, which takes the `UserCustomizationConfig` as a parameter and returns a customization object.
 
 Make sure you do this on component mount for best results.
 
 <!-- RHS -->
 
-```js
-// AppBuilderWrapper.tsx
-// <!-- [ dim code start ] -->
-import AgoraAppBuilder from "AgoraAppBuilder";
+```js {4-10} title="src/components/AppBuilderWrapper.tsx"
+import AgoraAppBuilder from "@appbuilder/react";
 
 const AppBuilderWrapper = () = {
-// <!-- [ dim code end ] -->
   useEffect(()=>{
-    const fpe = AgoraAppBuilder.createFPE({
+    const customization = AgoraAppBuilder.createCustomization({
     /*
-      My FPE Config. See https://example.com for config reference.
+      My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
     */
     });
   },[])
@@ -231,24 +217,21 @@ const AppBuilderWrapper = () = {
 
 <!-- LHS -->
 
-Pass the returned FPE Object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
+Pass the returned customization object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
 
 <!-- RHS -->
 
-```js
-// AppBuilderWrapper.tsx
-// <!-- [ dim code start ] -->
-import AgoraAppBuilder from "AgoraAppBuilder";
+```js {10} title="src/components/AppBuilderWrapper.tsx"
+import AgoraAppBuilder from "@appbuilder/react";
 
 const AppBuilderWrapper = () = {
   useEffect(()=>{
-    const fpe = AgoraAppBuilder.createFPE({
+    const customization = AgoraAppBuilder.createCustomization({
     /*
-      My FPE Config. See https://example.com for config reference.
+      My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
     */
     });
-    // <!-- [ dim code end ] -->
-    AgoraAppBuilder.customize(FPE);
+    AgoraAppBuilder.customize(customization);
   },[])
 ...
 ```

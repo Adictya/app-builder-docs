@@ -82,7 +82,7 @@ The module is installed with same name as your App Builder project. Import it ju
 
 ```js {2-5}
 import { Component } from "@angular/core";
-import AgoraAppBuilder from "AgoraAppBuilder";
+import AgoraAppBuilder from "@appbuilder/web";
 
 // To prevent removal of AgoraAppBuilder via dead code elimination.
 console.log(AgoraAppBuilder);
@@ -179,17 +179,17 @@ Read [this guide](/customization-api/quickstart) for more information.
 
 #### STEP 2
 
-To create a FPE in an Angular web app you need to access the `createFPE` method on the imported `AgoraAppBuilder` object, which takes the `FPEConfig` as a parameter and returns a FPE Object.
+To create a Customization you need to access the `createCustomization` method on the imported `AgoraAppBuilder` object, which takes the `UserCustomizationConfig` as a parameter and returns a customization object.
 
 <!-- RHS -->
 
 ```js {3-7}
-import AgoraAppBuilder from "AgoraAppBuilder";
+import AgoraAppBuilder from "@appbuilder/web";
 
-const fpe = AgoraAppBuilder.createFPE({
-  /*
-    My FPE Config. See https://example.com for config reference.
-  */
+const customization = AgoraAppBuilder.createCustomization({
+/*
+  My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
+*/
 });
 ```
 
@@ -197,19 +197,19 @@ const fpe = AgoraAppBuilder.createFPE({
 
 #### STEP 3
 
-Pass the returned FPE Object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
+Pass the returned customization object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
 
 <!-- RHS -->
 
 ```js {8}
-import AgoraAppBuilder from "AgoraAppBuilder";
+import AgoraAppBuilder from "@appbuilder/web";
 
-const fpe = AgoraAppBuilder.createFPE({
-  /*
-    My FPE Config. See https://example.com for config reference.
-  */
+const customization = AgoraAppBuilder.createCustomization({
+/*
+  My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
+*/
 });
-AgoraAppBuilder.customize(fpe);
+AgoraAppBuilder.customize(customization);
 ```
 
 <!-- LHS -->

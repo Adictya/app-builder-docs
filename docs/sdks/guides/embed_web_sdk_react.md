@@ -74,7 +74,7 @@ The **app-builder-cli** compiles your App Builder project into a node module ins
 npm install <path-to-app-builder-project-folder>/Builds/react-sdk
 ```
 
-#### STEP 5
+#### STEP 6
 
 <!-- LHS -->
 
@@ -99,7 +99,7 @@ The module is installed with same name as your App Builder project. Import it ju
 <!-- RHS -->
 
 ```js
-import AgoraAppBuilder from "AgoraAppBuilder";
+import AgoraAppBuilder from "@appbuilder/react";
 ```
 
 #### STEP 2
@@ -113,7 +113,7 @@ Make sure to provide necessary styling including a width, height and display fle
 <!-- RHS -->
 
 ```jsx {2-6}
-const App = () = {
+const App = () => {
   return (
     <div style={{ display: "flex", width: "100vw", height: "550px" }}>
       <AgoraAppBuilder.View />
@@ -166,9 +166,9 @@ Make sure you do this on component mount for best results.
 <!-- RHS -->
 
 ```js {4-10}
-import AgoraAppBuilder from "AgoraAppBuilder";
+import AgoraAppBuilder from "@appbuilder/react";
 
-const App = () = {
+const App = () => {
   useEffect(()=>{
     const customization = AgoraAppBuilder.createCustomization({
     /*
@@ -183,14 +183,14 @@ const App = () = {
 
 <!-- LHS -->
 
-Pass the returned FPE Object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
+Pass the returned customization object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
 
 <!-- RHS -->
 
 ```js {10}
-import AgoraAppBuilder from "AgoraAppBuilder";
+import AgoraAppBuilder from "@appbuilder/react";
 
-const App = () = {
+const App = () => {
   useEffect(()=>{
     const customization = AgoraAppBuilder.createCustomization({
     /*

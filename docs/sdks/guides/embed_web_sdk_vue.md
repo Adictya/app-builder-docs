@@ -47,7 +47,7 @@ The module is installed with same name as your App Builder project. Import it ju
 
 ```html
 <script>
-  import AgoraAppBuilder from "AgoraAppBuilder";
+  import AgoraAppBuilder from "@appbuilder/web";
 </script>
 ```
 
@@ -98,16 +98,16 @@ Read this [guide](/customization-api/quickstart) for more information
 
 <!-- LHS -->
 
-To create a FPE in a VueJS web app you need to access the `createFPE` method on the imported `AgoraAppBuilder` object, which takes the `FPEConfig` as a parameter and returns a FPE Object.
+To create a Customization you need to access the `createCustomization` method on the imported `AgoraAppBuilder` object, which takes the `UserCustomizationConfig` as a parameter and returns a customization object.
 
 <!-- RHS -->
 
 ```html {3-7}
 <script>
-  import AgoraAppBuilder from "AgoraAppBuilder";
-  const fpe = AgoraAppBuilder.createFPE({
-    /*
-    My FPE Config. See https://example.com for config reference.
+  import AgoraAppBuilder from "@appbuilder/web";
+  const customization = AgoraAppBuilder.createCustomization({
+  /*
+    My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
   */
   });
 </script>
@@ -117,19 +117,19 @@ To create a FPE in a VueJS web app you need to access the `createFPE` method on 
 
 <!-- LHS -->
 
-Pass the returned FPE Object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
+Pass the returned customization object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
 
 <!-- RHS -->
 
 ```html {8}
 <script>
-  import AgoraAppBuilder from "AgoraAppBuilder";
-  const FPE = AgoraAppBuilder.createFPE({
-    /*
-    My FPE Config. See https://example.com for config reference.
+  import AgoraAppBuilder from "@appbuilder/web";
+  const customization = AgoraAppBuilder.createCustomization({
+  /*
+    My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
   */
   });
-  AgoraAppBuilder.customize(FPE);
+  AgoraAppBuilder.customize(customization);
 </script>
 ```
 

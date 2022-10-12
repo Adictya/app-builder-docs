@@ -144,9 +144,7 @@ Read [this guide](/customization-api/quickstart) for more information.
 
 #### STEP 2
 
-To create a FPE in a vanilla JS project you need to access the global `AgoraAppBuilder` object.
-
-This object contains `createFPE` method which takes the `FPEConfig` as a parameter and returns a FPE Object.
+To create a Customization you need to access the `createCustomization` method on the global `AgoraAppBuilder` object, which takes the `UserCustomizationConfig` as a parameter and returns a customization object.
 
 <!-- RHS -->
 
@@ -156,10 +154,10 @@ This object contains `createFPE` method which takes the `FPEConfig` as a paramet
     <app-builder />
   </div>
   <script>
-    const fpe = AgoraAppBuilder.default.createFPE({
-      /*
-        My FPE Config. See https://example.com for config reference.
-      */
+    const customization = AgoraAppBuilder.createCustomization({
+    /*
+      My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
+    */
     });
   </script>
 </body>
@@ -169,18 +167,18 @@ This object contains `createFPE` method which takes the `FPEConfig` as a paramet
 
 #### STEP 3
 
-Pass the returned FPE Object to the `customize` method available under the same `AgoraAppBuilder` global object to apply the config to your embedded App Builder project.
+Pass the returned customization object to the `customize` method available under the same `AgoraAppBuilder` object to apply the config to your embedded App Builder project.
 
 <!-- RHS -->
 
 ```html {7}
 <script>
-  const FPEObject = AgoraAppBuilder.default.createFPE({
+    const customization = AgoraAppBuilder.createCustomization({
     /*
-      My FPE Config. See https://example.com for config reference.
+      My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
     */
-  });
-  AgoraAppBuilder.default.addFPE(FPEObject);
+    });
+    AgoraAppBuilder.customize(customization);
 </script>
 ```
 
