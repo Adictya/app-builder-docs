@@ -9,6 +9,10 @@ sidebar_custom_props: { icon: "settings" }
 
 The following guide describes the process of embedding the App Builder React SDK in a React web app.
 
+:::info
+App Bulder React SDK only supports Reactv16 based applications.
+:::
+
 ## BUILDING
 
 #### STEP 1
@@ -68,6 +72,18 @@ The **app-builder-cli** compiles your App Builder project into a node module ins
 
 ```shell
 npm install <path-to-app-builder-project-folder>/Builds/react-sdk
+```
+
+#### STEP 5
+
+<!-- LHS -->
+
+Once the App Bulder React SDK is installed we also need to install the peer dependencies.
+
+<!-- RHS -->
+
+```shell
+npm install react-router-dom@5 @apollo/client@3 nanoid@4
 ```
 
 ---
@@ -143,7 +159,7 @@ Read [this guide](/customization-api/quickstart) for more information.
 
 <!-- LHS -->
 
-To create a FPE in a React web app you need to access the `createFPE` method on the imported `AgoraAppBuilder` object, which takes the `FPEConfig` as a parameter and returns a FPE Object.
+To create a Customization in a React web app you need to access the `createCustomization` method on the imported `AgoraAppBuilder` object, which takes the `UserCustomizationConfig` as a parameter and returns a customization object.
 
 Make sure you do this on component mount for best results.
 
@@ -154,9 +170,9 @@ import AgoraAppBuilder from "AgoraAppBuilder";
 
 const App = () = {
   useEffect(()=>{
-    const fpe = AgoraAppBuilder.createFPE({
+    const customization = AgoraAppBuilder.createCustomization({
     /*
-      My FPE Config. See https://example.com for config reference.
+      My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
     */
     });
   },[])
@@ -176,12 +192,12 @@ import AgoraAppBuilder from "AgoraAppBuilder";
 
 const App = () = {
   useEffect(()=>{
-    const fpe = AgoraAppBuilder.createFPE({
+    const customization = AgoraAppBuilder.createCustomization({
     /*
-      My FPE Config. See https://example.com for config reference.
+      My Customization Config. See https://appbuilder-docs.agora.io/customization-api/quickstart to get started with customizing!
     */
     });
-    AgoraAppBuilder.customize(FPE);
+    AgoraAppBuilder.customize(customization);
   },[])
 ...
 ```
