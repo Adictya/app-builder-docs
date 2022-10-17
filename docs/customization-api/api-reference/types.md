@@ -154,6 +154,21 @@ stopRecording    : () => void
 Used to dispatch various app builder actions.
 Part of [RtcContext](/customization-api/api-reference/app-state-library#rtccontextinterface).
 
+```jsx
+import { useRtc } from "customization-api";
+
+...
+
+const { dispatch } = useRtc();
+
+...
+
+dispatch({
+  type: "AddCustomContent",
+  value: [123, { type: "MyContent", info: "MyInfo" }],
+});
+```
+
 </method>
 
 <!-- ***************************************************************************************************************** -->
