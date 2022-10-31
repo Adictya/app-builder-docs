@@ -6,6 +6,8 @@ keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
 ---
 
+<tabsToggle sdk/>
+
 Methods available on the sdk default export to interact with app builder.
 
 ---
@@ -14,7 +16,9 @@ Methods available on the sdk default export to interact with app builder.
 
 ## customize( [CustomizationApiInterface](/customization-api/api-reference/components-api) ): void
 
-Some content about the method that explains what it does.
+Applies your customization to the Embed-SDK.
+
+<tabs sdk>
 
 ```js
 import AppBuilderReactSDK from "@appbuilder/react";
@@ -27,6 +31,24 @@ useEffect(() => {
   });
 }, []);
 ```
+
+<method>
+
+:::info
+Call the method before rendering the <app-builder\> component to see changes.
+:::
+
+```js
+import AppBuilderWebSDK from "@appbuilder/web";
+
+AppBuilderWebSDK.customize({
+  // Your customization, see https://appbuilder-docs.agora.io/customization-api/api-reference/components-api
+});
+```
+
+</method>
+
+</tabs>
 
 </method>
 
@@ -36,7 +58,9 @@ useEffect(() => {
 
 ## createCustomization( [CustomizationApiInterface](/customization-api/api-reference/components-api) ): [CustomizationApiInterface](/customization-api/api-reference/components-api)
 
-Some content about the method that explains what it does.
+Creates a customization object to be applied via the [customize method](#customize).
+
+<tabs sdk>
 
 ```js
 import AppBuilderReactSDK from "@appbuilder/react";
@@ -44,11 +68,21 @@ import AppBuilderReactSDK from "@appbuilder/react";
 ...
 
 useEffect(() => {
-  AppBuilderReactSDK.customize({
+  AppBuilderReactSDK.createCustomization({
     // Your customization, see https://appbuilder-docs.agora.io/customization-api/api-reference/components-api
   });
 }, []);
 ```
+
+```js
+import AppBuilderWebSDK from "@appbuilder/web";
+
+cosnt myCustomization = AppBuilderWebSDK.createCustomization({
+  // Your customization, see https://appbuilder-docs.agora.io/customization-api/api-reference/components-api
+});
+```
+
+</tabs>
 
 </method>
 
@@ -58,19 +92,35 @@ useEffect(() => {
 
 ## join( roomId: string ): Promise<void\>
 
-Some content about the method that explains what it does.
+Allows user to programatically join a meeting with given `roomId`.
+
+<tabs sdk>
 
 ```js
 import AppBuilderReactSDK from "@appbuilder/react";
 
-...
-
-useEffect(() => {
-  AppBuilderReactSDK.customize({
-    // Your customization, see https://appbuilder-docs.agora.io/customization-api/api-reference/components-api
+const JoinButtonClickHandler = () => {
+  AppBuilderReactSDK.join(
+    /* Meeting id: */ "/7e6f1680-b20d-4273-bcf4-e1137fcb9ea3"
+  ).then(() => {
+    console.log("App Builder meeting joined");
   });
-}, []);
+};
 ```
+
+```js
+import AppBuilderWebSDK from "@appbuilder/web";
+
+const JoinButtonClickHandler = () => {
+  AppBuilderWebSDK.join(
+    /* Meeting id: */ "/7e6f1680-b20d-4273-bcf4-e1137fcb9ea3"
+  ).then(() => {
+    console.log("App Builder meeting joined");
+  });
+};
+```
+
+</tabs>
 
 </method>
 
@@ -78,18 +128,11 @@ useEffect(() => {
 
 <method>
 
-## on( eventName: keyof [sdkEventsMapInterface](#sdkeventsmapinterface) , callback: [sdkEventsMapInterface](#sdkeventsmapinterface)[eventName] ): [unsubscribe](#unsubscribe)
+## on( eventName: keyof [sdkEventsMapInterface](/sdks/api-reference/events#sdkeventsmapinterface) ,callback: [sdkEventsMapInterface](/sdks/api-reference/events#sdkeventsmapinterface)[eventName] ): [unsubscribe](#unsubscribe)
 
-Some content about the method that explains what it does.
+Allows attaching callbacks to events emitted by the Embed-SDK. A list of all events along with necessary callbacks can be found [here](/sdks/api-reference/events).
 
-#### sdkEventsMapInterface
-
-| EventName     | CallbackType                                                                                       | Description                               |
-| ------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| create        | ( hostPhrase: string, attendeePhrase?: string, pstNumber?: {number: string, pin: string} ) => void | Triggered when a meeting is created       |
-| ready-to-join | ( meetingTitle: string, devices: MediaDeviceInfo[] ) => void                                       | Triggered when user on the precall screen |
-| join          | ( meetingTitle: string, devices: MediaDeviceInfo[], isHost: boolean ) => void                      | Triggered when user joins a meeting       |
-| leave         | () => void                                                                                         | Triggered when user leaves a meeting      |
+<tabs sdk>
 
 ```js
 import AppBuilderReactSDK from "@appbuilder/react";
@@ -97,11 +140,29 @@ import AppBuilderReactSDK from "@appbuilder/react";
 ...
 
 useEffect(() => {
-  AppBuilderReactSDK.customize({
-    // Your customization, see https://appbuilder-docs.agora.io/customization-api/api-reference/components-api
+  const unbind = AppBuilderReactSDK.on("leave", () => {
+    console.log("App Builder meeting left");
   });
+
+  return () => {
+    unbind();
+  };
 }, []);
 ```
+
+```js
+import AppBuilderWebSDK from "@appbuilder/web";
+
+const unbind = AppBuilderReactSDK.on("leave", () => {
+  console.log("App Builder meeting left");
+});
+
+...
+
+unbind();
+```
+
+</tabs>
 
 <br/>
 

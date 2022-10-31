@@ -550,3 +550,9 @@ font-weight: 400;
 .menu__link--sublist-caret:after {
   background: var(--ifm-menu-link-sublist-icon);
 }
+
+
+.covert{
+  display: none
+}
+

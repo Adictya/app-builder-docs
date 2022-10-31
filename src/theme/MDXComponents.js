@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 // Import the original mapper
-import MDXComponents from '@theme-original/MDXComponents';
-import Collapsible from '../components/Collapsible';
-import SubTitle from '../components/SubTitle';
-import Image from '../components/Image';
-import NotFound from '../components/NotFound';
-import { API, Method } from '../components/Spacer';
-import { H2, H3 } from '../components/Headings';
-import ImageSlider from '../components/ImageSlider';
-
+import MDXComponents from "@theme-original/MDXComponents";
+import Collapsible from "../components/Collapsible";
+import SubTitle from "../components/SubTitle";
+import Image from "../components/Image";
+import NotFound from "../components/NotFound";
+import { API, Method } from "../components/Spacer";
+import { H2, H3 } from "../components/Headings";
+import ImageSlider from "../components/ImageSlider";
+import Tabs, { PlatformTabsToggle } from "../components/Tabs";
 
 //TODO: custom elements should be removed from rendering
 export default {
@@ -24,9 +24,10 @@ export default {
   intro: ({ children }) => children,
   h3: H3,
   h2: H2,
-  imageSlider: ImageSlider
+  imageSlider: ImageSlider,
+  tabs: Tabs,
+  tabsToggle: PlatformTabsToggle
   // api: ({ children }) => children,
   // method: ({ children }) => children,
   // interface: ({ children }) => children,
-
 };
