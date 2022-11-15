@@ -7,6 +7,8 @@ keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
 ---
 
+<tabsToggle />
+
 This page is an index of types, interfaces, enums used across the Customization API
 
 <api>
@@ -121,6 +123,8 @@ Defined by the user, can contain any information necessary for the corresponding
 
 Method to subscribe to portions of the app-state. When passed to an app-state accessor method it reicieves the contents of the associated app-state as argument, it must then selectively return the contents which are intended to be subscribed and eventually returned by the accessor method.
 
+<tabs lazy>
+
 ```jsx
 import { useRecording } from "customization-api";
 
@@ -139,6 +143,44 @@ stopRecording    : () => void
 */
 ```
 
+```jsx
+import { useRecording } from "@appbuilder/react";
+
+const { isRecordingActive, startRecording } = useRecording(
+  ({isRecordingActve ,startRecording, stopRecording}) => {
+    return({{isRecordingActve, startRecording}})
+  }
+);
+
+/*
+#### RecordingContextInterface
+
+isRecordingActve : boolean
+startRecording   : () => void
+stopRecording    : () => void
+*/
+```
+
+```jsx
+import { useRecording } from "@appbuilder/web";
+
+const { isRecordingActive, startRecording } = useRecording(
+  ({isRecordingActve ,startRecording, stopRecording}) => {
+    return({{isRecordingActve, startRecording}})
+  }
+);
+
+/*
+#### RecordingContextInterface
+
+isRecordingActve : boolean
+startRecording   : () => void
+stopRecording    : () => void
+*/
+```
+
+</tabs>
+
 </method>
 
 <!-- ***************************************************************************************************************** -->
@@ -154,6 +196,8 @@ stopRecording    : () => void
 Used to dispatch various app builder actions.
 Part of [RtcContext](/customization-api/api-reference/app-state-library#rtccontextinterface).
 
+<tabs lazy>
+
 ```jsx
 import { useRtc } from "customization-api";
 
@@ -168,6 +212,38 @@ dispatch({
   value: [123, { type: "MyContent", info: "MyInfo" }],
 });
 ```
+
+```jsx
+import { useRtc } from "@appbuilder/react";
+
+...
+
+const { dispatch } = useRtc();
+
+...
+
+dispatch({
+  type: "AddCustomContent",
+  value: [123, { type: "MyContent", info: "MyInfo" }],
+});
+```
+
+```jsx
+import { useRtc } from "@appbuilder/web";
+
+...
+
+const { dispatch } = useRtc();
+
+...
+
+dispatch({
+  type: "AddCustomContent",
+  value: [123, { type: "MyContent", info: "MyInfo" }],
+});
+```
+
+</tabs>
 
 </method>
 
