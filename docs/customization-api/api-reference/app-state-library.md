@@ -7,9 +7,30 @@ keywords: [MeetingInfoContextInterface, LayoutContextInterface]
 sidebar_custom_props: { icon: "code" }
 ---
 
+<tabsToggle />
+
 Provides accessors for various app states used in App Builder. Some accessors accept a [selector](/customization-api/api-reference/types#selector) method that allows for selective subscribing of data.
 
+<tabs lazy>
+
+<method>
+
 You can access them under the `customization-api` module as a named export.
+
+</method>
+<method>
+
+You can access them under the `@appbuilder/react` module as a named export.
+
+</method>
+
+<method>
+
+You can access them under the `@appbuilder/web` module as a named export.
+
+</method>
+
+</tabs>
 
 ---
 
@@ -33,6 +54,8 @@ The Recording app state governs the App Builder cloud recording functionality.
 
 Usage example of the app state:
 
+<tabs lazy>
+
 ```jsx
 import { useRecording } from "customization-api";
 
@@ -40,6 +63,24 @@ import { useRecording } from "customization-api";
 
 const { isRecordingActive, startRecording, stopRecording } = useRecording();
 ```
+
+```jsx
+import { useRecording } from "@appbuilder/react";
+
+...
+
+const { isRecordingActive, startRecording, stopRecording } = useRecording();
+```
+
+```jsx
+import { useRecording } from "@appbuilder/web";
+
+...
+
+const { isRecordingActive, startRecording, stopRecording } = useRecording();
+```
+
+</tabs>
 
 </method>
 
@@ -73,6 +114,8 @@ The SidePanel app state governs the sidePanel ui.
 
 Usage example of the app state:
 
+<tabs lazy>
+
 ```jsx
 import { useSidePanel, SidePanelType } from "customization-api";
 
@@ -80,6 +123,24 @@ import { useSidePanel, SidePanelType } from "customization-api";
 
 const { sidePanel, setSidePanel } = useSidePanel();
 ```
+
+```jsx
+import { useSidePanel, SidePanelType } from "@appbuilder/react";
+
+...
+
+const { sidePanel, setSidePanel } = useSidePanel();
+```
+
+```jsx
+import { useSidePanel, SidePanelType } from "@appbuilder/web";
+
+...
+
+const { sidePanel, setSidePanel } = useSidePanel();
+```
+
+</tabs>
 
 </method>
 
@@ -110,6 +171,8 @@ The ChatUIControl app state governs the chat ui.
 
 Usage example of the app state:
 
+<tabs lazy>
+
 ```jsx
 import { useRecording } from "customization-api";
 
@@ -117,6 +180,24 @@ import { useRecording } from "customization-api";
 
 const { isRecordingActive, startRecording, stopRecording } = useRecording();
 ```
+
+```jsx
+import { useRecording } from "@appbuilder/react";
+
+...
+
+const { isRecordingActive, startRecording, stopRecording } = useRecording();
+```
+
+```jsx
+import { useRecording } from "@appbuilder/web";
+
+...
+
+const { isRecordingActive, startRecording, stopRecording } = useRecording();
+```
+
+</tabs>
 
 </method>
 
@@ -159,6 +240,8 @@ The Messages app state governs the chat messages.
 
 usage example of the app state:
 
+<tabs lazy>
+
 ```jsx
 import { useMessages } from "customization-api";
 
@@ -174,6 +257,40 @@ const {
   setIndividualUnreadCount,
 } = useMessages();
 ```
+
+```jsx
+import { useMessages } from "@appbuilder/react";
+
+const {
+  groupMessages,
+  privateMessages,
+  sendMessage,
+  editMessage,
+  deleteMessage,
+  groupUnreadCount,
+  setGroupUnreadCount,
+  indIvidualUnreadCount,
+  setIndividualUnreadCount,
+} = useMessages();
+```
+
+```jsx
+import { useMessages } from "@appbuilder/web";
+
+const {
+  groupMessages,
+  privateMessages,
+  sendMessage,
+  editMessage,
+  deleteMessage,
+  groupUnreadCount,
+  setGroupUnreadCount,
+  indIvidualUnreadCount,
+  setIndividualUnreadCount,
+} = useMessages();
+```
+
+</tabs>
 
 </method>
 
@@ -208,6 +325,8 @@ You can add custom render objects to the render app state using the 'AddCustomCo
 
 Usage example of the app state:
 
+<tabs lazy>
+
 ```jsx
 import { useRender } from "customization-api";
 
@@ -215,6 +334,24 @@ import { useRender } from "customization-api";
 
 const { renderList, activeUids } = useRender();
 ```
+
+```jsx
+import { useRender } from "@appbuilder/react";
+
+...
+
+const { renderList, activeUids } = useRender();
+```
+
+```jsx
+import { useRender } from "@appbuilder/web";
+
+...
+
+const { renderList, activeUids } = useRender();
+```
+
+</tabs>
 
 </method>
 
@@ -227,6 +364,8 @@ const { renderList, activeUids } = useRender();
 The LocalUserInfo app state contains the local user information like `uid`, `audio` and `video` mute states etc.
 
 Usage example of the app state:
+
+<tabs lazy>
 
 ```jsx
 import { useLocalUserInfo } from "customization-api";
@@ -244,6 +383,42 @@ const {
   offline,
 } = useLocalUserInfo();
 ```
+
+```jsx
+import { useLocalUserInfo } from "@appbuilder/react";
+
+...
+
+const {
+  uid,
+  audio,
+  video,
+  streamType,
+  contentType,
+  name,
+  screenUid,
+  offline,
+} = useLocalUserInfo();
+```
+
+```jsx
+import { useLocalUserInfo } from "@appbuilder/web";
+
+...
+
+const {
+  uid,
+  audio,
+  video,
+  streamType,
+  contentType,
+  name,
+  screenUid,
+  offline,
+} = useLocalUserInfo();
+```
+
+</tabs>
 
 </method>
 
@@ -268,6 +443,8 @@ The Layout app state governs the video call screen content display layout.
 
 Usage example of the app state:
 
+<tabs lazy>
+
 ```jsx
 import { useLayout } from "customization-api";
 
@@ -275,6 +452,24 @@ import { useLayout } from "customization-api";
 
 const { currentLayout, setLayout } = useLayout();
 ```
+
+```jsx
+import { useLayout } from "@appbuilder/react";
+
+...
+
+const { currentLayout, setLayout } = useLayout();
+```
+
+```jsx
+import { useLayout } from "@appbuilder/web";
+
+...
+
+const { currentLayout, setLayout } = useLayout();
+```
+
+</tabs>
 
 </method>
 
@@ -316,6 +511,8 @@ The MeetingInfo app state contains information about the active meeting.
 
 Usage example of the app state:
 
+<tabs lazy>
+
 ```jsx
 import { useMeetingInfo } from "customization-api";
 
@@ -323,6 +520,24 @@ import { useMeetingInfo } from "customization-api";
 
 const { isJoinDataFetched, data } = useMeetingInfo();
 ```
+
+```jsx
+import { useMeetingInfo } from "@appbuilder/react";
+
+...
+
+const { isJoinDataFetched, data } = useMeetingInfo();
+```
+
+```jsx
+import { useMeetingInfo } from "@appbuilder/web";
+
+...
+
+const { isJoinDataFetched, data } = useMeetingInfo();
+```
+
+</tabs>
 
 </method>
 
@@ -336,6 +551,8 @@ The UserName app state governs the local user's display name.
 
 Usage example of the app state:
 
+<tabs lazy>
+
 ```js
 import { useUserName } from "customization-api";
 
@@ -343,6 +560,24 @@ import { useUserName } from "customization-api";
 
 const [userName, setUserName] = useUserName();
 ```
+
+```js
+import { useUserName } from "@appbuilder/react";
+
+...
+
+const [userName, setUserName] = useUserName();
+```
+
+```js
+import { useUserName } from "@appbuilder/web";
+
+...
+
+const [userName, setUserName] = useUserName();
+```
+
+</tabs>
 
 <br/>
 
@@ -394,6 +629,8 @@ Avoid using `RtcEngine` directly to perform actions such as muting audio, joinin
 
 Usage example of the app state:
 
+<tabs lazy>
+
 ```jsx
 import { useRtc } from "customization-api";
 
@@ -401,5 +638,23 @@ import { useRtc } from "customization-api";
 
 const { RtcEngine, dispatch, setDualStreamMode } = useRtc();
 ```
+
+```jsx
+import { useRtc } from "@appbuilder/react";
+
+...
+
+const { RtcEngine, dispatch, setDualStreamMode } = useRtc();
+```
+
+```jsx
+import { useRtc } from "@appbuilder/web";
+
+...
+
+const { RtcEngine, dispatch, setDualStreamMode } = useRtc();
+```
+
+</tabs>
 
 </method>

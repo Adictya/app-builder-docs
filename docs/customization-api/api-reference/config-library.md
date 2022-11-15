@@ -7,9 +7,30 @@ keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
 ---
 
+<tabsToggle />
+
 List of config variables set via the App Builder Console as configured by the user.
 
-You can access them under the `customization-api` module via tha named export `$config`.
+<tabs lazy>
+
+<method>
+
+You can access them under the `customization-api` module via the named export `$config`.
+
+</method>
+<method>
+
+You can access them under the `@appbuilder/react` module via the named export `$config`.
+
+</method>
+
+<method>
+
+You can access them under the `@appbuilder/web` module via the named export `$config`.
+
+</method>
+
+</tabs>
 
 <api>
 

@@ -7,6 +7,8 @@ keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
 ---
 
+<tabsToggle />
+
 Provides methods to execute specific actions like Muting / Unmuting a user and Joining / Creating a meeting.
 
 You can access them under the `customization-api` module as a named export.
@@ -19,6 +21,8 @@ You can access them under the `customization-api` module as a named export.
 
 Returns an asynchronous function to create a meeting with the given options.
 
+<tabs lazy>
+
 ```js
 import { useCreateMeeting } from "customization-api";
 
@@ -30,6 +34,32 @@ const createMeeting = useCreateMeeting();
 
 await createMeeting(/*roomTitle:*/ 'My Meeting', /*enablePSTN?:*/ false, /*isSeperateHostLink?:*/ false );
 ```
+
+```js
+import { useCreateMeeting } from "@appbuilder/react";
+
+...
+
+const createMeeting = useCreateMeeting();
+
+...
+
+await createMeeting(/*roomTitle:*/ 'My Meeting', /*enablePSTN?:*/ false, /*isSeperateHostLink?:*/ false );
+```
+
+```js
+import { useCreateMeeting } from "@appbuilder/web";
+
+...
+
+const createMeeting = useCreateMeeting();
+
+...
+
+await createMeeting(/*roomTitle:*/ 'My Meeting', /*enablePSTN?:*/ false, /*isSeperateHostLink?:*/ false );
+```
+
+</tabs>
 
 <br/>
 
@@ -55,6 +85,8 @@ await createMeeting(/*roomTitle:*/ 'My Meeting', /*enablePSTN?:*/ false, /*isSep
 
 Returns an asynchronous function to join a meeting with the given phrase.
 
+<tabs lazy>
+
 ```js
 import { useJoinMeeting } from "customization-api";
 
@@ -67,6 +99,35 @@ const joinMeeting = useJoinMeeting();
 await joinMeeting(/*roomId:*/ 12342139812);
 
 ```
+
+```js
+import { useJoinMeeting } from "@appbuilder/react";
+
+...
+
+const joinMeeting = useJoinMeeting();
+
+...
+
+await joinMeeting(/*roomId:*/ 12342139812);
+
+```
+
+```js
+import { useJoinMeeting } from "@appbuilder/web";
+
+...
+
+const joinMeeting = useJoinMeeting();
+
+...
+
+await joinMeeting(/*roomId:*/ 12342139812);
+
+```
+
+
+</tabs>
 
 <br/>
 
@@ -92,6 +153,8 @@ await joinMeeting(/*roomId:*/ 12342139812);
 
 Returns an asynchronous function to toggle muted state of the given track type for the local user.
 
+<tabs lazy>
+
 ```js
 import { useMuteToggleLocal, MUTE_LOCAL_TYPE } from "customization-api";
 
@@ -103,6 +166,32 @@ const muteToggleLocal = useMuteToggleLocal();
 
 muteToggleLocal( MUTE_LOCAL_TYPE.audio ); // toggle local user's audio mute state
 ```
+
+```js
+import { useMuteToggleLocal, MUTE_LOCAL_TYPE } from "@appbuilder/react";
+
+...
+
+const muteToggleLocal = useMuteToggleLocal();
+
+...
+
+muteToggleLocal( MUTE_LOCAL_TYPE.audio ); // toggle local user's audio mute state
+```
+
+```js
+import { useMuteToggleLocal, MUTE_LOCAL_TYPE } from "@appbuilder/web";
+
+...
+
+const muteToggleLocal = useMuteToggleLocal();
+
+...
+
+muteToggleLocal( MUTE_LOCAL_TYPE.audio ); // toggle local user's audio mute state
+```
+
+</tabs>
 
 <br/>
 
@@ -128,6 +217,8 @@ muteToggleLocal( MUTE_LOCAL_TYPE.audio ); // toggle local user's audio mute stat
 
 Returns an asynchronous function to toggle muted state of the given track type for a remote user with the given uid or if no uid provided, mutes everyone else in the meeting.
 
+<tabs lazy>
+
 ```js
 import { useRemoteMute, MUTE_REMOTE_TYPE } from "customization-api";
 
@@ -139,6 +230,32 @@ const muteToggleRemote = useRemoteMute();
 
 muteToggleRemote( MUTE_REMOTE_TYPE.audio, 123457 ); // toggle uid:123457 user's audio mute state
 ```
+
+```js
+import { useRemoteMute, MUTE_REMOTE_TYPE } from "@appbuilder/react";
+
+...
+
+const muteToggleRemote = useRemoteMute();
+
+...
+
+muteToggleRemote( MUTE_REMOTE_TYPE.audio, 123457 ); // toggle uid:123457 user's audio mute state
+```
+
+```js
+import { useRemoteMute, MUTE_REMOTE_TYPE } from "@appbuilder/web";
+
+...
+
+const muteToggleRemote = useRemoteMute();
+
+...
+
+muteToggleRemote( MUTE_REMOTE_TYPE.audio, 123457 ); // toggle uid:123457 user's audio mute state
+```
+
+</tabs>
 
 <br/>
 
@@ -164,6 +281,8 @@ muteToggleRemote( MUTE_REMOTE_TYPE.audio, 123457 ); // toggle uid:123457 user's 
 
 Returns a function to end the call for a remote user with the given uid.
 
+<tabs lazy>
+
 ```js
 import { useRemoteEndCall } from "customization-api";
 
@@ -175,6 +294,32 @@ const remoteEndCall = useRemoteEndCall();
 
 remoteEndCall( 123457 ); // end uid:123457 user's call
 ```
+
+```js
+import { useRemoteEndCall } from "@appbuilder/react";
+
+...
+
+const remoteEndCall = useRemoteEndCall();
+
+...
+
+remoteEndCall( 123457 ); // end uid:123457 user's call
+```
+
+```js
+import { useRemoteEndCall } from "@appbuilder/web";
+
+...
+
+const remoteEndCall = useRemoteEndCall();
+
+...
+
+remoteEndCall( 123457 ); // end uid:123457 user's call
+```
+
+</tabs>
 
 <br/>
 
@@ -210,9 +355,21 @@ remoteEndCall( 123457 ); // end uid:123457 user's call
 | audio | 0     |
 | video | 1     |
 
+<tabs lazy>
+
 ```js
 import { MUTE_LOCAL_TYPE } from "customization-api";
 ```
+
+```js
+import { MUTE_LOCAL_TYPE } from "@appbuilder/react";
+```
+
+```js
+import { MUTE_LOCAL_TYPE } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -230,8 +387,20 @@ import { MUTE_LOCAL_TYPE } from "customization-api";
 | audio | 0     |
 | video | 1     |
 
+<tabs lazy>
+
 ```js
 import { MUTE_REMOTE_TYPE } from "customization-api";
 ```
+
+```js
+import { MUTE_REMOTE_TYPE } from "@appbuilder/react";
+```
+
+```js
+import { MUTE_REMOTE_TYPE } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>

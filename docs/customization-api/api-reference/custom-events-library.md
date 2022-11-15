@@ -7,11 +7,32 @@ keywords: [MeetingInfoContextInterface, LayoutContextInterface]
 sidebar_custom_props: { icon: "code" }
 ---
 
+<tabsToggle />
+
 # Custom Events
 
 Provides methods to send and listen to custom events. These events can be sent to a specific user(s) in the channel or to all the user(s) in the channel.
 
+<tabs lazy>
+
+<method>
+
 You can access them under the `customization-api` module as a named export.
+
+</method>
+<method>
+
+You can access them under the `@appbuilder/react` module as a named export.
+
+</method>
+
+<method>
+
+You can access them under the `@appbuilder/web` module as a named export.
+
+</method>
+
+</tabs>
 
 These events can be sent to
 
@@ -41,9 +62,21 @@ These events can be sent with different levels of persistance.
 
 customEvents object handles customization api events and provides methods for sending, subscribing and unsubscribing to events.
 
+<tabs lazy>
+
 ```js
 import { customEvents } from "customization-api";
 ```
+
+```js
+import { customEvents } from "@appbuilder/react";
+```
+
+```js
+import { customEvents } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -72,8 +105,10 @@ Sends the event with the provided details.
 | persistLevel | [EventPersistLevel](#eventpersistlevel) | Sets the persistence of the event                                                    |
 | receiver?    | [ReceiverUid](#receiveruid)             | Uid(s) to send the message to. Leave emtpy to send as a channel message to all users |
 
+<tabs lazy>
+
 ```ts
-import { customEvents } from "fpe-api";
+import { customEvents } from "customization-api";
 
 ...
 
@@ -101,6 +136,66 @@ customEvents.send(
 );
 ```
 
+```ts
+import { customEvents } from "@appbuilder/react";
+
+...
+
+// 1. Sending to specific user 0001 in the channel
+customEvents.send(
+  "event-specific-single",
+  "Payload is Hello!!",
+  EventPersistLevel.LEVEL1,
+  001
+);
+
+// 2. Sending to user(s) 001 002, 003in the channel
+customEvents.send(
+  "event-specific-multiple",
+  "Payload is Hello!!",
+  EventPersistLevel.LEVEL1,
+  [001, 002, 003]
+);
+
+// 3. Sending in the channel
+customEvents.send(
+  "event-channel",
+  "Payload is Hello!!",
+  EventPersistLevel.LEVEL1
+);
+```
+
+```ts
+import { customEvents } from "@appbuilder/web";
+
+...
+
+// 1. Sending to specific user 0001 in the channel
+customEvents.send(
+  "event-specific-single",
+  "Payload is Hello!!",
+  EventPersistLevel.LEVEL1,
+  001
+);
+
+// 2. Sending to user(s) 001 002, 003in the channel
+customEvents.send(
+  "event-specific-multiple",
+  "Payload is Hello!!",
+  EventPersistLevel.LEVEL1,
+  [001, 002, 003]
+);
+
+// 3. Sending in the channel
+customEvents.send(
+  "event-channel",
+  "Payload is Hello!!",
+  EventPersistLevel.LEVEL1
+);
+```
+
+</tabs>
+
 </collapsible>
 </method>
 
@@ -125,9 +220,11 @@ Subscribes to the event. Use on method to add listener for specific event.
 | eventName | string   | Name of the event to be subscribed                                |
 | listener  | Function | Callback method for the event to be called when event is received |
 
+<tabs lazy>
+
 ```ts
 import react from "React";
-import { customEvents } from "fpe-api";
+import { customEvents } from "customization-api";
 
 ...
 
@@ -151,6 +248,61 @@ import { customEvents } from "fpe-api";
 ...
 
 ```
+
+```ts
+import React from "React";
+import { customEvents } from "@appbuilder/react";
+
+...
+
+    React.useEffect(() => {
+        const funcOne = (data) => {};
+        const funcTwo = (data) => {};
+        const funcThree = (data) => {};
+
+        // 1. Adding single anonymous listener
+        customEvents.on("event-one", (data)=> {console.log(data)});
+
+        // 2. Adding single named listener
+        customEvents.on("event-two", funcOne);
+
+        // 3. Adding multiple listener(s) to same event. Kindly note function name should be different when using multiple listeners
+        customEvents.on("event-three", funcTwo);
+        customEvents.on("event-three", funcThree);
+
+    }, []);
+
+...
+
+```
+
+```ts
+import { customEvents, React } from "@appbuilder/web";
+
+...
+
+    React.useEffect(() => {
+        const funcOne = (data) => {};
+        const funcTwo = (data) => {};
+        const funcThree = (data) => {};
+
+        // 1. Adding single anonymous listener
+        customEvents.on("event-one", (data)=> {console.log(data)});
+
+        // 2. Adding single named listener
+        customEvents.on("event-two", funcOne);
+
+        // 3. Adding multiple listener(s) to same event. Kindly note function name should be different when using multiple listeners
+        customEvents.on("event-three", funcTwo);
+        customEvents.on("event-three", funcThree);
+
+    }, []);
+
+...
+
+```
+
+</tabs>
 
 </collapsible>
 </method>
@@ -184,9 +336,11 @@ will be removed from event.
 
 1. Removing listener using calling unsubscribe method
 
+<tabs lazy>
+
 ```ts
-import react from "React";
-import { customEvents } from "fpe-api";
+import React from "React";
+import { customEvents } from "customization-api";
 
 ...
 
@@ -205,11 +359,57 @@ import { customEvents } from "fpe-api";
 
 ```
 
-2. Removing a single listener by passing pass eventname and function.
+```ts
+import React from "React";
+import { customEvents } from "@appbuilder/react";
+
+...
+
+    React.useEffect(() => {
+        const funcListener = (data) => {};
+
+        const unbind = customEvents.on("event-zero", funcListener);
+
+        return () => {
+            // Remove specific single listener.
+            unbind();
+        }
+    }, []);
+
+...
+
+```
 
 ```ts
-import react from "React";
-import { customEvents } from "fpe-api";
+import { customEvents, React } from "@appbuilder/web";
+
+...
+
+    React.useEffect(() => {
+        const funcListener = (data) => {};
+
+        const unbind = customEvents.on("event-zero", funcListener);
+
+        return () => {
+            // Remove specific single listener.
+            unbind();
+        }
+    }, []);
+
+...
+
+```
+
+
+</tabs>
+
+2. Removing a single listener by passing pass eventname and function.
+
+<tabs lazy>
+
+```ts
+import React from "React";
+import { customEvents } from "customization-api";
 
 ...
 
@@ -229,11 +429,58 @@ import { customEvents } from "fpe-api";
 
 ```
 
-3. Removing a multiple listener by passing pass eventname and function.
+```ts
+import React from "React";
+import { customEvents } from "@appbuilder/react";
+
+...
+
+    React.useEffect(() => {
+        const funcOne = (data) => {};
+
+        // 1. Adding single named listener
+        customEvents.on("event-one", funcOne);
+
+        return () => {
+           //  Remove single named listener
+            customEvents.off("event-one", funcOne);
+        }
+    }, []);
+
+...
+
+```
 
 ```ts
-import react from "React";
-import { customEvents } from "fpe-api";
+import { customEvents, React } from "@appbuilder/web";
+
+...
+
+    React.useEffect(() => {
+        const funcOne = (data) => {};
+
+        // 1. Adding single named listener
+        customEvents.on("event-one", funcOne);
+
+        return () => {
+           //  Remove single named listener
+            customEvents.off("event-one", funcOne);
+        }
+    }, []);
+
+...
+
+```
+
+</tabs>
+
+3. Removing a multiple listener by passing pass eventname and function.
+
+<tabs lazy>
+
+```ts
+import React from "React";
+import { customEvents } from "customization-api";
 
 ...
 
@@ -260,11 +507,72 @@ import { customEvents } from "fpe-api";
 
 ```
 
-4. Removing all listeners
+```ts
+import React from "React";
+import { customEvents } from "@appbuilder/react";
+
+...
+
+    React.useEffect(() => {
+        const funcOneFirst = (data) => {};
+        const funcOneSecond = (data) => {};
+
+        // 2. Adding multiple listener(s) to same event. Kindly note function name should be different when using multiple listeners
+        customEvents.on("event-one", funcOneFirst);
+        customEvents.on("event-one", funcOneSecond);
+
+        return () => {
+            // 1. Remove specific single listener.
+            customEvents.off("event-one", funcOneFirst);
+
+            // 2. Remove all listeners for a given specific event
+            // Here both funcOneFirst and funcOneSecond will be removed
+            customEvents.off("event-one")
+
+        }
+    }, []);
+
+...
+
+```
 
 ```ts
-import react from "React";
-import { customEvents } from "fpe-api";
+import { customEvents, React } from "@appbuilder/web";
+
+...
+
+    React.useEffect(() => {
+        const funcOneFirst = (data) => {};
+        const funcOneSecond = (data) => {};
+
+        // 2. Adding multiple listener(s) to same event. Kindly note function name should be different when using multiple listeners
+        customEvents.on("event-one", funcOneFirst);
+        customEvents.on("event-one", funcOneSecond);
+
+        return () => {
+            // 1. Remove specific single listener.
+            customEvents.off("event-one", funcOneFirst);
+
+            // 2. Remove all listeners for a given specific event
+            // Here both funcOneFirst and funcOneSecond will be removed
+            customEvents.off("event-one")
+
+        }
+    }, []);
+
+...
+
+```
+
+</tabs>
+
+4. Removing all listeners
+
+<tabs lazy>
+
+```ts
+import React from "React";
+import { customEvents } from "customization-api";
 
 ...
 
@@ -288,6 +596,59 @@ import { customEvents } from "fpe-api";
 
 ```
 
+```ts
+import React from "React";
+import { customEvents } from "@appbuilder/react";
+
+...
+
+    React.useEffect(() => {
+        const funcOne = (data) => {};
+        const funcTwo = (data) => {};
+        const funcThree = (data) => {};
+
+        customEvents.on("event-one", funcOne);
+        customEvents.on("event-two", funcTwo);
+        customEvents.on("event-three", funcThree);
+
+
+        return () => {
+            //  Remove all events and their listener(s)
+            customEvents.off();
+        }
+    }, []);
+
+...
+
+```
+
+```ts
+import { customEvents, React } from "@appbuilder/web";
+
+...
+
+    React.useEffect(() => {
+        const funcOne = (data) => {};
+        const funcTwo = (data) => {};
+        const funcThree = (data) => {};
+
+        customEvents.on("event-one", funcOne);
+        customEvents.on("event-two", funcTwo);
+        customEvents.on("event-three", funcThree);
+
+
+        return () => {
+            //  Remove all events and their listener(s)
+            customEvents.off();
+        }
+    }, []);
+
+...
+
+```
+
+</tabs>
+
 </collapsible>
 </method>
 
@@ -297,9 +658,11 @@ import { customEvents } from "fpe-api";
 
 ---
 
+<tabs lazy>
+
 ```ts
-import react from "React";
-import { customEvents, EventPersistLevel } from "fpe-api";
+import React from "React";
+import { customEvents, EventPersistLevel } from "customization-api";
 
 React.useEffect(() => {
   // Adding Listener
@@ -327,6 +690,69 @@ function App() {
   );
 }
 ```
+
+```ts
+import React from "React";
+import { customEvents, EventPersistLevel } from "@appbuilder/react";
+
+React.useEffect(() => {
+  // Adding Listener
+  const unbind = customEvents.on("hello-event", (data: EventCallback) => {
+    console.log(
+      `I have received payload ${data.payload} from user ${data.sender} at time ${data.timestamp} with persistance of ${data.persistLevel}`
+    );
+  });
+
+  return () => {
+    // Removing listener
+    unbind();
+  };
+}, []);
+
+function App() {
+  // Sending event
+  const sendEvent = () =>
+    customEvents.send("hello-event", "Hello!!", EventPersistLevel.LEVEL1);
+
+  return (
+    <div>
+      <button onClick={sendEvent}>Send event!</button>
+    </div>
+  );
+}
+```
+
+```ts
+import { customEvents, EventPersistLevel, React } from "@appbuilder/web";
+
+React.useEffect(() => {
+  // Adding Listener
+  const unbind = customEvents.on("hello-event", (data: EventCallback) => {
+    console.log(
+      `I have received payload ${data.payload} from user ${data.sender} at time ${data.timestamp} with persistance of ${data.persistLevel}`
+    );
+  });
+
+  return () => {
+    // Removing listener
+    unbind();
+  };
+}, []);
+
+function App() {
+  // Sending event
+  const sendEvent = () =>
+    customEvents.send("hello-event", "Hello!!", EventPersistLevel.LEVEL1);
+
+  return (
+    <div>
+      <button onClick={sendEvent}>Send event!</button>
+    </div>
+  );
+}
+```
+
+</tabs>
 
 <br/>
 
