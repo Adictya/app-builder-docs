@@ -7,6 +7,8 @@ keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
 ---
 
+<tabsToggle />
+
 <!-- <image alt="Video Call" lightImageSrc="api/videocall-light.png" darkImageSrc="api/videocall-dark.png" /> -->
 
 Provides API for granular overriding of various aspects of the App Builder user interface ranging from entire screens such as the “VideoCall” screen to specific components within these screens such as the “BottomBar” component.
@@ -59,6 +61,8 @@ You can override the entire VideoCall screen by passing in a [React.ComponentTyp
 
 Use the example code given below showcasing a simple use-case of the api as a guide.
 
+<tabs lazy>
+
 ```tsx {18-24} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/video-call.tsx"
 import { customize } from "customization-api";
 import React from "react";
@@ -107,6 +111,118 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+```tsx {19-23}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const VideoCallPage = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new video call page. Use app-state and sub-components to
+          customize your video call page.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: VideoCallPage,
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "calc(100% - 2px)",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px inset black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+```
+
+```html {17-21}
+<script type="module">
+import AppBuilderWebSdk from "@appbuilder/web";
+
+const VideoCallPage = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new video call page. Use app-state and sub-components to
+          customize your video call page.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: VideoCallPage,
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
 
 Result:
 
@@ -171,6 +287,8 @@ To reuse parts of default bottom bar ui you can import them from the [SubCompone
 
 Use the example code given below showcasing a simple use-case of the api as a guide.
 
+<tabs lazy>
+
 ```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/bottom-bar.tsx"
 import { customize } from "customization-api";
 import React from "react";
@@ -222,6 +340,121 @@ const styles = StyleSheet.create({
 });
 ```
 
+```tsx {19-25}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const BottomBar = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new bottom bar component. Use app-state and
+          sub-components to customize your bottom bar
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          bottomBar: BottomBar,
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+```
+
+```html {17-23}
+<script type="module">
+import AppBuilderWebSdk from "@appbuilder/web";
+
+const BottomBar = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new bottom bar component. Use app-state and
+          sub-components to customize your bottom bar
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      bottomBar: BottomBar,
+    },
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
+
 Result:
 
 <imageSlider alt="bottombar component override" darkImageSrc1="customization-api/api/components-api/videocall-bar-before.png" darkImageSrc2="customization-api/api/components-api/bottombar-after.png" />
@@ -262,6 +495,8 @@ You can override the TopBar component by passing in a [React Component](https://
 To reuse parts of default top bar ui you can import them from the [SubComponents Library](/customization-api/api-reference/sub-component-library) accessible under the `customization-api` module.
 
 Use the example code given below showcasing a simple use-case of the api as a guide.
+
+<tabs lazy>
 
 ```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/top-bar.tsx"
 import { customize } from "customization-api";
@@ -313,6 +548,121 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+```tsx {19-25}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const TopBar = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new top bar component. Use app-state and sub-components
+          to customize your top bar
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          topBar: TopBar,
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+```
+
+```html {17-23}
+<script type="module">
+import AppBuilderWebSdk from "@appbuilder/web";
+
+const TopBar = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new top bar component. Use app-state and
+          sub-components to customize your chat
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      topBar: TopBar,
+    },
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
 
 Result:
 
@@ -399,6 +749,8 @@ You can override the ChatTextInput component component by passing in a [React Co
 
 Use the code example given below showcasing overriding of the default chat bubble ui as a guide.
 
+<tabs lazy>
+
 ```tsx {9-19} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/chat-input.tsx"
 import { customize } from "customization-api";
 import React from "react";
@@ -430,6 +782,85 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+```tsx {10-18}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const ChatInput = () => {
+  return <div style={styles.container}></div>;
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          chat: {
+            chatInput: ChatInput,
+          },
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    alignSelf: "center",
+    display: "flex",
+    height: "40px",
+  },
+};
+```
+
+```html {8-16}
+<script type="module">
+import AppBuilderWebSdk from "@appbuilder/web";
+
+const ChatInput = () => {
+  return <div style={styles.container}></div>;
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      chat: {
+        chatInput: ChatInput,
+      },
+    },
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    alignSelf: "center",
+    display: "flex",
+    height: "40px",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
 
 Result:
 
@@ -474,6 +905,8 @@ You can override the ChatSendButton component by passing in a [React Component](
 
 Use the code example given below showcasing overriding of the default chat bubble ui as a guide.
 
+<tabs lazy>
+
 ```tsx {9-19} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/chat-send-button.tsx"
 import { customize } from "customization-api";
 import React from "react";
@@ -506,6 +939,87 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+```tsx {10-18}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const ChatSendButton = () => {
+  return <div style={styles.container}></div>;
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          chat: {
+            chatSendButton: ChatSendButton,
+          },
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    marginLeft: '10px',
+    width: '30px',
+    height: '30px',
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    alignSelf: "center",
+    display: "flex",
+  },
+};
+```
+
+```html {8-16}
+<script type="module">
+import AppBuilderWebSdk from "@appbuilder/web";
+
+const ChatSendButton = () => {
+  return <div style={styles.container}></div>;
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      chat: {
+        chatSendButton: ChatSendButton,
+      },
+    },
+  },
+});
+
+const styles = {
+  container: {
+    marginLeft: '10px',
+    width: '30px',
+    height: '30px',
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    alignSelf: "center",
+    display: "flex",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
 
 Result:
 
@@ -553,6 +1067,8 @@ You can override the ChatBubble component by passing in a [React Component](http
 <br/>
 
 Use the code example given below showcasing overriding of the default chat bubble ui as a guide.
+
+<tabs lazy>
 
 ```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/chat-bubble.tsx"
 import { customize } from "customization-api";
@@ -607,6 +1123,125 @@ const styles = StyleSheet.create({
 });
 ```
 
+```tsx {19-27}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const ChatBubble = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new chat bubble component. Use app-state and
+          sub-components to customize your chat
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          chat: {
+            chatBubble: ChatBubble,
+          },
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+```
+
+```html {17-25}
+<script type="module">
+import AppBuilderWebSdk from "@appbuilder/web";
+
+const ChatBubble = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new chat bubble component. Use app-state and
+          sub-components to customize your chat
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      chat: {
+        chatBubble: ChatBubble,
+      },
+    },
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
+
 Result:
 
 <imageSlider alt="chat bubble component override" darkImageSrc1="customization-api/api/components-api/chatbubble-before.png" darkImageSrc2="customization-api/api/components-api/chatbubble-after.png" />
@@ -646,6 +1281,8 @@ You can override the entire participantsPanel component by passing in a [React.C
 You can import parts of default participantsPanel ui from the [SubComponents Library](/customization-api/api-reference/sub-component-library) accessible under the `customization-api` module to reuse them in your component.
 
 Use the example code given below showcasing a simple use-case of the api as a guide.
+
+<tabs lazy>
 
 ```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/participants-panel.tsx"
 import { customize } from "customization-api";
@@ -701,6 +1338,122 @@ const styles = StyleSheet.create({
 });
 ```
 
+
+```tsx {19-25}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const ParticipantsPanel = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new participants panel component. Use app-state and
+          sub-components to customize your participants panel
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          participantsPanel: ParticipantsPanel,
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+```
+
+```html {17-23}
+<script type="module">
+import AppBuilderWebSdk from "@appbuilder/web";
+
+const ParticipantsPanel = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new participants panel component. Use app-state and
+          sub-components to customize your chat
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      participantsPanel: ParticipantsPanel,
+    },
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
+
 Result:
 
 <imageSlider alt="participanPanel component override" darkImageSrc1="customization-api/api/components-api/participant-before.png" darkImageSrc2="customization-api/api/components-api/participantpanel-after.png" />
@@ -746,6 +1499,8 @@ You can add custom content by adding custom render objects to the render app sta
 <br/>
 
 Use the example code given below showcasing overriding of the default render component for `rtc` content type as a guide.
+
+<tabs lazy>
 
 ```tsx {18-26} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/custom-content-basic.tsx"
 import { customize } from "customization-api";
@@ -800,6 +1555,125 @@ const styles = StyleSheet.create({
 });
 ```
 
+```tsx {19-27}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk, { useRtc } from "@appbuilder/react";
+
+const CustomView = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new video view component. Use app-state and
+          sub-components to customize your video view
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          customContent: {
+            rtc: CustomView,
+          },
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+```
+
+```html {17-25}
+<script type="module">
+import AppBuilderWebSdk from "@appbuilder/web";
+
+const CustomView = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new video view component. Use app-state and
+          sub-components to customize your video view
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      customContent: {
+        rtc: CustomView,
+      },
+    },
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
+
 Result:
 
 <imageSlider alt="custom content component override" darkImageSrc1="customization-api/api/components-api/videocomponent-before.png" darkImageSrc2="customization-api/api/components-api/videocomponent-after.png" />
@@ -812,6 +1686,8 @@ A more **advanced usage example** can be found [here](https://github.com/AgoraIO
 <br/>
 
 Use the example code given below showcasing a simple use-case of the api as a guide.
+
+<tabs lazy>
 
 ```tsx {18-39} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/custom-content-advanced.tsx"
 import { customize, useRtc } from "customization-api";
@@ -879,6 +1755,156 @@ const styles = StyleSheet.create({
 });
 ```
 
+
+```tsx {19-43}
+import React, { useEffect } from "react";
+import AppBuilderReactSdk,{useRtc} from "@appbuilder/react";
+
+const CustomView = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new video view component. Use app-state and
+          sub-components to customize your video view
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          customContent: {
+            //customview is key
+            customview: CustomView,
+          },
+          useUserContext: function useUserContext() {
+            const { dispatch } = useRtc();
+            useEffect(() => {
+              dispatch({
+                type: "AddCustomContent",
+                //value 0 = uid
+                //value 1 = user data
+                //type should match the customContent key otherwise it will fallback to default view
+                value: [
+                  new Date().getTime(),
+                  { name: "user", type: "customview" },
+                ],
+              });
+            }, []);
+          },
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+```
+
+```html {18-39}
+<script type="module">
+import AppBuilderWebSdk, { React, useRtc } from "@appbuilder/web";
+const { useContext, useEffect, useState } = React;
+
+const CustomView = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new video view component. Use app-state and
+          sub-components to customize your video view
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      customContent: {
+        //customview is key
+        customview: CustomView,
+      },
+      useUserContext: function useUserContext() {
+        const { dispatch } = useRtc();
+        useEffect(() => {
+          dispatch({
+            type: "AddCustomContent",
+            //value 0 = uid
+            //value 1 = user data
+            //type should match the customContent key otherwise it will fallback to default view
+            value: [new Date().getTime(), { name: "user", type: "customview" }],
+          });
+        }, []);
+      },
+    },
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
+
 Result:
 
 <imageSlider alt="custom content component override" darkImageSrc1="customization-api/api/components-api/videocomponent-before.png" darkImageSrc2="customization-api/api/components-api/custom-content-after.png" />
@@ -921,12 +1947,12 @@ This function receives an array of default layouts and expects you to return an 
 
 #### LayoutObjectWithIcon
 
-| Key       | Type                                                                                                                                  | Description                                                                           |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| name      | string                                                                                                                                | Name of the layout                                                                    |
-| label     | string                                                                                                                                | Label of the layout to be displayed in UI                                             |
+| Key       | Type                                                                                                                                  | Description                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| name      | string                                                                                                                                | Name of the layout                                                                     |
+| label     | string                                                                                                                                | Label of the layout to be displayed in UI                                              |
 | icon      | string                                                                                                                                | Can be a <br/> 1. Base 64 Image string <br/>2. CDN URL <br/>3. Bundler imported string |
-| component | [LayoutComponent](/customization-api/api-reference/components-api#layoutcomponent-reactcomponent-renderstateinterfacerenderposition-) | Layout component to be used to render the video feeds                                 |
+| component | [LayoutComponent](/customization-api/api-reference/components-api#layoutcomponent-reactcomponent-renderstateinterfacerenderposition-) | Layout component to be used to render the video feeds                                  |
 
 <br/>
 
@@ -944,6 +1970,8 @@ This function receives an array of default layouts and expects you to return an 
 #### LayoutComponent: [React.Component](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/207516039691b23e567fa585c9d1aa3970ec3404/types/react/v16/index.d.ts#L78)<{ [renderStateInterface](/customization-api/api-reference/types#renderinterface)\["renderPosition"\] }>
 
 Use the example code given below showcasing appending a custom layout as a guide.
+
+<tabs lazy>
 
 ```tsx {18-32} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/custom-layout.tsx"
 import { customize } from "customization-api";
@@ -1003,6 +2031,138 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+```tsx
+import React, { useEffect } from "react";
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const CustomLayout = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new custom layout view. Use app-state and sub-components
+          to customize your layout
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        videoCall: {
+          customLayout: (defaultLayouts) => [
+            ...defaultLayouts,
+            {
+              component: CustomLayout,
+              label: "Custom Layout",
+              name: "CustomLayout",
+              iconName: "clipboard",
+            },
+          ],
+        },
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+export default App;
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+```
+
+```html {18-32}
+<script type="module">
+import AppBuilderWebSdk, { React } from "@appbuilder/web";
+const { useContext, useEffect, useState } = React;
+
+const CustomLayout = () => {
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={styles.textStyle}>
+          Here is your new custom layout view. Use app-state and sub-components
+          to customize your layout
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    videoCall: {
+      customLayout: (defaultLayouts) => [
+        ...defaultLayouts,
+        {
+          component: CustomLayout,
+          label: "Custom Layout",
+          name: "CustomLayout",
+          iconName: "clipboard",
+        },
+      ],
+    },
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
 
 Result:
 
@@ -1069,6 +2229,8 @@ App root does not have access to any AppBuilder [app states](/customization-api/
 :::
 
 Use the example code given below showcasing a simple use-case of the api as a guide.
+
+<tabs lazy>
 
 ```tsx {72-79} gh="https://github.com/AgoraIO-Community/App-Builder-Customization-API-Examples/blob/main/customization-api-example/apiexamples/customization/api/app-root.tsx"
 import { customize } from "customization-api";
@@ -1151,6 +2313,188 @@ const customization = customize({
 
 export default customization;
 ```
+
+
+```tsx {54-59}
+import AppBuilderReactSdk from "@appbuilder/react";
+import React, { useContext, useEffect, useState } from "react";
+
+export interface AppRootInterface {
+  customKey1?: string;
+  customKey2?: string;
+}
+
+const AppRootContext = React.createContext<AppRootInterface>({
+  customKey1: "default value 1",
+  customKey2: "default value 2",
+});
+
+interface AppRootProviderProps {
+  children: React.ReactNode;
+}
+
+const AppRootProvider = (props: AppRootProviderProps) => {
+  const [customState, setCustomState] = useState<AppRootInterface>({});
+  useEffect(() => {
+    setCustomState({
+      customKey1: "custom value 1",
+      customKey2: "custom value 2",
+    });
+  }, []);
+  return (
+    <AppRootContext.Provider value={{ ...customState }}>
+      {props.children}
+    </AppRootContext.Provider>
+  );
+};
+
+const VideoCallPage = () => {
+  const { customKey1, customKey2 } = useContext(AppRootContext);
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={{...styles.textStyle, ...{ fontWeight: "bold" }}}>
+          Custom key 1 - {customKey1}
+        </div>
+        <div style={{...styles.textStyle, ...{ fontWeight: "bold" }}}>
+          Custom key 2 - {customKey2}
+        </div>
+        <div style={styles.textStyle}>
+          Here is your app root sample usage.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function App() {
+  useEffect(() => {
+    AppBuilderReactSdk.customize({
+      components: {
+        appRoot: AppRootProvider,
+        videoCall: VideoCallPage,
+      },
+    });
+  });
+
+  return (
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+    maxHeight: '200px',
+    flexDirection: 'column'
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+    textAlign: "center"
+  },
+};
+
+export default App;
+```
+
+```html {44-49}
+<script type="module">
+import AppBuilderWebSdk, {React} from "@appbuilder/web";
+const { useContext, useEffect, useState } = React;
+
+const AppRootContext = React.createContext({
+  customKey1: "default value 1",
+  customKey2: "default value 2",
+});
+
+const AppRootProvider = (props) => {
+  const [customState, setCustomState] = useState({});
+  useEffect(() => {
+    setCustomState({
+      customKey1: "custom value 1",
+      customKey2: "custom value 2",
+    });
+  }, []);
+  return (
+    <AppRootContext.Provider value={{ ...customState }}>
+      {props.children}
+    </AppRootContext.Provider>
+  );
+};
+
+const VideoCallPage = () => {
+  const { customKey1, customKey2 } = useContext(AppRootContext);
+  return (
+    <div style={styles.container}>
+      <div style={styles.textContainer}>
+        <div style={{...styles.textStyle, ...{ fontWeight: "bold" }}}>
+          Custom key 1 - {customKey1}
+        </div>
+        <div style={{...styles.textStyle, ...{ fontWeight: "bold" }}}>
+          Custom key 2 - {customKey2}
+        </div>
+        <div style={styles.textStyle}>
+          Here is your app root sample usage.
+        </div>
+      </div>
+    </div>
+  );
+};
+
+AppBuilderWebSdk.customize({
+  components: {
+    appRoot: AppRootProvider,
+    videoCall: VideoCallPage,
+  },
+});
+
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: "#90EE90",
+    justifyContent: "center",
+    display: "flex",
+  },
+  textContainer: {
+    display: "flex",
+    height: "100%",
+    justifyContent: "center",
+    alignSelf: "center",
+    border: "1px solid black",
+    borderRadius: 30,
+    maxHeight: '200px',
+    flexDirection: 'column'
+  },
+  textStyle: {
+    padding: "10px",
+    fontSize: "20px",
+    alignSelf: "center",
+    textAlign: "center"
+  },
+};
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
 
 <imageSlider alt="App root override" darkImageSrc1="customization-api/api/components-api/videocall-bar-before.png" darkImageSrc2="customization-api/api/app-root-api/approot-after.png" />
 
