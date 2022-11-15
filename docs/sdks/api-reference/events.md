@@ -6,6 +6,8 @@ keywords: [videCallProps, ChatBubbleProps]
 sidebar_custom_props: { icon: "settings" }
 ---
 
+<tabsToggle sdk/>
+
 Events emitted by the AppBuilder Embed SDK.
 
 #### sdkEventsMapInterface
