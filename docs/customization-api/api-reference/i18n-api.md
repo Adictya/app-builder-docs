@@ -7,6 +7,8 @@ keywords: [i18nInterface, i18nDataInterface]
 sidebar_custom_props: { icon: "i18" }
 ---
 
+<tabsToggle />
+
 Provides API to customize and add multiple language and locale translations for all strings used across App Builder.
 
 ## i18n : [i18nInterface](#i18ninterface)\[\]
@@ -45,6 +47,8 @@ The overrides are applied by passing the array under the top-level `i18n` key to
 
 Use the example code given below showcasing overriding
 
+<tabs lazy>
+
 ```js
 import React from "react";
 import { customize } from "customization-api";
@@ -79,6 +83,91 @@ const userCustomization = customize({
 
 export default userCustomization;
 ```
+
+```js {6-33}
+import React, { useEffect } from 'react';
+import AppBuilderReactSdk from "@appbuilder/react";
+
+const App = () => {
+  useEffect(()=>{
+    AppBuilderReactSdk.customize({
+      i18n: [
+        {
+          locale: "en-us",
+          label: "English US",
+          data: {
+            meetingNameInputPlaceholder: "Name your Room",
+            pstnUserLabel: "Dial In User",
+            joinRoomButton: ({ ready, role }) =>
+              ready
+                ? !role
+                  ? "Join Room"
+                  : `Join Room as ${
+                      role === ClientRole.Broadcaster ? "Host" : "Audience"
+                    }`
+                : `Loading...`,
+          },
+        },
+        {
+          locale: "es",
+          label: "Español",
+          data: {
+            meetingNameInputPlaceholder: "Nombra tu habitación",
+          },
+        },
+      ],
+    });
+  })
+
+  return(
+    <div style={{ display: "flex", flex: 1 }}>
+      <AppBuilderReactSdk.View />
+    </div>
+  )
+}
+
+export default App;
+```
+
+```html
+<script type="module">
+import AppBuilderWebSdk, {React} from "@appbuilder/web";
+
+AppBuilderWebSdk.customize({
+  i18n: [
+    {
+      locale: "en-us",
+      label: "English US",
+      data: {
+        meetingNameInputPlaceholder: "Name your Room",
+        pstnUserLabel: "Dial In User",
+        joinRoomButton: ({ ready, role }) =>
+          ready
+            ? !role
+              ? "Join Room"
+              : `Join Room as ${
+                  role === ClientRole.Broadcaster ? "Host" : "Audience"
+                }`
+            : `Loading...`,
+      },
+    },
+    {
+      locale: "es",
+      label: "Español",
+      data: {
+        meetingNameInputPlaceholder: "Nombra tu habitación",
+      },
+    },
+  ],
+});
+</script>
+
+<div style="height: 100vh; width: 100vw; display: flex; flex: 1">
+  <app-builder />
+</div>
+```
+
+</tabs>
 
 ---
 

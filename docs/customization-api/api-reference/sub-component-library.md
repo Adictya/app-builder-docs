@@ -10,9 +10,30 @@ sidebar_class_name: "separator"
 
 <api>
 
+<tabsToggle />
+
 Set of components to be composed as needed by the user.
 
+<tabs lazy>
+
+<method>
+
 You can access them under the `customization-api` module as a named export.
+
+</method>
+<method>
+
+You can access them under the `@appbuilder/react` module as a named export.
+
+</method>
+
+<method>
+
+You can access them under the `@appbuilder/web` module as a named export.
+
+</method>
+
+</tabs>
 
 ---
 
@@ -28,9 +49,21 @@ You can access them under the `customization-api` module as a named export.
 
 The object containing all the default icons used in the ui.
 
+<tabs lazy>
+
 ```jsx
 import { icons } from "customization-api";
 ```
+
+```jsx
+import { icons } from "@appbuilder/react";
+```
+
+```jsx
+import { icons } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -82,9 +115,21 @@ import { icons } from "customization-api";
 
 The ChatSendButton component displays the chat send button. Relies on [ChatUiControl app state](/customization-api/api-reference/app-state-library#chatuicontrolinterface) to determine required information.
 
+<tabs lazy>
+
 ```jsx
 import { ChatSendButton } from "customization-api";
 ```
+
+```jsx
+import { ChatSendButton } from "@appbuilder/react";
+```
+
+```jsx
+import { ChatSendButton } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -111,9 +156,21 @@ import { ChatSendButton } from "customization-api";
 
 The ChatTextInput component displays the chat input box. Relies on [ChatUiControl app state](/customization-api/api-reference/app-state-library#chatuicontrolinterface) to determine required information.
 
+<tabs lazy>
+
 ```jsx
 import { ChatTextInput } from "customization-api";
 ```
+
+```jsx
+import { ChatTextInput } from "@appbuilder/react";
+```
+
+```jsx
+import { ChatTextInput } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -148,9 +205,21 @@ import { ChatTextInput } from "customization-api";
 
 The Chat Bubble component displays the message inside the chat ui. It is conditionally styled based on message origin (ie local or remote).
 
+<tabs lazy>
+
 ```jsx
 import { ChatBubble } from "customization-api";
 ```
+
+```jsx
+import { ChatBubble } from "@appbuilder/react";
+```
+
+```jsx
+import { ChatBubble } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -185,9 +254,22 @@ import { ChatBubble } from "customization-api";
 
 The Chat component displays the chat sidepanel. Relies on [ChatUiControl app state](/customization-api/api-reference/app-state-library#chatuicontrolinterface) to determine required information.
 
+<tabs lazy>
+
 ```jsx
 import { Chat } from "customization-api";
 ```
+
+```jsx
+import { Chat } from "@appbuilder/react";
+```
+
+```jsx
+import { Chat } from "@appbuilder/web";
+```
+
+
+</tabs>
 
 <br/>
 
@@ -216,9 +298,21 @@ import { Chat } from "customization-api";
 
 The MaxVideoView component is used to render the user video feed using [UiKitMaxVideoView](#uikitmaxvideoview) along with overlay components like [NameWithMicStatus](#namewithmicstatus), [NetworkQualityPill](#networkqualitypill) etc.
 
+<tabs lazy>
+
 ```jsx
 import { MaxVideoView } from "customization-api";
 ```
+
+```jsx
+import { MaxVideoView } from "@appbuilder/react";
+```
+
+```jsx
+import { MaxVideoView } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -246,9 +340,21 @@ import { MaxVideoView } from "customization-api";
 
 The GridLayout component is used to render the user video feeds in a responsive grid pattern.
 
+<tabs lazy>
+
 ```jsx
 import { GridLayout } from "customization-api";
 ```
+
+```jsx
+import { GridLayout } from "@appbuilder/react";
+```
+
+```jsx
+import { GridLayout } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -268,9 +374,21 @@ import { GridLayout } from "customization-api";
 
 The PinnedLayout component is used to render the user video feeds in a pinned view with a collapsible sidebar displaying unpinned user feeds.
 
+<tabs lazy>
+
 ```jsx
 import { PinnedLayout } from "customization-api";
 ```
+
+```jsx
+import { PinnedLayout } from "@appbuilder/react";
+```
+
+```jsx
+import { PinnedLayout } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -290,9 +408,21 @@ import { PinnedLayout } from "customization-api";
 
 The VideoComponent is used to automatically render the user video feeds in the selected layout.
 
+<tabs lazy>
+
 ```jsx
 import { VideoComponent } from "customization-api";
 ```
+
+```jsx
+import { VideoComponent } from "@appbuilder/react";
+```
+
+```jsx
+import { VideoComponent } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -312,9 +442,21 @@ import { VideoComponent } from "customization-api";
 
 The NameWithMicIcon component is used to render the user name along with their mic muted state.
 
+<tabs lazy>
+
 ```jsx
 import { NameWithMicIcon } from "customization-api";
 ```
+
+```jsx
+import { NameWithMicIcon } from "@appbuilder/react";
+```
+
+```jsx
+import { NameWithMicIcon } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -342,9 +484,21 @@ import { NameWithMicIcon } from "customization-api";
 
 The NetworkQualityPill component is used to render the user network quality in a pill container that expands when hovered over.
 
+<tabs lazy>
+
 ```jsx
 import { NetworkQualityPill } from "customization-api";
 ```
+
+```jsx
+import { NetworkQualityPill } from "@appbuilder/react";
+```
+
+```jsx
+import { NetworkQualityPill } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -370,9 +524,21 @@ import { NetworkQualityPill } from "customization-api";
 
 The VideocallScreen component is used to render the entire video call screen.
 
+<tabs lazy>
+
 ```jsx
 import { VideocallScreen } from "customization-api";
 ```
+
+```jsx
+import { VideocallScreen } from "@appbuilder/react";
+```
+
+```jsx
+import { VideocallScreen } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -392,9 +558,21 @@ import { VideocallScreen } from "customization-api";
 
 The SettingsView component is used to render the settings side panel.
 
+<tabs lazy>
+
 ```jsx
 import { SettingsView } from "customization-api";
 ```
+
+```jsx
+import { SettingsView } from "@appbuilder/react";
+```
+
+```jsx
+import { SettingsView } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -414,9 +592,21 @@ import { SettingsView } from "customization-api";
 
 The ParticipantsView component is used to render the participant panel that lists all the users in the video call / livestream along with their audio and video status. Hosts additionally are able to see user controls such as `mute participant` , `remove participant from call`.
 
+<tabs lazy>
+
 ```jsx
 import { ParticipantsView } from "customization-api";
 ```
+
+```jsx
+import { ParticipantsView } from "@appbuilder/react";
+```
+
+```jsx
+import { ParticipantsView } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -434,9 +624,21 @@ import { ParticipantsView } from "customization-api";
 
 The Controls component is used to render all the meeting controls.
 
+<tabs lazy>
+
 ```jsx
 import { Controls } from "customization-api";
 ```
+
+```jsx
+import { Controls } from "@appbuilder/react";
+```
+
+```jsx
+import { Controls } from "@appbuilder/web";
+```
+
+</tabs>
 
 :::note
 The controls displayed change depending on the operating sytem/platform and the user config
@@ -460,9 +662,21 @@ The controls displayed change depending on the operating sytem/platform and the 
 
 The NavBar component displays the nav bar.
 
+<tabs lazy>
+
 ```jsx
 import { NavBar } from "customization-api";
 ```
+
+```jsx
+import { NavBar } from "@appbuilder/react";
+```
+
+```jsx
+import { NavBar } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -492,9 +706,21 @@ import { NavBar } from "customization-api";
 
 The HorizontalRule component displays a horizontal line.
 
+<tabs lazy>
+
 ```jsx
 import { HorizontalRule } from "customization-api";
 ```
+
+```jsx
+import { HorizontalRule } from "@appbuilder/react";
+```
+
+```jsx
+import { HorizontalRule } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -520,9 +746,21 @@ import { HorizontalRule } from "customization-api";
 
 The Render component handles rendering the correct content view component as defined in [custom content api](/customization-api/api-reference/components-api#videocallcustomcontent) based on the content type corresponding to the `uid` as defined in the [Render app state](/customization-api/api-reference/app-state-library#userender).
 
+<tabs lazy>
+
 ```jsx
 import { RenderComponent } from "customization-api";
 ```
+
+```jsx
+import { RenderComponent } from "@appbuilder/react";
+```
+
+```jsx
+import { RenderComponent } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -550,9 +788,21 @@ import { RenderComponent } from "customization-api";
 
 The TextInput component is used to render a text input box.
 
+<tabs lazy>
+
 ```jsx
 import { TextInput } from "customization-api";
 ```
+
+```jsx
+import { TextInput } from "@appbuilder/react";
+```
+
+```jsx
+import { TextInput } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -573,9 +823,21 @@ import { TextInput } from "customization-api";
 
 The PrimaryButton component is used to render a button with app builder primary button styling.
 
+<tabs lazy>
+
 ```jsx
 import { PrimaryButton } from "customization-api";
 ```
+
+```jsx
+import { PrimaryButton } from "@appbuilder/react";
+```
+
+```jsx
+import { PrimaryButton } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -603,9 +865,21 @@ import { PrimaryButton } from "customization-api";
 
 The SecondaryButton component is used to render a button with app builder primary button styling.
 
+<tabs lazy>
+
 ```jsx
 import { SecondaryButton } from "customization-api";
 ```
+
+```jsx
+import { SecondaryButton } from "@appbuilder/react";
+```
+
+```jsx
+import { SecondaryButton } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -633,9 +907,21 @@ import { SecondaryButton } from "customization-api";
 
 The UiKitBtnTemplate component renders a button in UiKit button structure.
 
+<tabs lazy>
+
 ```jsx
 import { UiKitBtnTemplate } from "customization-api";
 ```
+
+```jsx
+import { UiKitBtnTemplate } from "@appbuilder/react";
+```
+
+```jsx
+import { UiKitBtnTemplate } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -655,9 +941,21 @@ import { UiKitBtnTemplate } from "customization-api";
 
 The UiKitMaxVideoView component is used to render the user video feed along with a fallback component in case user video feed is disabled.
 
+<tabs lazy>
+
 ```jsx
 import { UiKitMaxVideoView } from "customization-api";
 ```
+
+```jsx
+import { UiKitMaxVideoView } from "@appbuilder/react";
+```
+
+```jsx
+import { UiKitMaxVideoView } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -676,9 +974,21 @@ import { UiKitMaxVideoView } from "customization-api";
 
 The UiKitImageIcon component is used to render a given icon within a wrapper component.
 
+<tabs lazy>
+
 ```jsx
 import { UiKitImageIcon } from "customization-api";
 ```
+
+```jsx
+import { UiKitImageIcon } from "@appbuilder/react";
+```
+
+```jsx
+import { UiKitImageIcon } from "@appbuilder/web";
+```
+
+</tabs>
 
 </method>
 
@@ -705,9 +1015,21 @@ The NavBarComponentsArray is an array of all buttons present on the default nav 
 | 4     | LayoutIconButton       | [LayoutIconButtonComponent](#layouticonbuttoncomponent)             | Button to switch layouts                          |
 | 5     | SettingsIconButton     | [SettingsIconButtonComponent](#settingsiconbuttoncomponent)         | Button to toggle setting sidepanel                |
 
+<tabs lazy>
+
 ```jsx
 import { NavBarComponentsArray } from "customization-api";
 ```
+
+```jsx
+import { NavBarComponentsArray } from "@appbuilder/react";
+```
+
+```jsx
+import { NavBarComponentsArray } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -826,9 +1148,22 @@ The ControlsComponentsArray is an array of all meeting control button subcompone
 | 5     | LocalEndCall       | [LocalEndCallComponent](#localendcallprops)             | Control button to end local user call                       |
 | 6     | LiveStreamControls | [LiveStreamControlsComponent](#livestreamcontrolsprops) | Control button to send/recall local user raise hand request |
 
+<tabs lazy>
+
 ```jsx
 import { ControlsComponentArray } from "customization-api";
 ```
+
+```jsx
+import { ControlsComponentArray } from "@appbuilder/react";
+```
+
+
+```jsx
+import { ControlsComponentArray } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
@@ -966,9 +1301,21 @@ The SidePanelButtonsArray is an array of all the side panel button subcomponents
 | 7     | MuteAllAudioButton                    | [MuteAllAudioButtonComponent](#muteallaudiobuttonprops)                                       | Side panel button to mute all remote users audio         |
 | 8     | MuteAllVideoButton                    | [MuteAllVideoButtonComponent](#muteallvideobuttonprops)                                       | Side panel button to mute all remote users video         |
 
+<tabs lazy>
+
 ```jsx
 import { SidePanelButtonsArray } from "customization-api";
 ```
+
+```jsx
+import { SidePanelButtonsArray } from "@appbuilder/react";
+```
+
+```jsx
+import { SidePanelButtonsArray } from "@appbuilder/web";
+```
+
+</tabs>
 
 <br/>
 
